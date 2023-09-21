@@ -1,0 +1,9 @@
+// test init
+// const N = 50;
+// const initNodes = [...Array(N).keys()].map(i => ({ id: i.toString()}))
+// const initLinks = [...Array(N).keys()]
+// .filter(id => id)
+//   .map(id => ({
+//     source: id.toString(),
+//     target: Math.round(Math.random() * (id-1)).toString()
+//   }))

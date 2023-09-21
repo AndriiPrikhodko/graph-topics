@@ -1,0 +1,17 @@
+/* Control the left side */
+.left {
+    left: 0;
+    padding-right: 5px;
+    padding-left: 5px;
+    background-color: #6f6f6f;
+  }
+
+.split-small {
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}

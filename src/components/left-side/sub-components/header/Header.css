@@ -1,0 +1,15 @@
+.header {
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    text-decoration: underline #a12110;
+    text-decoration-thickness: 3px;
+}
+
+.title span {
+    color: #b9b8b8;
+}
+
