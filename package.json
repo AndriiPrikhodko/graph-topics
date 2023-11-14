@@ -2,6 +2,7 @@
   "name": "graph-topics",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.5",
@@ -50,6 +51,10 @@
     ]
   },
   "devDependencies": {
-    "@types/ramda": "^0.29.9"
+    "@types/ramda": "^0.29.9",
+    "@vitejs/plugin-react": "^4.1.1",
+    "happy-dom": "^12.10.3",
+    "jest-canvas-mock": "^2.5.2",
+    "vitest": "^0.34.6"
   }
 }
