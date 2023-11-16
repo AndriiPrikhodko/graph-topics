@@ -1,7 +1,7 @@
 import { KeyboardEvent } from "react"
 import './Menu.css'
 import { useSelector, useDispatch } from 'react-redux'
-import * as actions from '../../../../actions/graph.action'
+import {actions} from '../../../../reducers/graph.reducer'
 
 type Props = {
     label: string,

@@ -7,7 +7,7 @@ const LeftView: React.FC = () => {
     return (
         <div className="split-small left">
             <Header />
-            <ActionMenu />
+            {/* <ActionMenu /> */}
             <GraphLoad />  
         </div>
     )

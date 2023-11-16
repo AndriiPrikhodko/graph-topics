@@ -6,17 +6,17 @@ type Action = {
 
 export const actionList: Action[] = [
     {
-        handleName: 'addGraphEdge',
+        handleName: 'graph/addGraphEdge',
         label: 'link nodes:',
         placeholder: 'comma separated strings'
     },
     {
-        handleName: 'removeGraphEdge',
+        handleName: 'graph/removeGraphEdge',
         label: 'remove edge:',
         placeholder: 'comma separated strings'
     },
     {
-        handleName: 'deleteGraphNode',
+        handleName: 'graph/deleteGraphNode',
         label: 'remove node:',
         placeholder: 'node name'
     }

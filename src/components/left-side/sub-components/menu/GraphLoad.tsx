@@ -1,5 +1,5 @@
 import React, { useState, useEffect, MouseEvent, ChangeEvent } from "react"
-import { setGraphData } from "../../../../actions/graph.action"
+import { setGraphData } from "../../../../reducers/graph.reducer"
 import { graphAPI } from "../../../../api/graph.api"
 import {selfDataAdapter} from "../../../../helpers/data-adapter/self-data-adapter"
 import Dropdown from "./Dropdown"

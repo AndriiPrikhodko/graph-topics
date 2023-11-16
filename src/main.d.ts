@@ -13,7 +13,7 @@ interface IGraphData {
       source:  string | LinkNode
       target: string | LinkNode
       [key: string]: any
-    } []
+    }[]
   }
 
 interface IFuncProps {
