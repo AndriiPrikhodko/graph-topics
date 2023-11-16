@@ -29,7 +29,13 @@ type Edge = {
     edge: string
   }
 
+  interface IGraphListState {
+    data: string [],
+    status: 'idle' | 'succeeded' | 'failed' | 'loading',
+    error: string | null | undefined,
+}
+
 type Store = {
   graphData: IGraphData,
-  graphList: string[]
+  graphList: IGraphListState
 }

@@ -49,7 +49,7 @@ const GraphLoad: React.FC = () => {
                     onChange={handleMenuChange}
                     >
                 </input>}
-            menu={graphList.map((graphName: string) => <input
+            menu={graphList.data.map((graphName: string) => <input
                 defaultValue={graphName}
                 onClick={handleMenuItemClick}
                 readOnly></input>)
