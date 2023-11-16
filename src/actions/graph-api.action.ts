@@ -8,13 +8,13 @@ export const loadGraphList = createAsyncThunk(
       const graphList = await graphAPI.getGraphList()
       dispatch({
         type: 'fulfilled', 
-        payload: graphList 
       })
+      return graphList
     } catch (error) {
       dispatch({
         type: 'failed', 
-        error: error,
      })
+     return error
     }
   }
 )

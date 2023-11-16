@@ -8,6 +8,7 @@ const store = configureStore({
     graphList: rootReducer.graphListSlice
   },
   middleware: [thunk],
+  devTools: true
 })
 
 export default store;
