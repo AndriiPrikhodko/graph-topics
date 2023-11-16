@@ -1,7 +1,7 @@
 import { ForceGraph2D } from 'react-force-graph'
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addGraphEdge } from '../../../actions/graph.action'
+import { addGraphEdge } from '../../../reducers/graph.reducer'
 
 const { useRef } = React
 
@@ -23,11 +23,18 @@ interface INodeObjExt {
 const Graph = () => {
     const fgRef = useRef()
     const data = useSelector((store: Store) => store.graphData)
+
+    // needed because of Immer (redux Toolkit)
+    // data returned is immutable however it should be mutable
+    // by design of force graph therefore creation copy is required
+    const nodes = data.nodes.map(node => Object.assign({}, node))
+    const links = data.links.map(link => Object.assign({}, link))
+    
     const dispatch = useDispatch();
 
     const [edge, setEdge] = useState<string[]>([])
 
-    const handleNodeClick = React.useCallback((node: NodeObject,event: MouseEvent) => {
+    const handleNodeClick = React.useCallback((node: NodeObject, event: MouseEvent) => {
         // aim at node from outside it
         if (edge.length === 0 && typeof node.id === 'string') {
             setEdge([node.id])
@@ -51,7 +58,7 @@ const Graph = () => {
         // />
         <ForceGraph2D
             ref={fgRef}
-            graphData={data}
+            graphData={{nodes, links}}
             d3VelocityDecay={0.3}
             // d3Force={'center'}
             nodeAutoColorBy="group"
