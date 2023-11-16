@@ -1,27 +1,6 @@
-// interface IAction {
-//     type: string,
-//     payload: string[]
-// }
-
-// const graphListReducer = (store: string[] = [], action: IAction) => {
-//     switch(action.type) {
-//         case 'LOAD_GRAPH_LIST':
-//             return action.payload
-//         default:
-//             return store
-//     }
-// }
-
-// export default graphListReducer
 import { loadGraphList as APIloadGraphList }
  from '../actions/graph-api.action'
 import { createSlice } from '@reduxjs/toolkit';
-
-interface IGraphListState {
-    data: string [],
-    status: 'idle' | 'succeeded' | 'failed' | 'loading',
-    error: string | null | undefined,
-}
 
 const graphListSlice = createSlice({
     name: 'graphList',

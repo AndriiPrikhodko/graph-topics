@@ -1,10 +1,8 @@
-type Edge = {
-  edge: string
-}
+
 
 // (this: Edge, graphData :IGraphData & {bind?: (this: Edge) => Edge} )
-export function addEdge(this: Edge, graphData :IGraphData & {bind?: Function}): IGraphData {
-        const edgeArr = this.edge.split(',')
+export function addEdge(this: string, graphData :IGraphData): IGraphData {
+        const edgeArr = this.split(',')
         if (edgeArr.length === 2) {
           const [source, target] = edgeArr
           const trimmedSource = source.trim()
@@ -31,7 +29,7 @@ export function addEdge(this: Edge, graphData :IGraphData & {bind?: Function}): 
             }
         }
         else {
-          console.log(`incorrect input: ${this.edge}`)
+          console.log(`incorrect input: ${this}`)
           return graphData
         }
 }

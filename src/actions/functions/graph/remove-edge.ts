@@ -1,7 +1,7 @@
-export const removeEdge = function (this: Edge, graphData :IGraphData & {bind?: Function}): IGraphData {
+export const removeEdge = function (this: string, graphData :IGraphData): IGraphData {
     let islinked: boolean = false
 
-    const edgeArr = this.edge.split(',')
+    const edgeArr = this.split(',')
     const [source, target] = edgeArr
     const trimmedSource = source.trim()
     const trimmedTarget = target.trim()
@@ -29,7 +29,7 @@ export const removeEdge = function (this: Edge, graphData :IGraphData & {bind?: 
           links: updateLinks
         }
     } else {
-      console.log(`incorrect input: ${this.edge}`)
+      console.log(`incorrect input: ${this}`)
       return graphData
     }
   }

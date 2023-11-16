@@ -1,7 +1,9 @@
 import { ForceGraph2D } from 'react-force-graph'
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addGraphEdge } from '../../../reducers/graph.reducer'
+import graphFn from '../../../actions/graph-fn.facade'
+import { setGraphData } from '../../../reducers/graph.reducer'
+import { clone } from 'ramda'
 
 const { useRef } = React
 
@@ -22,13 +24,12 @@ interface INodeObjExt {
 }
 const Graph = () => {
     const fgRef = useRef()
-    const data = useSelector((store: Store) => store.graphData)
+    const gData = useSelector((store: Store) => store.graphData)
 
     // needed because of Immer (redux Toolkit)
     // data returned is immutable however it should be mutable
     // by design of force graph therefore creation copy is required
-    const nodes = data.nodes.map(node => Object.assign({}, node))
-    const links = data.links.map(link => Object.assign({}, link))
+   const mutableGData = clone(gData)
     
     const dispatch = useDispatch();
 
@@ -40,7 +41,8 @@ const Graph = () => {
             setEdge([node.id])
         }
         else {
-            dispatch(addGraphEdge([...edge, node.id].join(',')))
+            const updatedData = graphFn.addGraphEdge.call([...edge, node.id].join(','), mutableGData)
+            dispatch(setGraphData(updatedData))
             setEdge([])
         }
       }, [edge, setEdge, dispatch])
@@ -58,9 +60,8 @@ const Graph = () => {
         // />
         <ForceGraph2D
             ref={fgRef}
-            graphData={{nodes, links}}
+            graphData={mutableGData}
             d3VelocityDecay={0.3}
-            // d3Force={'center'}
             nodeAutoColorBy="group"
             
             nodeCanvasObject={(node: NodeObject & INodeObjExt, ctx, globalScale) => {
@@ -81,7 +82,7 @@ const Graph = () => {
                 ctx.textBaseline = 'middle';
                 ctx.fillStyle = node.color && node.color !== '#a6cee3' ? 
                     node.color :'rgb(120, 120, 120)';
-                // ctx.fillStyle = 'rgb(120, 120, 120)';
+                ctx.fillStyle = 'rgb(120, 120, 120)';
                 ctx.fillText(label, node.x ? node.x : 0, node.y? node.y : 0);
                 
                 // node['__bckgDimensions'] = bckgDimensions; // to re-use in nodePointerAreaPaint

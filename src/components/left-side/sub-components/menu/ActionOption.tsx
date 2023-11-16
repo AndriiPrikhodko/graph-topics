@@ -1,7 +1,10 @@
 import { KeyboardEvent } from "react"
 import './Menu.css'
 import { useSelector, useDispatch } from 'react-redux'
-import {actions} from '../../../../reducers/graph.reducer'
+import { setGraphData } from '../../../../reducers/graph.reducer'
+import graphFnFacade from '../../../../actions/graph-fn.facade'
+import { clone } from 'ramda'
+
 
 type Props = {
     label: string,
@@ -11,13 +14,18 @@ type Props = {
 
 const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) => {
     const dispatch = useDispatch()
-
+    const data = useSelector((store: Store) => store.graphData)
+    
     const handleActionOnEnter = (event: KeyboardEvent): void =>  {
-        const actionFunctionObj = Object.getOwnPropertyDescriptors(actions)
-        const getActionFunction = actionFunctionObj[actionFunction]['get']
-        const target  = event.target as HTMLButtonElement
-        if (event.key === 'Enter' && target && getActionFunction) {
-            dispatch(getActionFunction()(target.value))
+        if (event.key === 'Enter') {
+            const actionFunctionObj = Object.getOwnPropertyDescriptors(graphFnFacade)
+            const getActionFunction = actionFunctionObj[actionFunction].value
+            const target  = event.target as HTMLButtonElement
+         if(target && getActionFunction) {
+            const mutableData = clone(data)
+            const updatedGraphData = getActionFunction.call(target.value.toString(), mutableData)
+            dispatch(setGraphData(updatedGraphData))
+            }
         }
     }
 
