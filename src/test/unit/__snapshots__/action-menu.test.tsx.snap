@@ -1,0 +1,52 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`action menu 1`] = `
+<div
+  class="data-input"
+>
+  <label
+    class="unselectable"
+  >
+    link nodes:
+    <input
+      class="edge-input"
+      placeholder="comma separated strings"
+      type="text"
+    />
+  </label>
+</div>
+`;
+
+exports[`action menu 2`] = `
+<div
+  class="data-input"
+>
+  <label
+    class="unselectable"
+  >
+    remove edge:
+    <input
+      class="edge-input"
+      placeholder="comma separated strings"
+      type="text"
+    />
+  </label>
+</div>
+`;
+
+exports[`action menu 3`] = `
+<div
+  class="data-input"
+>
+  <label
+    class="unselectable"
+  >
+    delete node:
+    <input
+      class="edge-input"
+      placeholder="node name"
+      type="text"
+    />
+  </label>
+</div>
+`;
