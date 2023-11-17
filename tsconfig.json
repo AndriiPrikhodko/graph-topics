@@ -24,6 +24,4 @@
     "./node_modules/@types",
     "./src/"
   ]
-  // "include": [
-  // "./src/.d.ts"  ]
 }
