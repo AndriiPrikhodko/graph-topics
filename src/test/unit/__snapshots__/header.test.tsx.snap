@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`header 1`] = `
+<h3
+  class="title unselectable"
+>
+  <span>
+    Graph
+  </span>
+   Topics
+</h3>
+`;

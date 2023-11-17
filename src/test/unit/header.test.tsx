@@ -1,14 +1,12 @@
 import {  test } from 'vitest'
 import { render } from '@testing-library/react';
-import Graph from '../../components/right-side/graph-engine/graph';
+// import Graph from '../../components/right-side/graph-engine/graph';
+const Graph = import('../../components/right-side/graph-engine/graph')
 import Header from '../../components/left-side/sub-components/header/Header';
 
 test('header', () => {
-  const header = render(<Header />)
-  expect(header).toMatchSnapshot()
+  const { getByRole } = render(<Header />)
+  const h3 = getByRole('heading')
+  expect(h3).toMatchSnapshot()
 })
 
-test.skip('graph', async () => {
-  const wrapper = render(<Graph />)
-  expect(wrapper).toBeTruthy()
-})

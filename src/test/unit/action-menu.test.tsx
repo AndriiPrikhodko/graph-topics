@@ -4,7 +4,6 @@ import '@testing-library/jest-dom/extend-expect'
 import ActionMenu from '../../components/left-side/sub-components/menu/ActionMenu'
 import store from '../../store';
 import { Provider } from 'react-redux';
-import React from 'react';
 
 test('action menu', () => {
   const menuRender = render(
