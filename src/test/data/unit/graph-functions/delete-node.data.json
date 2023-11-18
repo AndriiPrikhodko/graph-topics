@@ -1,7 +1,7 @@
 [
     {
-        "name": "should add edge between existing nodes",
-        "edge": "4, 1",
+        "name": "should delete existing node without links",
+        "node": "4",
         "graphData": [
             {
                 "nodes": [
@@ -43,9 +43,6 @@
                     },
                     {
                         "id": "3"
-                    },
-                    {
-                        "id": "4"
                     }
                 ],
                 "links": [
@@ -56,22 +53,14 @@
                     {
                         "source": "1",
                         "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "1"
                     }
                 ]
             }
         ]
     },
     {
-        "name": "should add new node and edge",
-        "edge": "4, 5",
+        "name": "should delete existing node with all connected links",
+        "node": "3",
         "graphData": [
             {
                 "nodes": [
@@ -112,115 +101,21 @@
                         "id": "2"
                     },
                     {
-                        "id": "3"
-                    },
-                    {
                         "id": "4"
-                    },
-                    {
-                        "id": "5"
                     }
                 ],
                 "links": [
                     {
                         "source": "1",
                         "target": "2"
-                    },
-                    {
-                        "source": "1",
-                        "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "5"
                     }
                 ]
             }
         ]
     },
     {
-        "name": "should add edge and two new nodes",
-        "edge": "6, 5",
-        "graphData": [
-            {
-                "nodes": [
-                    {
-                        "id": "1"
-                    },
-                    {
-                        "id": "2"
-                    },
-                    {
-                        "id": "3"
-                    },
-                    {
-                        "id": "4"
-                    }
-                ],
-                "links": [
-                    {
-                        "source": "1",
-                        "target": "2"
-                    },
-                    {
-                        "source": "1",
-                        "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "3"
-                    }
-                ]
-            },
-            {
-                "nodes": [
-                    {
-                        "id": "1"
-                    },
-                    {
-                        "id": "2"
-                    },
-                    {
-                        "id": "3"
-                    },
-                    {
-                        "id": "4"
-                    },
-                    {
-                        "id": "6"
-                    },
-                    {
-                        "id": "5"
-                    }
-                ],
-                "links": [
-                    {
-                        "source": "1",
-                        "target": "2"
-                    },
-                    {
-                        "source": "1",
-                        "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "3"
-                    },
-                    {
-                        "source": "6",
-                        "target": "5"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "should do nothing if edge is empty",
-        "edge": "",
+        "name": "should do nothing if node does not exist",
+        "node": "5",
         "graphData": [
             {
                 "nodes": [
@@ -285,8 +180,8 @@
         ]
     },
     {
-        "name": "should do nothing if edge does not contain comma",
-        "edge": "abcdefg129-34",
+        "name": "should do nothing if node is empty",
+        "node": "",
         "graphData": [
             {
                 "nodes": [
@@ -351,8 +246,74 @@
         ]
     },
     {
-        "name": "should handle object edges key id",
-        "edge": "3, 4",
+        "name": "should do nothing if node contain comma",
+        "node": "3, 4",
+        "graphData": [
+            {
+                "nodes": [
+                    {
+                        "id": "1"
+                    },
+                    {
+                        "id": "2"
+                    },
+                    {
+                        "id": "3"
+                    },
+                    {
+                        "id": "4"
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "1",
+                        "target": "2"
+                    },
+                    {
+                        "source": "1",
+                        "target": "3"
+                    },
+                    {
+                        "source": "4",
+                        "target": "3"
+                    }
+                ]
+            },
+            {
+                "nodes": [
+                    {
+                        "id": "1"
+                    },
+                    {
+                        "id": "2"
+                    },
+                    {
+                        "id": "3"
+                    },
+                    {
+                        "id": "4"
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "1",
+                        "target": "2"
+                    },
+                    {
+                        "source": "1",
+                        "target": "3"
+                    },
+                    {
+                        "source": "4",
+                        "target": "3"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "should delete existing node with object edges key id",
+        "node": "3",
         "graphData": [
             {
                 "nodes": [
@@ -405,9 +366,6 @@
                         "id": "2"
                     },
                     {
-                        "id": "3"
-                    },
-                    {
                         "id": "4"
                     }
                 ],
@@ -419,26 +377,6 @@
                         "target": {
                             "id": "2"
                         }
-                    },
-                    {
-                        "source": {
-                            "id": "1"
-                        },
-                        "target": {
-                            "id": "3"
-                        }
-                    },
-                    {
-                        "source": {
-                            "id": "4"
-                        },
-                        "target": {
-                            "id": "3"
-                        }
-                    },
-                    {
-                        "source": "3",
-                        "target": "4"
                     }
                 ]
             }

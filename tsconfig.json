@@ -23,5 +23,9 @@
   "typeRoots": [
     "./node_modules/@types",
     "./src/"
-  ]
+  ],
+  "include": [
+    "./src",
+  ],
+  "files": ["./src/main.d.ts"]
 }

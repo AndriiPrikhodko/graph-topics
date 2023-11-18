@@ -2,10 +2,11 @@ export const removeEdge = function (this: string, graphData :IGraphData): IGraph
     let islinked: boolean = false
 
     const edgeArr = this.split(',')
-    const [source, target] = edgeArr
-    const trimmedSource = source.trim()
-    const trimmedTarget = target.trim()
+
     if (edgeArr.length === 2) {
+      const [source, target] = edgeArr
+      const trimmedSource = source.trim()
+      const trimmedTarget = target.trim()
       const nodes = graphData.nodes
       const isSource = nodes.find(node => node.id === trimmedSource)
       const isTarget = nodes.find(node => node.id === trimmedTarget)

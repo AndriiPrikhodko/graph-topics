@@ -1,7 +1,7 @@
 [
     {
-        "name": "should add edge between existing nodes",
-        "edge": "4, 1",
+        "name": "should remove existing edge between existing nodes",
+        "edge": "4, 3",
         "graphData": [
             {
                 "nodes": [
@@ -56,22 +56,14 @@
                     {
                         "source": "1",
                         "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "1"
                     }
                 ]
             }
         ]
     },
     {
-        "name": "should add new node and edge",
-        "edge": "4, 5",
+        "name": "should do nothing if edge does not exist",
+        "edge": "2, 3",
         "graphData": [
             {
                 "nodes": [
@@ -116,9 +108,6 @@
                     },
                     {
                         "id": "4"
-                    },
-                    {
-                        "id": "5"
                     }
                 ],
                 "links": [
@@ -133,18 +122,14 @@
                     {
                         "source": "4",
                         "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "5"
                     }
                 ]
             }
         ]
     },
     {
-        "name": "should add edge and two new nodes",
-        "edge": "6, 5",
+        "name": "should remove edge if source and target order is reversed",
+        "edge": "3, 4",
         "graphData": [
             {
                 "nodes": [
@@ -189,12 +174,6 @@
                     },
                     {
                         "id": "4"
-                    },
-                    {
-                        "id": "6"
-                    },
-                    {
-                        "id": "5"
                     }
                 ],
                 "links": [
@@ -205,14 +184,6 @@
                     {
                         "source": "1",
                         "target": "3"
-                    },
-                    {
-                        "source": "4",
-                        "target": "3"
-                    },
-                    {
-                        "source": "6",
-                        "target": "5"
                     }
                 ]
             }
@@ -427,18 +398,6 @@
                         "target": {
                             "id": "3"
                         }
-                    },
-                    {
-                        "source": {
-                            "id": "4"
-                        },
-                        "target": {
-                            "id": "3"
-                        }
-                    },
-                    {
-                        "source": "3",
-                        "target": "4"
                     }
                 ]
             }
