@@ -17,6 +17,10 @@ code {
   width: 100%;
 }
 
+.reel-holder {
+  touch-action: none;
+}
+
 .container {
   display: flex !important;
   width: 100%;
