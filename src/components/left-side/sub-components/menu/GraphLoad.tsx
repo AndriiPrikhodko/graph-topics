@@ -42,20 +42,22 @@ const GraphLoad: React.FC = () => {
     }
     
     return <div className="graph-menu">
-        <Dropdown
-            trigger={<input
-                    className="dropdown-trigger"
-                    value={menuOption}
-                    onChange={handleMenuChange}
-                    >
-                </input>}
-            menu={graphList.data.map((graphName: string) => <input
-                defaultValue={graphName}
-                onClick={handleMenuItemClick}
-                readOnly></input>)
-            }
-        />
-        <button onClick={handleLoadGraphClick}>Load</button>
+            <Dropdown
+                trigger={<input
+                        className="dropdown-trigger"
+                        value={menuOption}
+                        onChange={handleMenuChange}
+                        data-testid='load-dropdown'
+                        >
+                    </input>}
+                menu={graphList.data.map((graphName: string) => <input
+                    defaultValue={graphName}
+                    onClick={handleMenuItemClick}
+                    readOnly></input>)
+                }
+            />
+            <button onClick={handleLoadGraphClick} data-testid='load-graph-list'>
+                Load</button>
         </div>
 }
 

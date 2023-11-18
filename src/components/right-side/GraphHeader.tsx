@@ -1,5 +1,4 @@
 import { graphAPI } from "../../api/graph.api"
-import { TbFidgetSpinner } from 'react-icons/tb';
 import { ImSpinner2 } from "react-icons/im"
 import { ChangeEvent, useState } from "react"
 import { useSelector, useDispatch } from 'react-redux'
@@ -40,11 +39,21 @@ const GraphHeader: React.FC = () => {
 
     return (
         <div className="graph-header">
-            <input value={graphName} onChange={handleInputNameChange} placeholder="enter graph name"></input>
-                <button className="save unselectable" onClick={handleSaveGraphClick}>Save</button>
+            <input 
+                value={graphName} 
+                onChange={handleInputNameChange} 
+                placeholder="enter graph name"
+                data-testid='save-input'
+                ></input>
+                <button 
+                    className="save unselectable" 
+                    onClick={handleSaveGraphClick}
+                    data-testid='save-button'>
+                        Save
+                </button>
             {(() => {
                 if (graphLoading) {
-                    return <ImSpinner2 className="loaderIcon" />
+                    return <ImSpinner2 className="loaderIcon" data-testid='save-spinner' />
                 }
             })()}
                 
