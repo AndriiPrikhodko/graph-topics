@@ -1,0 +1,12 @@
+{
+    "d3VelocityDecay": 0.5,
+    "fontSize": 12,
+    "font": "Sans-Serif",
+    "textAlign": "center",
+    "textBaseline": "middle",
+    "linkDirectionalParticles": 1,
+    "linkDirectionalParticleSpeed": 1.007,
+    "defaultNodeColor": "rgb(120, 120, 120)",
+    "labelColor": "rgb(70, 70, 70)",
+    "labelBackgroundColor": "rgba(235, 235, 235, 0.3)"
+}
