@@ -9,7 +9,9 @@ interface IViteConfig extends UserConfig {
 }
 
 export default {
-    plugins: [react()],
+    plugins: [
+      react(),
+    ],
     testTimeout: 60000,
     test: {
       globals: true,

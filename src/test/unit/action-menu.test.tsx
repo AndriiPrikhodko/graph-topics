@@ -5,7 +5,7 @@ import ActionMenu from '../../components/left-side/sub-components/menu/ActionMen
 import store from '../../store';
 import { Provider } from 'react-redux';
 
-test('action menu', () => {
+test('action menu data input items', () => {
   const menuRender = render(
     <Provider store={store}>
      <ActionMenu />

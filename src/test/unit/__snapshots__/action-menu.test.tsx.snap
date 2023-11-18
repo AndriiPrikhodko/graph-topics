@@ -1,8 +1,9 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`action menu 1`] = `
+exports[`action menu data input items 1`] = `
 <div
   class="data-input"
+  data-testid="addGraphEdge"
 >
   <label
     class="unselectable"
@@ -17,9 +18,10 @@ exports[`action menu 1`] = `
 </div>
 `;
 
-exports[`action menu 2`] = `
+exports[`action menu data input items 2`] = `
 <div
   class="data-input"
+  data-testid="removeGraphEdge"
 >
   <label
     class="unselectable"
@@ -34,9 +36,10 @@ exports[`action menu 2`] = `
 </div>
 `;
 
-exports[`action menu 3`] = `
+exports[`action menu data input items 3`] = `
 <div
   class="data-input"
+  data-testid="deleteGraphNode"
 >
   <label
     class="unselectable"

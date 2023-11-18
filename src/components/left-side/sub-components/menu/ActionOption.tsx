@@ -29,7 +29,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
         }
     }
 
-    return <div className="data-input">
+    return <div className="data-input" data-testid={actionFunction}>
             <label className="unselectable">{label}
                 <input 
                 className="edge-input"

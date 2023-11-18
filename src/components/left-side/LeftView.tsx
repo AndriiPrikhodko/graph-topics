@@ -5,7 +5,7 @@ import ActionMenu from './sub-components/menu/ActionMenu'
 
 const LeftView: React.FC = () => {
     return (
-        <div className="split-small left">
+        <div className="split-small left" data-testid="left-view">
             <Header />
             <ActionMenu />
             <GraphLoad />  

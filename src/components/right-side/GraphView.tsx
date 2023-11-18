@@ -4,7 +4,7 @@ import './GraphView.css'
 
 const GraphView: React.FC = () => {
     return (
-        <div className="graph-view split-large right" id="graph">
+        <div className="graph-view split-large right" id="graph" data-testid='right-view'>
             <GraphHeader />
             <Graph />
         </div>

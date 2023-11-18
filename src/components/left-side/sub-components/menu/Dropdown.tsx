@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import { type Action } from './ActionList'
+
 
 
 const Dropdown: React.FC<{trigger: JSX.Element&IFuncProps, menu: JSX.Element[]}> = 
@@ -16,7 +18,7 @@ const Dropdown: React.FC<{trigger: JSX.Element&IFuncProps, menu: JSX.Element[]}>
                 {open?
                 (<ul className="menu">
                     {menu.map((menuItem, index) => (
-                        <li key={index} className = "menu-item">
+                        <li key={index} className = "menu-item" data-testid='graph-list'>
                             {React.cloneElement(menuItem, {
                                 onClick: () => {
                                     menuItem.props.onClick(menuItem.props)
