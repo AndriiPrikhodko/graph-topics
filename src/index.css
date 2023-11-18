@@ -20,6 +20,7 @@ code {
 .container {
   display: flex !important;
   width: 100%;
+  overflow-x: hidden;
 }
 
 button {
