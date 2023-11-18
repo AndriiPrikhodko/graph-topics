@@ -3,9 +3,6 @@ import graphSlice from '../../../reducers/graph.reducer';
 
 
 test('graph slice actions', () => {
-  let state;
-  state = graphSlice({nodes:[{id:'1'},{id:'2'},{id:'3'}, {id:'4'}],links:[{source:'1',target:'2'},{source:'1',target:'3'}]}, setGraphData);
+  const state = graphSlice({nodes:[{id:'1'},{id:'2'},{id:'3'}, {id:'4'}],links:[{source:'1',target:'2'},{source:'1',target:'3'}]}, setGraphData);
   expect(state).toEqual({nodes:[{id:'1'},{id:'2'},{id:'3'}, {id:'4'}],links:[{source:'1',target:'2'},{source:'1',target:'3'}]})
 });
-
-
