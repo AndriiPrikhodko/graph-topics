@@ -9,12 +9,12 @@ const App = () => {
 
   const dispatch = useDispatch()
   
-  useEffect(() => {
-    localStorage.setItem(
-      'react-graph-app-data', 
-    JSON.stringify(graphData)
-    )
-  }, [graphData])
+  // useEffect(() => {
+  //   localStorage.setItem(
+  //     'react-graph-app-data', 
+  //   JSON.stringify(graphData)
+  //   )
+  // }, [graphData])
 
   useEffect(() => {
     const localStoreGraphStr = localStorage.getItem('react-graph-app-data')

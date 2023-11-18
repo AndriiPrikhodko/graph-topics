@@ -5,8 +5,8 @@ export type GraphAction = {
 }
 
 const initGraphData = {
-    nodes: [{id: '1'}, {id: '2'}, {id: '3'}], 
-    links: [{source: '1', target: '2'}, {source: '1', target: '3'}]
+    nodes: [{id: 'Graph initialized successfully'}], 
+    links: []
 }
 
 const graphSlice = createSlice({
@@ -14,7 +14,16 @@ const graphSlice = createSlice({
     initialState: initGraphData as IGraphData,
     reducers: {
         setGraphData: (state, action) => {
-            return action.payload;
+            // possible because of immer
+            state = action.payload
+
+            // adding graphData to localStorage on change
+            localStorage.setItem(
+                'react-graph-app-data', 
+              JSON.stringify(action.payload)
+              )
+
+            return state
           }
     }
 })
