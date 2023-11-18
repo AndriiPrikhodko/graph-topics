@@ -5,12 +5,6 @@ import { Provider } from 'react-redux';
 import mediaQuery from 'css-mediaquery';
 import '../../components/left-side/LeftView.css'
 
-type CreateMatchMedia = (width: number) => (query: string) => {
-    matches: boolean;
-    addListener: () => void;
-    removeListener: () => void;
-  };
-
 const createMatchMedia = (width: number) => {
     return (query: string) => ({
       matches: mediaQuery.match(query, { width }),
