@@ -1,5 +1,6 @@
 import { graphAPI } from "../../api/graph.api"
 import { TbFidgetSpinner } from 'react-icons/tb';
+import { ImSpinner2 } from "react-icons/im"
 import { ChangeEvent, useState } from "react"
 import { useSelector, useDispatch } from 'react-redux'
 import { loadGraphList } from "../../actions/graph-api.action";
@@ -43,7 +44,7 @@ const GraphHeader: React.FC = () => {
                 <button className="save unselectable" onClick={handleSaveGraphClick}>Save</button>
             {(() => {
                 if (graphLoading) {
-                    return <TbFidgetSpinner className="loaderIcon" />
+                    return <ImSpinner2 className="loaderIcon" />
                 }
             })()}
                 
