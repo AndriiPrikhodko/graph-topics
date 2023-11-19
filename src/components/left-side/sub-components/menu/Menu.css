@@ -3,7 +3,7 @@
     display: flex;
     align-items: normal;
     background-color: rgb(233, 233, 233);
-    border-radius: 10px;
+    border-radius: 4px;
     padding: 5px;
     min-width: 300px;
     max-width: 300px;
@@ -57,6 +57,7 @@
 }
 
 .graph-menu button {
+  margin-left: 5px;
   align-self: start;
 }
 /* end graph menu */
