@@ -37,17 +37,17 @@ code {
 
 
 button {
-  background-color: rgb(118, 184, 115);
-  color: #FFFFFF; /* White */
+  background-color: gold;
+  color: black;
   border: none;
   font-size: 12pt;
   margin-top: 1px;
   cursor: pointer;
   border-radius: 4px;
   transition-duration: 0.4s;
+  box-shadow: 0 0 2px black;
 }
 
 button:hover {
-  background-color: #5F9EA0; /* Cadet Blue */
-  color: #000000; /* Black */
+  background-color: #ff8c00;
 }

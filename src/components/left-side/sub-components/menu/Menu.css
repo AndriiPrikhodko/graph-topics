@@ -29,7 +29,7 @@
   /* end data-input*/
   /* dropdown */
 .dropdown-trigger {
-  background-color: rgb(208, 125, 15);
+  background-color: gold;
 }
 
 .dropdown input {
@@ -51,6 +51,7 @@
   margin-top: -5px;
   padding: 2
 }
+/* end dropdown */
 /* graph menu */
 .graph-menu {
  display: inline-flex;

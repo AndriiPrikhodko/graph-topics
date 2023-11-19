@@ -11,6 +11,16 @@
     margin-top: 0;
 }
 
+#save-filename-input {
+    border-color: goldenrod;
+    border-radius: 4px;
+}
+
+#save-filename-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px orange;
+}
+
 .graph-header {
     padding-bottom: 5px;
     display: flex;

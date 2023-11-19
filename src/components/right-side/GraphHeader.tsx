@@ -42,6 +42,7 @@ const GraphHeader: React.FC = () => {
             <input 
                 value={graphName} 
                 onChange={handleInputNameChange} 
+                id="save-filename-input"
                 placeholder="enter graph name"
                 data-testid='save-input'
                 ></input>
