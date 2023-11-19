@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
 }
 
 code {
@@ -14,7 +16,6 @@ code {
 
 #root {
   display: flex !important;
-  width: 100%;
 }
 
 .reel-holder {
@@ -24,8 +25,16 @@ code {
 .container {
   display: flex !important;
   width: 100%;
+  max-height: 100vh !important;
   overflow-x: hidden;
+  overflow-y: hidden !important;
+  flex-wrap: wrap;
+  align-items: baseline;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-start;
 }
+
 
 button {
   cursor: pointer;
