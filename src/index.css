@@ -37,7 +37,7 @@ code {
 
 
 button {
-  background-color: #dfdb98;
+  background-color: #98dfbd;
   color: black;
   border: none;
   font-size: 12pt;
@@ -49,5 +49,5 @@ button {
 }
 
 button:hover {
-  background-color: #98dfbd;
+  background-color: darkorange;
 }

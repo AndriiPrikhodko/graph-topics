@@ -14,13 +14,18 @@
 #save-filename-input {
     border: none;
     outline: solid;
-    outline-color: #dfdb98;
+    outline-color: #98dfbd;
     border-radius: 4px;
+}
+
+#save-filename-input:hover {
+    outline: solid;
+    outline-color: darkorange;
 }
 
 #save-filename-input:focus {
     outline: solid;
-    outline-color: #98dfbd;
+    outline-color: darkorange;
 }
 
 .graph-header {
