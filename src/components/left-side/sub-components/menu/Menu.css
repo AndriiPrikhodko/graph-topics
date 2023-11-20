@@ -27,6 +27,11 @@
     outline: none;
   }
 
+  .data-input:hover {
+    outline: solid;
+    outline-color: orange;
+  }
+
   .data-input:focus-within {
     font-weight: bold;
     outline: solid;
@@ -36,6 +41,10 @@
   /* dropdown */
 .dropdown-trigger {
   background-color: gold;
+}
+
+.dropdown-trigger:hover {
+  background-color: darkorange;
 }
 
 .dropdown input {
