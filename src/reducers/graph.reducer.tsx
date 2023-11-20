@@ -9,6 +9,11 @@ const initGraphData = {
     links: []
 }
 
+const emptyGraphData = {
+    nodes: [], 
+    links: []
+}
+
 const graphSlice = createSlice({
     name: 'graph',
     initialState: initGraphData as IGraphData,
@@ -24,10 +29,22 @@ const graphSlice = createSlice({
               )
 
             return state
+          },
+          cleanGraphData: (state, action: {payload: void}) => {
+            // possible because of immer
+            state = emptyGraphData
+
+            // adding graphData to localStorage on change
+            localStorage.setItem(
+                'react-graph-app-data', 
+                JSON.stringify(emptyGraphData)
+              )
+
+            return state
           }
     }
 })
 
-export const { setGraphData } = graphSlice.actions
+export const { setGraphData, cleanGraphData } = graphSlice.actions
 
 export default graphSlice.reducer

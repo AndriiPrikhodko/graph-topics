@@ -3,6 +3,7 @@ import { ImSpinner2 } from "react-icons/im"
 import { ChangeEvent, useState } from "react"
 import { useSelector, useDispatch } from 'react-redux'
 import { loadGraphList } from "../../actions/graph-api.action";
+import { cleanGraphData } from '../../reducers/graph.reducer';
 import './GraphHeader.css'
 
 const GraphHeader: React.FC = () => {
@@ -12,8 +13,8 @@ const GraphHeader: React.FC = () => {
     const dispatch = useDispatch()
 
     const handleSaveGraphClick = () => {
-        setGraphLoading(true)
         if(graphName.trim().length > 0){
+            setGraphLoading(true)
             const payload:IPostGraphPayload = {
                 name: graphName.trim(),
                 data: graphData
@@ -30,6 +31,10 @@ const GraphHeader: React.FC = () => {
         }
         else
             console.log('Enter graph name to save')
+    }
+
+    const handleCleanGraphClick = () => {
+        dispatch(cleanGraphData())
     }
 
     const handleInputNameChange = (event: ChangeEvent) => {
@@ -57,7 +62,12 @@ const GraphHeader: React.FC = () => {
                     return <ImSpinner2 className="loaderIcon" data-testid='save-spinner' />
                 }
             })()}
-                
+                <button 
+                    className="clean unselectable" 
+                    onClick={handleCleanGraphClick}
+                    data-testid='clear-button'>
+                        Clear
+                </button>
         </div>
     )
 }
