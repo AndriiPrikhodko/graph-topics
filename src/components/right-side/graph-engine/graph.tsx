@@ -51,16 +51,6 @@ const Graph = () => {
       }, [edge, setEdge, dispatch])
 
     return (
-        // <ForceGraph3D
-        //   graphData={graphData}
-        //   nodeAutoColorBy="group"
-        //   nodeThreeObject={node => {
-        //     const sprite = new SpriteText(node.id);
-        //     sprite.color = node.color;
-        //     sprite.textHeight = 8;ForceGraphMethods
-        //     return sprite;
-        //   }}
-        // />
         <ForceGraph2D
             ref={fgRef}
             graphData={mutableGData}
@@ -71,7 +61,7 @@ const Graph = () => {
             linkDirectionalParticles={graphConfig.linkDirectionalParticles}
             linkDirectionalParticleSpeed={graphConfig.linkDirectionalParticleSpeed}
             
-            nodeCanvasObject={(node: INodeObjExt & NodeObject, ctx, globalScale) => {
+            nodeCanvasObject={(node: INodeObjExt & NodeObject, ctx, globalScale = 4) => {
                 const label = typeof node.id === 'string' ? node.id : '';
                 const fontSize = graphConfig.fontSize/globalScale;
                 ctx.font = `${fontSize}px ${graphConfig.font}`;
@@ -102,12 +92,7 @@ const Graph = () => {
             //         (node.y as number) - bckgDimensions[1] / 2, ...bckgDimensions);
             // }}
 
-            // onEngineStop={() => {
-            //     console.log(fgRef.current)
-            //     fgRef.current.zoomToFit(100)
-            // }}
-            // on graph node click event
-            onNodeClick={handleNodeClick}
+            // onNodeClick={handleNodeClick}
         />
     )
 }
