@@ -26,6 +26,12 @@
   .data-input input:focus {
     outline: none;
   }
+
+  .data-input:focus-within {
+    font-weight: bold;
+    outline: solid;
+    outline-color: orange;
+  }
   /* end data-input*/
   /* dropdown */
 .dropdown-trigger {
@@ -39,6 +45,7 @@
 
 .dropdown input:focus {
   outline: none;
+  background-color: darkorange;
 }
 
 .dropdown ul {
