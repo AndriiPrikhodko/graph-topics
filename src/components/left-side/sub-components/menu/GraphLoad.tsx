@@ -41,7 +41,7 @@ const GraphLoad: React.FC = () => {
             .then(graphData => dispatch(setGraphData(graphData)))
     }
     
-    return <div className="graph-menu">
+    return <div className="graph-menu" data-testid='load-graph-list'>
             <Dropdown
                 trigger={<input
                         className="dropdown-trigger"
@@ -56,7 +56,7 @@ const GraphLoad: React.FC = () => {
                     readOnly></input>)
                 }
             />
-            <button onClick={handleLoadGraphClick} data-testid='load-graph-list'>
+            <button onClick={handleLoadGraphClick} data-testid='load-graph-button'>
                 Load</button>
         </div>
 }

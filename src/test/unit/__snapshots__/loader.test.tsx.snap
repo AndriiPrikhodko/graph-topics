@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`loader 1`] = `
+<div
+  class="graph-menu"
+  data-testid="load-graph-list"
+>
+  <div
+    class="dropdown"
+  >
+    <input
+      class="dropdown-trigger"
+      data-testid="load-dropdown"
+      value=""
+    />
+  </div>
+  <button
+    data-testid="load-graph-button"
+  >
+    Load
+  </button>
+</div>
+`;
