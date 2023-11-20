@@ -43,7 +43,7 @@ const GraphHeader: React.FC = () => {
     }
 
     return (
-        <div className="graph-header">
+        <div className="graph-header" data-testid='graph-view-header'>
             <input 
                 value={graphName} 
                 onChange={handleInputNameChange} 

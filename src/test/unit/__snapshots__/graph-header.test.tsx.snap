@@ -1,0 +1,27 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`header 1`] = `
+<div
+  class="graph-header"
+  data-testid="graph-view-header"
+>
+  <input
+    data-testid="save-input"
+    id="save-filename-input"
+    placeholder="enter graph name"
+    value=""
+  />
+  <button
+    class="save unselectable"
+    data-testid="save-button"
+  >
+    Save
+  </button>
+  <button
+    class="clean unselectable"
+    data-testid="clear-button"
+  >
+    Clear
+  </button>
+</div>
+`;
