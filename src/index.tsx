@@ -1,8 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { Provider } from 'react-redux'
-// import logger from 'redux-logger'
-import type {} from 'redux-thunk/extend-redux'
 import App from './App'
 import store from './store'
 
