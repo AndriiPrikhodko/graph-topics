@@ -1,6 +1,8 @@
 {
   "name": "graph-topics",
   "version": "0.1.0",
+  "author": "Andrii Prykhodko",
+  "license": "CC BY-NC 4.0",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
