@@ -12,13 +12,15 @@
 }
 
 #save-filename-input {
-    border-color: goldenrod;
+    border: none;
+    outline: solid;
+    outline-color: #dfdb98;
     border-radius: 4px;
 }
 
 #save-filename-input:focus {
-    outline: none;
-    box-shadow: 0 0 5px orange;
+    outline: solid;
+    outline-color: #98dfbd;
 }
 
 .graph-header {

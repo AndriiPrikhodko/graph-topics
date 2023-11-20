@@ -29,18 +29,17 @@
 
   .data-input:hover {
     outline: solid;
-    outline-color: orange;
+    outline-color: #98dfbd;
   }
 
   .data-input:focus-within {
     font-weight: bold;
     outline: solid;
-    outline-color: orange;
   }
   /* end data-input*/
   /* dropdown */
 .dropdown-trigger {
-  background-color: gold;
+  background-color: #dfdb98;
 }
 
 .dropdown-trigger:hover {
