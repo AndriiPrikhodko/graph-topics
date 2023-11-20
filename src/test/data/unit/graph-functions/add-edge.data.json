@@ -443,5 +443,95 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "should handle nodes with spaces",
+        "edge": "one thing, three things",
+        "graphData": [
+            {
+                "nodes": [
+                    {
+                        "id": "one thing"
+                    },
+                    {
+                        "id": "two things"
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "one thing",
+                        "target": "two things"
+                    }
+                ]
+            },
+            {
+                "nodes": [
+                    {
+                        "id": "one thing"
+                    },
+                    {
+                        "id": "two things"
+                    },
+                    {
+                        "id": "three things"
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "one thing",
+                        "target": "two things"
+                    },
+                    {
+                        "source": "one thing",
+                        "target": "three things"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "should case insensitive",
+        "edge": "one thing, three things",
+        "graphData": [
+            {
+                "nodes": [
+                    {
+                        "id": "One Thing"
+                    },
+                    {
+                        "id": "two things"
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "One Thing",
+                        "target": "two things"
+                    }
+                ]
+            },
+            {
+                "nodes": [
+                    {
+                        "id": "One Thing"
+                    },
+                    {
+                        "id": "two things"
+                    },
+                    {
+                        "id": "three things"
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "One Thing",
+                        "target": "two things"
+                    },
+                    {
+                        "source": "One Thing",
+                        "target": "three things"
+                    }
+                ]
+            }
+        ]
     }
 ]

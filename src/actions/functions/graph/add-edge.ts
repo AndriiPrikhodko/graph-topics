@@ -8,19 +8,19 @@ export function addEdge(this: string, graphData :IGraphData): IGraphData {
           const trimmedSource = source.trim()
           const trimmedTarget = target.trim()
           let upadateNodes = graphData.nodes
-          const isSource = upadateNodes.find(node => node.id === trimmedSource)
-          const isTarget = upadateNodes.find(node => node.id === trimmedTarget)
-          if(isSource === undefined) upadateNodes.push({
+          const findSource = upadateNodes.find(node => node.id.toLowerCase() === trimmedSource.toLowerCase())
+          const findTarget = upadateNodes.find(node => node.id.toLowerCase() === trimmedTarget.toLowerCase())
+          if(findSource === undefined) upadateNodes.push({
             id: trimmedSource,
           })
-          if(isTarget === undefined) upadateNodes.push({
+          if(findTarget === undefined) upadateNodes.push({
             id: trimmedTarget,
           })
           const updateLinks = [
             ...graphData.links,
             {
-              source: trimmedSource,
-              target: trimmedTarget
+              source: findSource?.id ? findSource.id : trimmedSource,
+              target: findTarget?.id ? findTarget.id : trimmedTarget
             }
           ]
           return  {
