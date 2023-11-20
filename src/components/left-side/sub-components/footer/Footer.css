@@ -1,0 +1,33 @@
+.footer {
+    margin-top: auto;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(50,50,50); /* Adjust this to match your page color schema */
+    padding: 10px;
+    margin-left: -10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .legal-notice {
+    width: 90%;
+  }
+  
+  .legal-notice h2 {
+    color: lightgray;
+  }
+  
+  .legal-notice {
+    color: gray;
+  }
+
+  .footer a {
+    color: #0078d7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer a:hover {
+    color: #005a9e;
+    text-decoration: underline;
+  }
