@@ -1,6 +1,14 @@
 # React Graph Topics Application
 
-The motivation behind this app is to get rid of old sticky notes and tree like mind-maps. Based on the recent scientific studies, for instance [Researchers uncover how the human brain separates, stores, and retrieves memories](https://www.nih.gov/news-events/news-releases/researchers-uncover-how-human-brain-separates-stores-retrieves-memories) and [Connectome: Graph theory application in functional brain network architecture](https://www.sciencedirect.com/science/article/pii/S2467981X17300276) from NIH and Brain Connectivity Laboratory, IRCCS San Raffaele Pisana, Rome, Italy respectively, there is an intrinsic link between graph theory and real functional brain network architecture. Here is some points derived from those studies:
+The motivation behind this app is to get rid of old sticky notes and tree like mind-maps. Based on the recent scientific studies, for instance [Researchers uncover how the human brain separates, stores, and retrieves memories](https://www.nih.gov/news-events/news-releases/researchers-uncover-how-human-brain-separates-stores-retrieves-memories) and [Connectome: Graph theory application in functional brain network architecture](https://www.sciencedirect.com/science/article/pii/S2467981X17300276) from NIH and Brain Connectivity Laboratory, IRCCS San Raffaele Pisana, Rome, Italy respectively, there is an intrinsic link between graph theory and real functional brain network architecture. 
+
+## Benefits of organizing topics in graph like structure:
+1. It can reduce the analytical brain complexity and highlight the key aspects of network topology, such as integration, segregation, and modularity.
+2. It can provide a common theoretical framework and a general language to understand the association of various pathological processes in the brain.
+3. It can enable an online view on brain dynamics and variability, and capture the temporal evolution of network states.
+4. It can be combined with other neuroimaging techniques, such as MRI, to obtain a more comprehensive picture of brain structure and function.
+
+## Comparison analysis with sticky notes:
 
 1. Graphs allow linking related notes. 
     - Graphs can show the connections between different notes by using links, which can help you find, collect, and organize related ideas. Sticky notes are isolated and can only be grouped by physical proximity or color, which limits the complexity and richness of the associations
@@ -9,13 +17,8 @@ The motivation behind this app is to get rid of old sticky notes and tree like m
 3. Graphs support flexible and dynamic note-taking.
     - Graphs can adapt to your personal workflow and preferences, as you can customize the style, layout, and format of your notes. You can also use plugins and apps to enhance the functionality and interactivity of your notes. Sticky notes are rigid and fixed, as you can only write or draw on them with limited space and tools. You cannot easily edit, rearrange, or expand your notes without creating a mess.
 
-As well as help in the organization of data inside one's head:
-1. It can reduce the analytical brain complexity and highlight the key aspects of network topology, such as integration, segregation, and modularity.
-2. It can provide a common theoretical framework and a general language to understand the association of various pathological processes in the brain.
-3. It can enable an online view on brain dynamics and variability, and capture the temporal evolution of network states.
-4. It can be combined with other neuroimaging techniques, such as MRI, to obtain a more comprehensive picture of brain structure and function.
-
-Therefore storing topics in form of graph exceeds just form of storing the data but is a powerful tool in learning and can improve brain health, unveiling representation of underline brain structure.
+## Conclusions
+Therefore storing topics in form of graph exceeds just form of storing the data but is a powerful tool in improving your learning abilities and brain health, unveiling representation of underline brain structure.
 
 
 ## Features
