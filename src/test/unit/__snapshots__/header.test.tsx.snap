@@ -5,8 +5,8 @@ exports[`header 1`] = `
   class="title unselectable"
 >
   <span>
-    Graph
+    Mind
   </span>
-   Topics
+   Graph
 </h3>
 `;

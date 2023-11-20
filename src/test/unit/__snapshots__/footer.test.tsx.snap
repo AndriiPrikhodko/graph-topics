@@ -1,0 +1,24 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`footer 1`] = `
+<footer
+  class="footer"
+  data-testid="footer"
+>
+  <div
+    class="legal-notice"
+  >
+    <h2>
+      Author
+    </h2>
+    <p>
+      © 
+      2023
+       Andrii Prykhodko. All Rights Reserved. email:
+      <a>
+        prykhodkoaa@gmail.com
+      </a>
+    </p>
+  </div>
+</footer>
+`;
