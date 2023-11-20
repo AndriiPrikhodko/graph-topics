@@ -4,7 +4,7 @@ const Header = () => {
     return (
         <div className="header">
             <h3 className="title unselectable">
-                <span>Graph</span> Topics
+                <span>Mind</span> Graph
             </h3>
             <p>Follow the origins of your ideas.</p>
         </div>
