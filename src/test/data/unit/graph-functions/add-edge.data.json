@@ -490,7 +490,7 @@
         ]
     },
     {
-        "name": "should case insensitive",
+        "name": "should be case insensitive",
         "edge": "one thing, three things",
         "graphData": [
             {
