@@ -15,6 +15,8 @@
     background-color: #ccc;
     color: #111;
     border: none;
+    font-family: "Ropa Sans";
+    font-style: oblique;
     font-size: 14pt;
     border-radius: 4px;
 }

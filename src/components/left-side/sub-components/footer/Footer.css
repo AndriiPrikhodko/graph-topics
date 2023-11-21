@@ -22,12 +22,12 @@
   }
 
   .footer a {
-    color: #0078d7;
+    color: steelblue;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
   .footer a:hover {
-    color: #005a9e;
+    color: steelblue;
     text-decoration: underline;
   }

@@ -3,6 +3,7 @@
     display: flex;
     align-items: normal;
     background-color: #ccc;
+    font-family: "Ropa Sans";
     border-radius: 4px;
     padding: 5px;
     min-width: 300px;
@@ -12,16 +13,22 @@
   }
   
   .data-input label {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
     cursor: pointer;
+    font-style: oblique;
+    font-size: 14pt;
   }
   
   .data-input input {
-    width: 200px;
+    width: 250px;
     border: none;
+    font-family: "Ropa Sans";
+    font-size: 12pt;
     background-color: inherit;
     text-align: left;
-    cursor: pointer;
+    cursor: inherit;
   }
   
   .data-input input:focus {
@@ -35,8 +42,21 @@
   }
   /* end data-input*/
   /* dropdown */
+.dropdown {
+  display:flex;
+  flex-direction: column;
+  font-family: "Ropa Sans";
+  
+}
 .dropdown-trigger {
   background-color: #666;
+  border-radius: 4px;
+  flex-grow: 1 ;
+  flex-shrink: 0;
+  font-size: inherit;
+  font-family: "Ropa Sans";
+  font-size: 14pt;
+  font-style: oblique;
 }
 
 .dropdown-trigger:hover {
@@ -54,23 +74,32 @@
 }
 
 .dropdown ul {
+  display: flex;
+  flex-direction: column;
   list-style-type: none;
+  flex-grow: 1;
   padding: 0;
   margin: 0;
 }
 
 .dropdown li {
+  flex-grow:1;
   margin-top: -5px;
-  padding: 2
+  padding: 2;
+  font-size: 14pt;
 }
 /* end dropdown */
 /* graph menu */
 .graph-menu {
- display: inline-flex;
+ display: flex;
+ flex-wrap: wrap;
+ align-content: flex-start;
+ justify-content: flex-start;
 }
 
 .graph-menu button {
   margin-left: 5px;
+  margin-right: 5px;
   align-self: start;
 }
 /* end graph menu */
