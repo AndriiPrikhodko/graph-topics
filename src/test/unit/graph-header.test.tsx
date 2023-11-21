@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 test('header', () => {
   const { getByTestId } = render(
     <Provider store={store}>
-    <GraphHeader />
+        <GraphHeader />
     </Provider>
   )
   const graphHeaderEl = getByTestId('graph-view-header')

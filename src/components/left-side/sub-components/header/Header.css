@@ -35,9 +35,8 @@
 .header p {
     text-align: center;
     color: ghostwhite;
-    /* font-family: "Ropa Sans"; */
+    font-family: "Ropa Sans";
     font-style: oblique;
-    font-family: Exo; 
     font-weight: 700;
     font-size: 14pt;
 }
