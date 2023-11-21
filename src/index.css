@@ -37,8 +37,8 @@ code {
 
 
 button {
-  background-color: steelblue;
-  color: black;
+  background-color: #666;
+  color: #fff;
   border: none;
   font-size: 12pt;
   margin-top: 1px;
@@ -49,5 +49,7 @@ button {
 }
 
 button:hover {
-  background-color: darkorange;
+  background-color: #e6e6e6;
+  color: #333;
+  outline-color: #adadad;
 }

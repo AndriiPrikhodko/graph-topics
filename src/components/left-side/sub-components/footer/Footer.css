@@ -2,7 +2,7 @@
     margin-top: auto;
     bottom: 0;
     width: 100%;
-    background-color: rgb(50,50,50); /* Adjust this to match your page color schema */
+    background-color: inherit; /* Adjust this to match your page color schema */
     padding: 10px;
     margin-left: -10px;
     display: flex;

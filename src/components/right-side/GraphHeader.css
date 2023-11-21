@@ -12,20 +12,15 @@
 }
 
 #save-filename-input {
+    background-color: #ccc;
+    color: #111;
     border: none;
-    outline: solid;
-    outline-color: steelblue;
     border-radius: 4px;
-}
-
-#save-filename-input:hover {
-    outline: solid;
-    outline-color: darkorange;
 }
 
 #save-filename-input:focus {
     outline: solid;
-    outline-color: darkorange;
+    outline-color: #111;
 }
 
 .clean {

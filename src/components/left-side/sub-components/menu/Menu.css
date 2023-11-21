@@ -2,7 +2,7 @@
 .data-input {
     display: flex;
     align-items: normal;
-    background-color: rgb(233, 233, 233);
+    background-color: #ccc;
     border-radius: 4px;
     padding: 5px;
     min-width: 300px;
@@ -19,18 +19,13 @@
   .data-input input {
     width: 200px;
     border: none;
-    background-color: rgb(233, 233, 233);
+    background-color: inherit;
     text-align: left;
     cursor: pointer;
   }
   
   .data-input input:focus {
     outline: none;
-  }
-
-  .data-input:hover {
-    outline: solid;
-    outline-color: steelblue;
   }
 
   .data-input:focus-within {
@@ -41,7 +36,7 @@
   /* end data-input*/
   /* dropdown */
 .dropdown-trigger {
-  background-color: steelblue;
+  background-color: #666;
 }
 
 .dropdown-trigger:hover {
