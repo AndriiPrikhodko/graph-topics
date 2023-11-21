@@ -8,13 +8,13 @@
       "type": "image/x-icon"
     },
     {
-      "src": "graph.png",
-      "type": "image/png",
+      "src": "graph.svg",
+      "type": "image/svg",
       "sizes": "192x192"
     },
     {
-      "src": "graph.png",
-      "type": "image/png",
+      "src": "graph.svg",
+      "type": "image/svg",
       "sizes": "512x512"
     }
   ],

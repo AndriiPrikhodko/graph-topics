@@ -1,14 +1,32 @@
 .header {
     margin-bottom: 5px;
+    display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .title {
     text-align: center;
+    color: midnightblue;
+    margin-left: 28%;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: underline #a12110;
     text-decoration-thickness: 3px;
 }
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* justify-content: space-between; */
+    width: 100%;
+  }
+
+.header img {
+    height: 50px;
+    width: 50px;
+    align-self: flex-start;
+  }
 
 .title span {
     color: ghostwhite;
