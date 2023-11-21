@@ -30,7 +30,7 @@
 
   .data-input:hover {
     outline: solid;
-    outline-color: #98dfbd;
+    outline-color: steelblue;
   }
 
   .data-input:focus-within {
@@ -41,7 +41,7 @@
   /* end data-input*/
   /* dropdown */
 .dropdown-trigger {
-  background-color: #98dfbd;
+  background-color: steelblue;
 }
 
 .dropdown-trigger:hover {
