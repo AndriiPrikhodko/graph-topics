@@ -34,11 +34,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "npx vitest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
+      "react-app",
+      "plugin:storybook/recommended"
     ]
   },
   "browserslist": {
@@ -54,8 +57,22 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.3",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-links": "^7.5.3",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.3",
+    "@storybook/preset-create-react-app": "^7.5.3",
+    "@storybook/react": "^7.5.3",
+    "@storybook/react-webpack5": "^7.5.3",
+    "@storybook/testing-library": "^0.2.2",
     "@types/css-mediaquery": "^0.1.4",
     "@types/ramda": "^0.29.9",
-    "react-refresh": "^0.11.0"
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint-plugin-storybook": "^0.6.15",
+    "prop-types": "^15.8.1",
+    "react-refresh": "^0.11.0",
+    "storybook": "^7.5.3",
+    "webpack": "^5.89.0"
   }
 }
