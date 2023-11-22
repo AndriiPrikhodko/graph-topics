@@ -15,6 +15,7 @@ exports[`loader 1`] = `
     />
   </div>
   <button
+    class="standard-button"
     data-testid="load-graph-button"
   >
     Load

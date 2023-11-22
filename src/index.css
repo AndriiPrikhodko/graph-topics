@@ -34,22 +34,3 @@ code {
   align-content: flex-start;
   justify-content: flex-start;
 }
-
-
-button {
-  background-color: #666;
-  color: #fff;
-  border: none;
-  font-size: 14pt;
-  margin-top: 1px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition-duration: 0.4s;
-  box-shadow: 0 0 2px black;
-}
-
-button:hover {
-  background-color: #e6e6e6;
-  color: #333;
-  outline-color: #adadad;
-}

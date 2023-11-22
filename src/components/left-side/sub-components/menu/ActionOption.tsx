@@ -15,6 +15,7 @@ type Props = {
     label: string,
     placeholder: string
     actionFunction: string
+    style?: React.CSSProperties
 }
 
 interface IIconObject {

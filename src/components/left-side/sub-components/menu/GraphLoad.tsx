@@ -5,6 +5,7 @@ import {selfDataAdapter} from "../../../../helpers/data-adapter/self-data-adapte
 import Dropdown from "./Dropdown"
 import { useSelector, useDispatch } from "react-redux"
 import { loadGraphList } from "../../../../actions/graph-api.action"
+import Button from '../../../shared/button'
 
 
 
@@ -51,13 +52,13 @@ const GraphLoad: React.FC = () => {
                         >
                     </input>}
                 menu={graphList.data.map((graphName: string) => <input
+                    className='dropdown-input'
                     defaultValue={graphName}
                     onClick={handleMenuItemClick}
                     readOnly></input>)
                 }
             />
-            <button onClick={handleLoadGraphClick} data-testid='load-graph-button'>
-                Load</button>
+            <Button label='Load' onClick={handleLoadGraphClick} testid='load-graph-button' />
         </div>
 }
 

@@ -40,6 +40,12 @@
     outline: solid;
     outline-color: darkorange;
   }
+
+.data-input:hover {
+  font-weight: bold;
+  outline: solid;
+  outline-color: darkorange;
+}
   /* end data-input*/
   /* dropdown */
 .dropdown {
@@ -84,7 +90,6 @@
 
 .dropdown li {
   flex-grow:1;
-  margin-top: -5px;
   padding: 2;
   font-size: 14pt;
 }
@@ -103,3 +108,14 @@
   align-self: start;
 }
 /* end graph menu */
+.dropdown-input {
+ flex-grow: 1;
+}
+
+.menu-item {
+  display: flex;
+}
+
+.menu-item input:hover {
+  background-color: darkorange;
+}

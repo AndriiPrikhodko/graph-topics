@@ -12,16 +12,20 @@ exports[`header 1`] = `
     value=""
   />
   <button
-    class="save unselectable"
+    class="standard-button"
     data-testid="save-button"
   >
     Save
   </button>
-  <button
-    class="clean unselectable"
-    data-testid="clear-button"
+  <div
+    class="right"
   >
-    Clear
-  </button>
+    <button
+      class="standard-button"
+      data-testid="clear-button"
+    >
+      Clear
+    </button>
+  </div>
 </div>
 `;

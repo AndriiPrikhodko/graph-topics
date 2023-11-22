@@ -4,6 +4,7 @@ import { ChangeEvent, useState } from "react"
 import { useSelector, useDispatch } from 'react-redux'
 import { loadGraphList } from "../../actions/graph-api.action";
 import { cleanGraphData } from '../../reducers/graph.reducer';
+import Button from '../shared/button';
 import './GraphHeader.css'
 
 const GraphHeader: React.FC = () => {
@@ -51,23 +52,15 @@ const GraphHeader: React.FC = () => {
                 placeholder="enter graph name"
                 data-testid='save-input'
                 ></input>
-                <button 
-                    className="save unselectable" 
-                    onClick={handleSaveGraphClick}
-                    data-testid='save-button'>
-                        Save
-                </button>
+                <Button label='Save' onClick={handleSaveGraphClick} testid='save-button' />
             {(() => {
                 if (graphLoading) {
                     return <ImSpinner2 className="loaderIcon" data-testid='save-spinner' />
                 }
             })()}
-                <button 
-                    className="clean unselectable" 
-                    onClick={handleCleanGraphClick}
-                    data-testid='clear-button'>
-                        Clear
-                </button>
+            <div className='right'>
+                <Button label='Clear' onClick={handleCleanGraphClick} testid='clear-button' />
+            </div>
         </div>
     )
 }

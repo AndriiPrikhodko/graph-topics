@@ -19,6 +19,7 @@
     font-style: oblique;
     font-size: 14pt;
     border-radius: 4px;
+    margin-right: 5px;
 }
 
 #save-filename-input:focus {
@@ -26,7 +27,7 @@
     outline-color: #111;
 }
 
-.clean {
+.right {
     margin-left: auto;
 }
 
