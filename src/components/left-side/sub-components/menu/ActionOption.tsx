@@ -1,4 +1,4 @@
-import { KeyboardEvent } from "react"
+import { ChangeEventHandler, KeyboardEvent, RefAttributes } from "react"
 import './Menu.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { setGraphData } from '../../../../reducers/graph.reducer'
@@ -7,7 +7,7 @@ import { FaUnlink, FaLink } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa"
 import { MdOutlineClear } from "react-icons/md";
 import { clone } from 'ramda'
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { IconType } from 'react-icons/lib'
 
 
@@ -31,6 +31,9 @@ const actionIcons: IIconObject = {
 const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) => {
     const dispatch = useDispatch()
     const data = useSelector((store: Store) => store.graphData)
+    const inputRef = useRef(null)
+
+    const [inputValue, setInputValue] = useState('')
     
     const handleActionOnEnter = (event: KeyboardEvent): void =>  {
         if (event.key === 'Enter') {
@@ -42,6 +45,23 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
             const updatedGraphData = getActionFunction.call(target.value.toString(), mutableData)
             dispatch(setGraphData(updatedGraphData))
             }
+        }
+    }
+
+    const handleInputChange: ChangeEventHandler<HTMLInputElement>
+     = (event) => {
+        const target = event.target
+        if (target && target.value){
+            setInputValue(target.value)
+        }
+      }
+    
+
+    const handleClearInput = () => {
+        setInputValue('')
+        const current = inputRef.current as null | object & {value?: string}
+        if (current && current.value) {
+            current.value = '' 
         }
     }
 
@@ -57,12 +77,16 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                         return null;
                 })()}
                 <input 
-                className="edge-input"
-                type="text"
-                placeholder={placeholder}
-                onKeyDown={handleActionOnEnter}
+                    ref={inputRef}
+                    className="edge-input"
+                    type="text"
+                    placeholder={placeholder}
+                    onKeyDown={handleActionOnEnter}
+                    onInput={handleInputChange}
                 ></input>
-                <MdOutlineClear />
+                {inputValue && (
+                    <MdOutlineClear onClick={handleClearInput}/>
+                )}
             </label>
         </div>
 }
