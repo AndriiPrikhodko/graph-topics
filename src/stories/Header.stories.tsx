@@ -4,7 +4,7 @@ import store from '../store';
 import LeftView from '../components/left-side/LeftView';
 
 const meta = {
-  title: 'GraphLoad',
+  title: 'left view',
   component: LeftView,
   decorators: [(Story) => <Provider store={store}><Story/></Provider>],
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
@@ -18,4 +18,5 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const leftView: Story = {
+};
