@@ -120,3 +120,7 @@
 .menu-item input:hover {
   background-color: darkorange;
 }
+
+.action-icon {
+  padding-right: 5px;
+}
