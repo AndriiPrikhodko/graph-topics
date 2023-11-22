@@ -7,6 +7,8 @@ import ActionOption from '../components/left-side/sub-components/menu/ActionOpti
 type CustomArgs = React.ComponentProps<typeof ActionOption> & { 
   advanced?: boolean
   margin?: number
+  backgroundColor?: string
+  style?: React.CSSProperties;
 };
 
 const meta = {
@@ -29,7 +31,7 @@ const meta = {
       control: 'boolean',
       defaultValue: false
     },
-    margin: { control: 'number', if: { arg: 'advanced' } },
+    backgroundColor: { control: 'color' },
   }
 } satisfies Meta<CustomArgs>;
 
@@ -37,13 +39,17 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const actionOption: Story = {
-  parameters: {
-    controls: { exclude: ['label', 'placeholder'] },
+  render: (args) => {
+
+    return <ActionOption {...args} style={{ }} />;
   },
+  parameters: {
+        controls: { exclude: ['label', 'placeholder', 'style'] },
+      },
   args: {
-    label: 'title',
-    placeholder: 'placeholder',
-    actionFunction: 'addGraphEdge',
-    advanced: false
-  }
+        label: 'title',
+        placeholder: 'placeholder',
+        actionFunction: 'addGraphEdge',
+        advanced: false
+      }
 };
