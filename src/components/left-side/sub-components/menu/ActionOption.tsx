@@ -9,6 +9,7 @@ import { MdOutlineClear } from "react-icons/md";
 import { clone } from 'ramda'
 import React, { useState, useRef } from 'react'
 import { IconType } from 'react-icons/lib'
+import { setGraphDataLocal } from '../../../../helpers/local-storage'
 
 
 type Props = {
@@ -41,6 +42,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
         if(getActionFunction) {
             const mutableData = clone(data)
             const updatedGraphData = getActionFunction.call(strValue, mutableData)
+            setGraphDataLocal(updatedGraphData)
             dispatch(setGraphData(updatedGraphData))
         }
         else console.log('action is not in the list')

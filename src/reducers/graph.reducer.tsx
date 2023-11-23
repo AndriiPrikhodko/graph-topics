@@ -22,23 +22,11 @@ const graphSlice = createSlice({
             // possible because of immer
             state = action.payload
 
-            // adding graphData to localStorage on change
-            localStorage.setItem(
-                'react-graph-app-data', 
-              JSON.stringify(action.payload)
-              )
-
             return state
           },
           cleanGraphData: (state, action: {payload: void}) => {
             // possible because of immer
             state = emptyGraphData
-
-            // adding graphData to localStorage on change
-            localStorage.setItem(
-                'react-graph-app-data', 
-                JSON.stringify(emptyGraphData)
-              )
 
             return state
           }

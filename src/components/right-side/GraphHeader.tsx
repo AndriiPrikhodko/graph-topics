@@ -6,6 +6,7 @@ import { loadGraphList } from "../../actions/graph-api.action";
 import { cleanGraphData } from '../../reducers/graph.reducer';
 import Button from '../shared/button';
 import './GraphHeader.css'
+import { setGraphDataLocal } from '../../helpers/local-storage';
 
 const GraphHeader: React.FC = () => {
     const [graphLoading, setGraphLoading] = useState<boolean>(false)
@@ -36,6 +37,10 @@ const GraphHeader: React.FC = () => {
 
     const handleCleanGraphClick = () => {
         dispatch(cleanGraphData())
+        setGraphDataLocal({
+            nodes: [], 
+            links: []
+        })
     }
 
     const handleInputNameChange = (event: ChangeEvent) => {

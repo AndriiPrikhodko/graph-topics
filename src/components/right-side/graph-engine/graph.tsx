@@ -5,6 +5,7 @@ import graphFn from '../../../actions/graph-fn.facade'
 import { setGraphData } from '../../../reducers/graph.reducer'
 import {default as graphConfig} from './graph.config.json'
 import { clone } from 'ramda'
+import { setGraphDataLocal } from '../../../helpers/local-storage'
 
 const { useRef } = React
 
@@ -46,6 +47,7 @@ const Graph = () => {
         else {
             const updatedData = graphFn.addGraphEdge.call([...edge, node.id].join(','), mutableGData)
             dispatch(setGraphData(updatedData))
+            setGraphDataLocal(updatedData)
             setEdge([])
         }
       }, [edge, setEdge, dispatch])

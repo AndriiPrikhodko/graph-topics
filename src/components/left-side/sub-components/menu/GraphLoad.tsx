@@ -6,7 +6,7 @@ import Dropdown from "./Dropdown"
 import { useSelector, useDispatch } from "react-redux"
 import { loadGraphList } from "../../../../actions/graph-api.action"
 import Button from '../../../shared/button'
-
+import { setGraphDataLocal } from '../../../../helpers/local-storage'
 
 
 const GraphLoad: React.FC = () => {
@@ -40,7 +40,10 @@ const GraphLoad: React.FC = () => {
     
             graphAPI.getGraph(args)
                 .then(res => selfDataAdapter(res))
-                .then(graphData => dispatch(setGraphData(graphData)))
+                .then(graphData => {
+                    setGraphDataLocal(graphData)
+                    dispatch(setGraphData(graphData))
+                })
         }
     }
     
