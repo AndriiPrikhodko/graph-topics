@@ -54,14 +54,15 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
         if (target && target.value){
             setInputValue(target.value)
         }
+        else setInputValue('')
       }
     
 
     const handleClearInput = () => {
-        setInputValue('')
         const current = inputRef.current as null | object & {value?: string}
         if (current && current.value) {
-            current.value = '' 
+            current.value = ''
+            setInputValue('')
         }
     }
 
@@ -82,7 +83,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                     type="text"
                     placeholder={placeholder}
                     onKeyDown={handleActionOnEnter}
-                    onInput={handleInputChange}
+                    onChange={handleInputChange}
                 ></input>
                 {inputValue && (
                     <MdOutlineClear onClick={handleClearInput}/>
