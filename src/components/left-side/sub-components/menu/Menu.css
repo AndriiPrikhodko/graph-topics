@@ -68,6 +68,7 @@
 }
 
 .dropdown-trigger:hover {
+  color: #111;
   background-color: darkorange;
 }
 
@@ -117,11 +118,11 @@
  background-color: #ccc;
 }
 
-.menu-item {
+.dropdown-item {
   display: flex;
 }
 
-.menu-item input:hover {
+.dropdown-item input:hover {
   background-color: darkorange;
 }
 
