@@ -40,11 +40,11 @@
     font-family: math;
     font-style: oblique;
     font-weight: 700;
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 .header p span {
     color: darkorange;
     font-family: fantasy;
-    font-size: larger;
+    font-size:  14pt;
 }
