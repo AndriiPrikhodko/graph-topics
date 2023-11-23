@@ -9,7 +9,12 @@ const MST: React.FC = () => {
 
   return (
     <div className="menu-item">
-      <Button label='Build MST by' testid='ai-tags-button' onClick={onClickHandler}/>
+      <Button 
+        label='Build MST by' 
+        testid='ai-tags-button' 
+        onClick={onClickHandler}
+        className='menu-button-right'
+        />
       <input className='data-input' placeholder='tag'></input>
     </div>
   );

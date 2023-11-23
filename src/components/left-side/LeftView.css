@@ -19,6 +19,7 @@
 
 .menu-item {
   margin-bottom: 5px;
+  max-width: 325px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

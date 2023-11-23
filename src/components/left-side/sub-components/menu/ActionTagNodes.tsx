@@ -9,8 +9,13 @@ const TagNodes: React.FC = () => {
 
   return (
     <div className="menu-item">
-      <Button label='AI classified tags' testid='ai-tags-button' onClick={onClickHandler}/>
-      <input className='data-input' placeholder='limit'></input>
+      <Button 
+        label='AI tags' 
+        testid='ai-tags-button' 
+        onClick={onClickHandler}
+        className='menu-button-right'
+        />
+      <input className='data-input' placeholder='limit tag class number'></input>
     </div>
   );
 };
