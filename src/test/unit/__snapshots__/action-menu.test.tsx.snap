@@ -2,7 +2,7 @@
 
 exports[`action menu data input items 1`] = `
 <div
-  class="data-input"
+  class="data-input menu-item"
   data-testid="addGraphEdge"
 >
   <label
@@ -37,7 +37,7 @@ exports[`action menu data input items 1`] = `
 
 exports[`action menu data input items 2`] = `
 <div
-  class="data-input"
+  class="data-input menu-item"
   data-testid="removeGraphEdge"
 >
   <label
@@ -72,7 +72,7 @@ exports[`action menu data input items 2`] = `
 
 exports[`action menu data input items 3`] = `
 <div
-  class="data-input"
+  class="data-input menu-item"
   data-testid="deleteGraphNode"
 >
   <label

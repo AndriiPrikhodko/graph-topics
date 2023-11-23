@@ -2,7 +2,7 @@
 
 exports[`loader 1`] = `
 <div
-  class="graph-menu"
+  class="menu-item graph-menu"
   data-testid="load-graph-list"
 >
   <div
