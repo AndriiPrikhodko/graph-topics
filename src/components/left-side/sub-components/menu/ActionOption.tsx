@@ -89,7 +89,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
         }
     }
 
-    return <div className="data-input" data-testid={actionFunction}>
+    return <div className="data-input menu-item" data-testid={actionFunction}>
             <label className="unselectable">
                 {(() => {
                         const icon: IconType = actionIcons[actionFunction];
