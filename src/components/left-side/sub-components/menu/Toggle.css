@@ -12,6 +12,7 @@
   }
   
   .slider {
+    border-radius: 4px;
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -24,6 +25,7 @@
   
   .slider:before {
     position: absolute;
+    border-radius: 4px;
     content: "";
     height: 26px;
     width: 26px;
