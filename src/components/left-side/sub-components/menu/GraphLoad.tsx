@@ -44,7 +44,7 @@ const GraphLoad: React.FC = () => {
         }
     }
     
-    return <div className="graph-menu" data-testid='load-graph-list'>
+    return <div className="menu-item graph-menu" data-testid='load-graph-list'>
             <Dropdown
                 trigger={<input
                         className="dropdown-trigger"
