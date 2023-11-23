@@ -12,7 +12,7 @@ const ToggleStatistics = () => {
   return (
     <div className='menu-item'>
       <label className='toggle-label'>
-        <span>Right View </span>
+        <span>View </span>
         { isToggled ?  'Statistics:': 'Graph:'}</label>
       <label className="switch"> 
         <input type="checkbox" checked={isToggled} onChange={handleToggle} />
