@@ -4,12 +4,15 @@ import GraphLoad from "./sub-components/menu/GraphLoad"
 import ActionMenu from './sub-components/menu/ActionMenu'
 import Footer from './sub-components/footer/Footer'
 import TagNodes from './sub-components/menu/ActionTagNodes'
+import MST from './sub-components/menu/MSTbyTag'
+
 const LeftView: React.FC = () => {
     return (
         <div className="split-small left" data-testid="left-view">
             <Header />
             <ActionMenu />
             <TagNodes />
+            <MST />
             <GraphLoad />
             <Footer />
         </div>
