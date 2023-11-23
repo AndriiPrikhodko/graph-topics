@@ -34,16 +34,34 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
     const inputRef = useRef(null)
 
     const [inputValue, setInputValue] = useState('')
+
+    const applyGraphFunction = (strValue: string) => {
+        const actionFunctionObj = Object.getOwnPropertyDescriptors(graphFnFacade)
+        const getActionFunction = actionFunctionObj[actionFunction].value
+        if(getActionFunction) {
+            const mutableData = clone(data)
+            const updatedGraphData = getActionFunction.call(strValue, mutableData)
+            dispatch(setGraphData(updatedGraphData))
+        }
+        else console.log('action is not in the list')
+    }
+
+    const cleanUpInput = () => {
+        const current = inputRef.current as null | object & {value?: string}
+        if (current && current.value) {
+            current.value = ''
+            setInputValue('')
+        }
+    }
     
     const handleActionOnEnter = (event: KeyboardEvent): void =>  {
         if (event.key === 'Enter') {
-            const actionFunctionObj = Object.getOwnPropertyDescriptors(graphFnFacade)
-            const getActionFunction = actionFunctionObj[actionFunction].value
             const target  = event.target as HTMLButtonElement
-         if(target && getActionFunction) {
-            const mutableData = clone(data)
-            const updatedGraphData = getActionFunction.call(target.value.toString(), mutableData)
-            dispatch(setGraphData(updatedGraphData))
+         if(target) {
+            applyGraphFunction(target.value.toString())
+            }
+            if(actionFunction !== 'addGraphEdge') {
+                cleanUpInput()
             }
         }
     }
@@ -59,10 +77,15 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
     
 
     const handleClearInput = () => {
-        const current = inputRef.current as null | object & {value?: string}
-        if (current && current.value) {
-            current.value = ''
-            setInputValue('')
+        cleanUpInput()
+    }
+
+    const actionIconClick = () => {
+        if (inputValue) {
+            applyGraphFunction(inputValue)
+            if(actionFunction !== 'addGraphEdge') {
+                cleanUpInput()
+            }
         }
     }
 
@@ -71,7 +94,13 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                 {(() => {
                         const icon: IconType = actionIcons[actionFunction];
                         if (icon) {
-                            return React.createElement(icon, {className: 'action-icon', title: `${label}`, id: 'icon-actionFunction'});
+                            return React.createElement(icon, 
+                                {
+                                    className: 'action-icon', 
+                                    title: `${label}`, 
+                                    id: 'icon-actionFunction',
+                                    onClick: actionIconClick
+                                });
                         } else {
                             console.error(`No icon found for action function: ${actionFunction}`);
                         }
