@@ -58,6 +58,9 @@
   font-family: "Ropa Sans";
 }
 .dropdown-trigger {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 178px;
   background-color: #666;
   margin-top: 2px;
   color: ghostwhite;
@@ -85,7 +88,10 @@
   background-color: darkorange;
 }
 
-.dropdown ul {
+.menu {
+  position: absolute;
+  margin-top: 26px !important;
+  width: 183px;
   display: flex;
   flex-direction: column;
   list-style-type: none;
@@ -137,12 +143,14 @@
 /* menu button */
 .menu-button-right {
   flex-grow: 1;
+  flex-shrink: 0;
   margin-right: 5px;
   max-width: 150px;
 }
 
 .menu-button-left {
   flex-grow: 1;
+  flex-shrink: 0;
   margin-left: 5px;
   max-width: 150px;
 }
