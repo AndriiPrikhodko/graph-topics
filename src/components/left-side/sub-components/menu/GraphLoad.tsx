@@ -33,13 +33,15 @@ const GraphLoad: React.FC = () => {
     }
 
     const handleLoadGraphClick = () => {
-        const args = {
-            graphName: menuOption
+        if (menuOption) {
+            const args = {
+                graphName: menuOption
+            }
+    
+            graphAPI.getGraph(args)
+                .then(res => selfDataAdapter(res))
+                .then(graphData => dispatch(setGraphData(graphData)))
         }
-
-        graphAPI.getGraph(args)
-            .then(res => selfDataAdapter(res))
-            .then(graphData => dispatch(setGraphData(graphData)))
     }
     
     return <div className="graph-menu" data-testid='load-graph-list'>
