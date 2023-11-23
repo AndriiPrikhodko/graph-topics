@@ -4,6 +4,7 @@
     border: none;
     font-size: 14pt;
     margin-top: 1px;
+    font-family: math;
     cursor: pointer;
     border-radius: 4px;
     transition-duration: 0.4s;
@@ -11,7 +12,7 @@
 }
   
 .standard-button:hover {
-background-color: #e6e6e6;
-color: #333;
-outline-color: #adadad;
+    background-color: #e6e6e6;
+    color: #333;
+    outline-color: #adadad;
 }

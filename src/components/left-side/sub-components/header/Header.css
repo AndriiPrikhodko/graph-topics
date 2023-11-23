@@ -9,9 +9,11 @@
     text-align: center;
     color: darkorange;
     margin-left: 28%;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     text-decoration: underline steelblue;
+    font-family: math;
     text-decoration-thickness: 3px;
+    font-size: larger;
 }
 
 .logo-title {
@@ -29,14 +31,20 @@
   }
 
 .title span {
-    color: ghostwhite;
+    color: ivory;
 }
 
 .header p {
     text-align: center;
-    color: ghostwhite;
-    font-family: "Ropa Sans";
+    color: ivory;
+    font-family: math;
     font-style: oblique;
     font-weight: 700;
     font-size: 14pt;
+}
+
+.header p span {
+    color: darkorange;
+    font-family: fantasy;
+    font-size: larger;
 }

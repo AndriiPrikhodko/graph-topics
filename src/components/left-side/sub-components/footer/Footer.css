@@ -10,15 +10,16 @@
   }
   
   .legal-notice {
+    font-family: math;
     width: 90%;
   }
   
   .legal-notice h2 {
-    color: lightgray;
+    color: ivory;
   }
   
   .legal-notice {
-    color: gray;
+    color: silver;
   }
 
   .footer a {

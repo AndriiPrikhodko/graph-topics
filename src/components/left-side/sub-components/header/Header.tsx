@@ -9,7 +9,7 @@ const Header = () => {
                 </h3>
                 <img src={'../../../../graph.svg'} alt="Company Logo" />
             </div>
-            <p>Follow the origins of your ideas...</p>
+            <p>Follow the <span>origins</span> of your <span>ideas</span>...</p>
         </div>
     )
 }

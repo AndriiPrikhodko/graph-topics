@@ -54,10 +54,10 @@
   z-index: 1;
   flex-direction: column;
   font-family: "Ropa Sans";
-  
 }
 .dropdown-trigger {
   background-color: #666;
+  color: ghostwhite;
   border-radius: 4px;
   flex-grow: 1 ;
   flex-shrink: 0;
@@ -88,6 +88,8 @@
   flex-grow: 1;
   padding: 0;
   margin: 0;
+  transition: height .4s ease;
+
 }
 
 .dropdown li {
@@ -112,6 +114,7 @@
 /* end graph menu */
 .dropdown-input {
  flex-grow: 1;
+ background-color: #ccc;
 }
 
 .menu-item {
