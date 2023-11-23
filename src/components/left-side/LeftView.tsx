@@ -5,6 +5,8 @@ import ActionMenu from './sub-components/menu/ActionMenu'
 import Footer from './sub-components/footer/Footer'
 import TagNodes from './sub-components/menu/ActionTagNodes'
 import MST from './sub-components/menu/MSTbyTag'
+import ToggleStatistics
+    from './sub-components/menu/ToggleStatistics'
 
 const LeftView: React.FC = () => {
     return (
@@ -13,6 +15,7 @@ const LeftView: React.FC = () => {
             <ActionMenu />
             <TagNodes />
             <MST />
+            <ToggleStatistics />
             <GraphLoad />
             <Footer />
         </div>
