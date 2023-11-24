@@ -72,11 +72,15 @@ To run unit tests, use this command:
 ```npm test```
 
 
-## Building the App
+## Docker Building the App
 
-To build the app for production, use this command:
+Build docker image
 
-```npm run build```
+```docker build -t app-prod .```
+
+To run the app for production in docker, use this command:
+
+```docker run -p 80:80 --name app-prod app-prod```
 
 ## Contact
 
