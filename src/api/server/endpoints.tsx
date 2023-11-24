@@ -1,14 +1,18 @@
 const endpoints = {
-    local: {
+    development: {
         baseUrl: "localhost",
         port: "3100"
     },
     production: {
+        baseUrl: "localhost",
+        port: "3100"
+    },
+    test: {
         baseUrl: "",
         port: ""
     }
 }
 
-// const serverUrl = endpoints[process.env.SERVER_NAME]
-const serverUrl = endpoints['local']
+
+const serverUrl = endpoints[process.env.NODE_ENV]
 export default serverUrl
