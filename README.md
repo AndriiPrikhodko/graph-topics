@@ -45,14 +45,29 @@ To install and run the app, follow these steps:
 2. Navigate to the project directory:
 ```cd graph-topics```
 3. Install the dependencies:
-```npm ci --legacy-peer-deps```
+```npm ci```
 4. Start the app:
-```npm start```
+```npm run start```
 
+## Setup MSW Mocks
+
+To setup msw mocks, use this command:
+
+```npm run initialize-msw```
+
+To start app with mocks, use this command:
+
+```npm run start:mock```
+
+## Running Storybook
+Make sure mocks have been initialized.
+
+To run storybook, use following command:
+```npm run storybook```
 
 ## Running Tests
 
-To run tests, use this command:
+To run unit tests, use this command:
 
 ```npm test```
 
