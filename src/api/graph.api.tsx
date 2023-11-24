@@ -35,13 +35,19 @@ export const graphAPI = {
     },
 
     getGraphList: async function(): Promise<string[]> {
-        const response = await api.request({
-            url: ROUTER.graphList,
-            method: 'GET',
-            headers: HEADERS,
-        })
-
-        return response.data.graphList
+        try {
+            const response = await api.request({
+                url: ROUTER.graphList,
+                method: 'GET',
+                headers: HEADERS,
+            })
+    
+            return response.data.graphList
+        }
+        catch (err) {
+            console.log(err)
+            return []
+        }
     },
 
     getGraph: async function(args: object): Promise<IGraphData> {
