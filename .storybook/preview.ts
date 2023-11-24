@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 import { initialize, mswLoader } from 'msw-storybook-addon';
 import { setupWorker } from "msw";
-import { handlers } from "../src/handlers";
+import { handlers } from "../src/mocks/handlers";
 
 const worker = setupWorker(...handlers);
 worker.start();

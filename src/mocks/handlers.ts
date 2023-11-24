@@ -1,5 +1,5 @@
 import { rest } from 'msw'
-import serverUrl from './api/server/endpoints'
+import serverUrl from '../api/server/endpoints'
 
 export const handlers = [
     rest.get(`http://${serverUrl.baseUrl}:${serverUrl.port}/graphList`, (req, res, ctx) => {

@@ -16,7 +16,7 @@ const Dropdown: React.FC<{trigger: JSX.Element&IFuncProps, menu: JSX.Element[]}>
                     onClick: handleOpen
                 })}
                 {open?
-                (<ul className="menu">
+                (<ul className="menu" data-testid="dropdown-content">
                     {menu.map((menuItem, index) => (
                         <li key={index} className = "dropdown-item" data-testid={`dropdown-item-${index}`}>
                             {React.cloneElement(menuItem, {

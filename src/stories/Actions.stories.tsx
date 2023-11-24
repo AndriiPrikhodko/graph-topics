@@ -34,9 +34,13 @@ export const actionList: Story = {
     })
     
     await step('should show clear when fill in graph actions inputs', async () => {
-      await userEvent.type(canvas.getByTestId('action-addGraphEdge'), 'add, edge');
-      await userEvent.type(canvas.getByTestId('action-removeGraphEdge'), 'remove, edge');
-      await userEvent.type(canvas.getByTestId('action-deleteGraphNode'), 'delete node');
+      const addEdgeInput = await canvas.getByTestId('action-addGraphEdge')
+      const removeEdgeInput = await canvas.getByTestId('action-removeGraphEdge')
+      const deleteNodeInput = await canvas.getByTestId('action-deleteGraphNode')
+
+      await userEvent.type(addEdgeInput, 'add, edge');
+      await userEvent.type(removeEdgeInput, 'remove, edge');
+      await userEvent.type(deleteNodeInput, 'delete node');
 
       expect(await canvas.getByTestId('clear-addGraphEdge')).toBeInTheDocument()
       expect(await canvas.getByTestId('clear-addGraphEdge')).toBeInTheDocument()
@@ -44,9 +48,13 @@ export const actionList: Story = {
     });
 
     await step('should clear in graph actions input when click on clear', async () => {
-      await userEvent.click(canvas.getByTestId('clear-addGraphEdge'))
-      await userEvent.click(canvas.getByTestId('clear-removeGraphEdge'))
-      await userEvent.click(canvas.getByTestId('clear-deleteGraphNode'))
+      const clearAddEdgeIcon = await canvas.getByTestId('clear-addGraphEdge')
+      const clearRemoveEdgeIcon = await canvas.getByTestId('clear-removeGraphEdge')
+      const clearDeleteNodeIcon = await canvas.getByTestId('clear-deleteGraphNode')
+
+      await userEvent.click(clearAddEdgeIcon)
+      await userEvent.click(clearRemoveEdgeIcon)
+      await userEvent.click(clearDeleteNodeIcon)
 
       expect(await canvas.queryByTestId('clear-addGraphEdge')).toBeNull()
       expect(await canvas.queryByTestId('clear-removeGraphEdge')).toBeNull()
