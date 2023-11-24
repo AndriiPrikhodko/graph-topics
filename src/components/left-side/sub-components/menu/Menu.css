@@ -49,6 +49,10 @@
   outline: solid;
   outline-color: darkorange;
 }
+
+.icon-right {
+  margin-left: auto;
+}
   /* end data-input*/
   /* dropdown */
 .dropdown {
@@ -56,6 +60,7 @@
   z-index: 1;
   flex-direction: column;
   font-family: "Ropa Sans";
+  caret-color: transparent;
 }
 .dropdown-trigger {
   padding-top: 2px;
@@ -91,7 +96,7 @@
 .menu {
   position: absolute;
   margin-top: 26px !important;
-  width: 183px;
+  width: 182.5px;
   display: flex;
   flex-direction: column;
   list-style-type: none;

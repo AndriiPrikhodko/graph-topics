@@ -115,9 +115,10 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                     placeholder={placeholder}
                     onKeyDown={handleActionOnEnter}
                     onChange={handleInputChange}
+                    data-testid={`action-${actionFunction}`}
                 ></input>
                 {inputValue && (
-                    <MdOutlineClear onClick={handleClearInput}/>
+                    <MdOutlineClear onClick={handleClearInput} className='icon-right' data-testid={`clear-${actionFunction}`}/>
                 )}
             </label>
         </div>
