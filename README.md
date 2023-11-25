@@ -65,7 +65,16 @@ Make sure mocks have been initialized.
 To run storybook, use following command:
 ```npm run storybook```
 
-## Running Tests
+## Running storybook component tests
+#### Prerequisites: 
+Make sure mocks have been initialized.
+Install playwright, with command
+```npx playwright install```
+#### Run tests
+Run component tests with following command:
+```npm run test:component```
+
+## Running Unit Tests
 
 To run unit tests, use this command:
 
