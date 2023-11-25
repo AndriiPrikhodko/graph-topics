@@ -28,6 +28,7 @@ exports[`action menu data input items 1`] = `
     </svg>
     <input
       class="edge-input"
+      data-testid="action-addGraphEdge"
       placeholder="comma separated strings"
       type="text"
     />
@@ -63,6 +64,7 @@ exports[`action menu data input items 2`] = `
     </svg>
     <input
       class="edge-input"
+      data-testid="action-removeGraphEdge"
       placeholder="comma separated strings"
       type="text"
     />
@@ -98,6 +100,7 @@ exports[`action menu data input items 3`] = `
     </svg>
     <input
       class="edge-input"
+      data-testid="action-deleteGraphNode"
       placeholder="node name"
       type="text"
     />

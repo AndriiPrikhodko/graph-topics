@@ -35,8 +35,8 @@
     "start:mock": "REACT_APP_MOCK=true react-scripts start",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "npx vitest",
-    "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
+    "test-storybook": "test-storybook",
     "build-storybook": "storybook build",
     "initialize-msw": "npx msw init ./public"
   },
@@ -68,6 +68,7 @@
     "@storybook/react": "^7.5.3",
     "@storybook/react-webpack5": "^7.5.3",
     "@storybook/test": "^7.6.0-beta.2",
+    "@storybook/test-runner": "^0.15.2",
     "@storybook/testing-library": "^0.2.2",
     "@types/css-mediaquery": "^0.1.4",
     "@types/ramda": "^0.29.9",
