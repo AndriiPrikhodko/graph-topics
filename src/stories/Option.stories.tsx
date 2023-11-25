@@ -41,7 +41,7 @@ type Story = StoryObj<typeof meta>;
 export const actionOption: Story = {
   render: (args) => {
 
-    return <ActionOption {...args} style={{ }} />;
+    return <ActionOption {...args} style={{backgroundColor: args['backgroundColor']}} />;
   },
   parameters: {
         controls: { exclude: ['label', 'placeholder', 'style'] },

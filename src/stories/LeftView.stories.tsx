@@ -3,6 +3,8 @@ import { waitFor, within, userEvent, expect, fn } from '@storybook/test';
 import { Provider } from 'react-redux';
 import store from '../store';
 import LeftView from '../components/left-side/LeftView';
+import {default as testData} from './test-data/dropdown.data.json'
+import selectors from './components/dorpdown.selectors'
 
 const meta = {
   title: 'left view',
@@ -24,26 +26,27 @@ export const leftView: Story = {
     const canvas = within(canvasElement);
 
     step('should open drop down on click', async () => {
-      const dropdownTrigger = canvas.getByTestId('load-dropdown')
+      const dropdownTrigger = canvas.getByTestId(selectors.testIdDropdownTrigger)
       await userEvent.click(dropdownTrigger)
-      const dropdownEls = await document.getElementsByClassName('dropdown-item')
+      const dropdownEls = await document
+        .getElementsByClassName(selectors.classDropdownItems)
 
-      expect(dropdownEls.length).toEqual(2)
+      expect(dropdownEls.length).toEqual(testData.numberOfItems)
     })
 
     step('dropdown elements should have correct graph names', async () => {
-      const firstFileInput = await
-        canvas.findByTestId('dropdown-item-0')
+      const firstFileItem = await
+        canvas.findByTestId(selectors.testIdDropdownItem1)
         const secondFileInput = await
-        canvas.findByTestId('dropdown-item-1')
+        canvas.findByTestId(selectors.testIdDropdownItem2)
 
-      expect(firstFileInput.innerHTML).toContain('mockfileName1')
-      expect(secondFileInput.innerHTML).toContain('mockfileName2')
+      expect(firstFileItem.innerHTML).toContain(testData.valueFirstInput)
+      expect(secondFileInput.innerHTML).toContain(testData.valueSecondInput)
     })
 
     step('should close dropdown on picking graph and set graph name', async () => {
       const firstFileItem = await
-        canvas.findByTestId('dropdown-item-0')
+        canvas.findByTestId(selectors.testIdDropdownItem1)
       const firstFileInput = firstFileItem.querySelector('input') as HTMLElement
       await userEvent.click(firstFileInput)
 
@@ -51,7 +54,7 @@ export const leftView: Story = {
         await expect(firstFileInput).not.toBeVisible()
       })
 
-      const dropdownTrigger = await canvas.findByDisplayValue('mockfileName1')
+      const dropdownTrigger = await canvas.findByDisplayValue(testData.fileName1)
 
       await waitFor(async () => {
         await expect(dropdownTrigger).toBeVisible()

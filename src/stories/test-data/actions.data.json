@@ -1,0 +1,5 @@
+{
+    "addEdge": "add, edge",
+    "removeEdge": "remove, edge",
+    "deleteNode": "delete node"
+}

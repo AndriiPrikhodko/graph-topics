@@ -8,7 +8,7 @@ const MST: React.FC = () => {
     }
 
   return (
-    <div className="menu-item">
+    <div className="menu-item" data-testid='MST'>
       <Button 
         label='Build MST by' 
         testid='ai-tags-button' 
