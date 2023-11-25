@@ -36,7 +36,7 @@
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "npx vitest",
     "storybook": "storybook dev -p 6006",
-    "test-storybook": "test-storybook",
+    "test:component": "test-storybook",
     "build-storybook": "storybook build",
     "initialize-msw": "npx msw init ./public"
   },

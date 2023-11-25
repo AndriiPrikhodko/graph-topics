@@ -13,6 +13,7 @@ RUN npm ci
 # Copy the rest of the application code to the container
 COPY . .
 
+ENV NODE_ENV='production'
 # Build the application
 RUN npm run build
 
