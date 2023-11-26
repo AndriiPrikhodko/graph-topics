@@ -7,6 +7,7 @@ import { cleanGraphData } from '../../reducers/graph.reducer';
 import Button from '../shared/button';
 import './GraphHeader.css'
 import { setGraphDataLocal } from '../../helpers/local-storage';
+import ActionMenuHeader from './ActionMenuHeader'
 
 const GraphHeader: React.FC = () => {
     const [graphLoading, setGraphLoading] = useState<boolean>(false)
@@ -63,6 +64,7 @@ const GraphHeader: React.FC = () => {
                     return <ImSpinner2 className="loaderIcon" data-testid='save-spinner' />
                 }
             })()}
+            <ActionMenuHeader />
             <div className='right'>
                 <Button label='Clear' onClick={handleCleanGraphClick} testid='clear-button' />
             </div>

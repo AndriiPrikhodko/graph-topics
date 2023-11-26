@@ -1,0 +1,18 @@
+.icon-encircle {
+    outline: solid;
+    background-color: lightgray;
+    outline-color: dimgray;
+    outline-width: 3px;
+    border-radius: 16px;
+    padding: 3px;
+    display: flex;
+    width: 17px;
+}
+
+  .action-icon {
+    position: relative;
+  }
+
+  .icon-encircle:hover {
+    outline-color: darkorange;
+  }

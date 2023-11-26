@@ -3,14 +3,15 @@ import './Menu.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { setGraphData } from '../../../../reducers/graph.reducer'
 import graphFnFacade from '../../../../actions/graph-fn.facade'
-import { FaUnlink, FaLink } from "react-icons/fa";
-import { FaMinusCircle } from "react-icons/fa"
-import { MdOutlineClear } from "react-icons/md";
+import { ImCancelCircle } from "react-icons/im";
 import { clone } from 'ramda'
 import React, { useState, useRef } from 'react'
 import { IconType } from 'react-icons/lib'
 import { setGraphDataLocal } from '../../../../helpers/local-storage'
-
+import RemoveEdgeIcon from '../../../shared/actions/RemoveEdgeIcon'
+import AddEdgeIcon from '../../../shared/actions/AddEdgeIcon'
+import DeleteNodeIcon from '../../../shared/actions/DeleteGraphNode'
+import { IconBaseProps } from 'react-icons'
 
 type Props = {
     label: string,
@@ -20,13 +21,16 @@ type Props = {
 }
 
 interface IIconObject {
-    [key: string]: IconType; // This is the string index signature
+    [key: string]: React.FC<IconBaseProps & {
+        onClick: React.MouseEventHandler
+        label: string
+    }>; // This is the string index signature
   }
 
 const actionIcons: IIconObject = {
-    addGraphEdge: FaLink,
-    removeGraphEdge: FaUnlink,
-    deleteGraphNode: FaMinusCircle
+    addGraphEdge: AddEdgeIcon,
+    removeGraphEdge: RemoveEdgeIcon,
+    deleteGraphNode: DeleteNodeIcon
 }
 
 const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) => {
@@ -94,15 +98,9 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
     return <div className="data-input menu-item" data-testid={actionFunction}>
             <label className="unselectable">
                 {(() => {
-                        const icon: IconType = actionIcons[actionFunction];
-                        if (icon) {
-                            return React.createElement(icon, 
-                                {
-                                    className: 'action-icon', 
-                                    title: `${label}`, 
-                                    id: 'icon-actionFunction',
-                                    onClick: actionIconClick
-                                });
+                        const IconComponent = actionIcons[actionFunction];
+                        if (IconComponent) {
+                           return <IconComponent onClick={actionIconClick} label={`${label}`}/>
                         } else {
                             console.error(`No icon found for action function: ${actionFunction}`);
                         }
@@ -118,7 +116,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                     data-testid={`action-${actionFunction}`}
                 ></input>
                 {inputValue && (
-                    <MdOutlineClear onClick={handleClearInput} className='icon-right' data-testid={`clear-${actionFunction}`}/>
+                    <ImCancelCircle onClick={handleClearInput} className='icon-right' data-testid={`clear-${actionFunction}`}/>
                 )}
             </label>
         </div>

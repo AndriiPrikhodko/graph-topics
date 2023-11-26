@@ -12,6 +12,7 @@
 }
 
 #save-filename-input {
+    padding: 3px;
     background-color: #ccc;
     color: #111;
     border: none;
@@ -36,6 +37,7 @@
     padding-left: 5px;
     max-width: 95%;
     display: flex;
+    align-items: center;
 }
 
 @keyframes spin {
@@ -45,4 +47,23 @@
     to {
         transform: scale(1) rotate(360deg);
     }
+}
+
+.action-wrapper-header {
+    flex-shrink: 0;
+    position: fixed;
+    background-color: dimgray;
+    display: flex;
+    width: 140px;
+    outline: solid;
+    padding: 3px 3px;
+    flex-wrap: wrap;
+    align-content: center;
+    border-radius: 16px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-left: 280px;
+    outline-width: 3px;
+    outline-color: lightgray;
 }

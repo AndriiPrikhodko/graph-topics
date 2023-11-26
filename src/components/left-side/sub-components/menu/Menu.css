@@ -25,6 +25,7 @@
   }
   
   .data-input input {
+    margin-left: 8px;
     width: 250px;
     border: none;
     font-family: "Ropa Sans";
@@ -142,7 +143,7 @@
 }
 
 .action-icon {
-  padding-right: 5px;
+  position: relative;
 }
 
 /* menu button */
