@@ -1,12 +1,13 @@
 {
     "d3VelocityDecay": 0.2,
-    "fontSize": 12,
+    "fontSize": 14,
     "font": "Sans-Serif",
     "textAlign": "center",
     "textBaseline": "middle",
     "linkDirectionalParticles": 1,
     "linkDirectionalParticleSpeed": 1.006,
     "defaultNodeColor": "rgb(120, 120, 120)",
-    "labelColor": "rgb(70, 70, 70)",
-    "labelBackgroundColor": "rgba(235, 235, 235, 0.3)"
+    "labelColor": "black",
+    "labelBackgroundColor": "rgba(180, 180, 180, 0.5)",
+    "linkColor": "lightgrey"
 }

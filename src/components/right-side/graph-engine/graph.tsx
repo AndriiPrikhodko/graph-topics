@@ -59,14 +59,14 @@ const Graph = () => {
             d3VelocityDecay={graphConfig.d3VelocityDecay}
             nodeAutoColorBy="group"
             linkWidth={2}
-            linkColor={'white'}
+            linkColor={() => graphConfig.linkColor}
             linkDirectionalParticles={graphConfig.linkDirectionalParticles}
             linkDirectionalParticleSpeed={graphConfig.linkDirectionalParticleSpeed}
             
             nodeCanvasObject={(node: INodeObjExt & NodeObject, ctx, globalScale = 4) => {
                 const label = typeof node.id === 'string' ? node.id : '';
                 const fontSize = graphConfig.fontSize/globalScale;
-                ctx.font = `${fontSize}px ${graphConfig.font}`;
+                ctx.font = `bold ${fontSize}px ${graphConfig.font}`;
                 const textWidth = label ? ctx.measureText(label).width : 1;
                 const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
                 const [w, h] = bckgDimensions
