@@ -12,6 +12,7 @@
 }
 
 #save-filename-input {
+    max-width: 180px;
     padding: 3px;
     background-color: #ccc;
     color: #111;
