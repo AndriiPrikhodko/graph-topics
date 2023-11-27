@@ -1,11 +1,9 @@
 import { useEffect } from 'react'
-import GraphView from "./components/right-side/GraphView"
-import LeftView from "./components/left-side/LeftView"
 import { useSelector, useDispatch } from 'react-redux'
 import { setGraphData } from "./reducers/graph.reducer"
 import { setGraphDataLocal } from './helpers/local-storage'
 import RouteComponents from './pages/Router'
-import { Routes, Route, Navigate } from "react-router-dom"
+import { Routes } from "react-router-dom"
 
 const App = () => {
   const graphData = useSelector((store: Store) => store.graphData)

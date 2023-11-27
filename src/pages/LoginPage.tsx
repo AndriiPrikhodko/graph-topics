@@ -25,10 +25,27 @@ const Login = () => {
     const [password, setPassword] = useState('');
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (event) => {
-    // e.preventDefault();
-    // const { data } = await axios.post('/api/login', { username, password });
-    // // Save the returned token in local storage (or cookies)
-    // localStorage.setItem('token', data.token);
+    event.preventDefault();
+    const response = await fetch('/api/authenticate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      });
+  
+      if (response.ok) {
+        const { token } = await response.json();
+  
+        // Store the token in local storage or in a cookie
+        localStorage.setItem('token', token);
+  
+        // Redirect to the next page
+        navigate('/graph');
+      } else {
+        // Handle error
+        console.error('Authentication failed');
+      }
   };
 
   return (
