@@ -8,15 +8,13 @@ import { clone } from 'ramda'
 import React, { useState, useRef } from 'react'
 import { IconType } from 'react-icons/lib'
 import { setGraphDataLocal } from '../../../../helpers/local-storage'
-import RemoveEdgeIcon from '../../../shared/actions/RemoveEdgeIcon'
-import AddEdgeIcon from '../../../shared/actions/AddEdgeIcon'
-import DeleteNodeIcon from '../../../shared/actions/DeleteGraphNode'
+import IconFabrica from '../../../shared/actions/actionIcon.fabrica'
 import { IconBaseProps } from 'react-icons'
 
 type Props = {
     label: string,
     placeholder: string
-    actionFunction: string
+    actionFunction: "addGraphEdge" | "removeGraphEdge" | "deleteGraphNode" 
     style?: React.CSSProperties
 }
 
@@ -27,11 +25,11 @@ interface IIconObject {
     }>; // This is the string index signature
   }
 
-const actionIcons: IIconObject = {
-    addGraphEdge: AddEdgeIcon,
-    removeGraphEdge: RemoveEdgeIcon,
-    deleteGraphNode: DeleteNodeIcon
-}
+// const actionIcons: IIconObject = {
+//     addGraphEdge: AddEdgeIcon,
+//     removeGraphEdge: RemoveEdgeIcon,
+//     deleteGraphNode: DeleteNodeIcon
+// }
 
 const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) => {
     const dispatch = useDispatch()
@@ -97,15 +95,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
 
     return <div className="data-input menu-item" data-testid={actionFunction}>
             <label className="unselectable">
-                {(() => {
-                        const IconComponent = actionIcons[actionFunction];
-                        if (IconComponent) {
-                           return <IconComponent onClick={actionIconClick} label={`${label}`}/>
-                        } else {
-                            console.error(`No icon found for action function: ${actionFunction}`);
-                        }
-                        return null;
-                })()}
+                <IconFabrica iconName={actionFunction} onClick={actionIconClick} label={label} />
                 <input 
                     ref={inputRef}
                     className="edge-input"
