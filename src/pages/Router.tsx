@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, Navigate } from "react-router-dom"
+import { Route } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
 import Login from './LoginPage';
 import Graph from './GraphPage';
@@ -7,7 +7,6 @@ import Graph from './GraphPage';
 const isAuthenticated = () => !!localStorage.getItem('token')
 
 const ProtectedRoute = ({ children }: {children: React.ReactElement}) => {
-  debugger
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
 
