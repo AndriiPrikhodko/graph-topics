@@ -37,7 +37,7 @@ const IconFabrica: React.FC<Props> = ({
   const IconFC = iconFacade[iconName]
   return (
     <div className='icon-encircle' >
-        <IconFC onClick={onClickHandler} title={label} selected={selected}/>
+        <IconFC onClick={onClickHandler} title={label} selected={selected} className='action-icon'/>
     </div>
   );
 };
