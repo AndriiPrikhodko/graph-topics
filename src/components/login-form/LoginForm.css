@@ -106,6 +106,7 @@ span,
 }
 
 .custom-checkbox {
+  appearance: initial;
   -webkit-appearance: none;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 8px;
