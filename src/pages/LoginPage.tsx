@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 // import axios from 'axios';
 
 // const sessionKey = 'your-session-key'; // replace with your session key
@@ -15,8 +16,13 @@ import axios from 'axios';
 
 
 const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        navigate('/login');
+    }, [navigate]);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (event) => {
     // e.preventDefault();
