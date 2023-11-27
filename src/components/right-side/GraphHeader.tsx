@@ -8,6 +8,7 @@ import Button from '../shared/button';
 import './GraphHeader.css'
 import { setGraphDataLocal } from '../../helpers/local-storage';
 import ActionMenuHeader from './ActionMenuHeader'
+import HistoryControls from './HistoryControls'
 
 const GraphHeader: React.FC = () => {
     const [graphLoading, setGraphLoading] = useState<boolean>(false)
@@ -51,8 +52,10 @@ const GraphHeader: React.FC = () => {
 
     return (
         <div className="graph-header" data-testid='graph-view-header'>
+            <HistoryControls />
             <input 
                 value={graphName} 
+                className='header-item'
                 onChange={handleInputNameChange} 
                 id="save-filename-input"
                 placeholder="enter graph name"

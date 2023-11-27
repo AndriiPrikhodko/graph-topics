@@ -20,7 +20,6 @@
     font-style: oblique;
     font-size: 14pt;
     border-radius: 4px;
-    margin-right: 5px;
 }
 
 #save-filename-input:focus {
@@ -66,4 +65,25 @@
     margin-left: 280px;
     outline-width: 3px;
     outline-color: lightgray;
+}
+
+.history-wrapper {
+    flex-shrink: 0;
+    background-color: dimgray;
+    display: flex;
+    width: 52px;
+    outline: solid;
+    padding: 3px 3px;
+    flex-wrap: wrap;
+    align-content: center;
+    border-radius: 16px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    outline-width: 3px;
+    outline-color: lightgray;
+}
+
+.header-item {
+    margin-right: 5px;
 }

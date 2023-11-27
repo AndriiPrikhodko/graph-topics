@@ -1,7 +1,7 @@
 import IconFabrica from '../shared/actions/actionIcon.fabrica'
 import './ActionMenu.css'
 
-const Button: React.FC = () => {
+const ActionMenu: React.FC = () => {
   return (
     <div className='action-wrapper-header'>
       <IconFabrica iconName='addGraphEdge' label="link nodes" onClick={() => {}}/>
@@ -12,4 +12,4 @@ const Button: React.FC = () => {
   );
 };
 
-export default Button
+export default ActionMenu
