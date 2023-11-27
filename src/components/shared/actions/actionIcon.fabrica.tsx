@@ -5,8 +5,8 @@ import { AiTwotoneStop } from "react-icons/ai"
 import { FaMinusCircle } from "react-icons/fa"
 import { FaUnlink } from "react-icons/fa"
 import { IconBaseProps } from 'react-icons'
-import { SlActionUndo } from "react-icons/sl";
-import { SlActionRedo } from "react-icons/sl";
+import { IoArrowRedoSharp } from "react-icons/io5";
+import { IoArrowUndoSharp } from "react-icons/io5";
 interface IIconObject {
   [key: string]: React.FC<IconBaseProps & {
       onClick: React.MouseEventHandler
@@ -19,8 +19,8 @@ const iconFacade: IIconObject= {
     "removeGraphEdge": FaUnlink,
     "cancelIcon": AiTwotoneStop,
     "deleteGraphNode": FaMinusCircle,
-    "undo": SlActionUndo,
-    "redo": SlActionRedo
+    "undo": IoArrowUndoSharp,
+    "redo": IoArrowRedoSharp
 }
 
 type Props = {
