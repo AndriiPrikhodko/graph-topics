@@ -4,6 +4,8 @@ import LeftView from "./components/left-side/LeftView"
 import { useSelector, useDispatch } from 'react-redux'
 import { setGraphData } from "./reducers/graph.reducer"
 import { setGraphDataLocal } from './helpers/local-storage'
+import RouteComponents from './pages/Router'
+import { Routes, Route, Navigate } from "react-router-dom"
 
 const App = () => {
   const graphData = useSelector((store: Store) => store.graphData)
@@ -24,10 +26,9 @@ const App = () => {
   }, [dispatch])
 
   return (
-    <div className="container"> 
-      <LeftView />
-      <GraphView />
-    </div>
+    <Routes>
+      {RouteComponents}
+    </Routes>
   )
 }
 
