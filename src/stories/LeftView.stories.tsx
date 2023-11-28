@@ -5,11 +5,16 @@ import store from '../store';
 import LeftView from '../components/left-side/LeftView';
 import {default as testData} from './test-data/dropdown.data.json'
 import selectors from './components/dorpdown.selectors'
+import { Routes, Route } from "react-router-dom"
 
 const meta = {
   title: 'left view',
   component: LeftView,
-  decorators: [(Story) => <Provider store={store}><Story/></Provider>],
+  decorators: [(Story) => 
+  
+  <Provider store={store}>
+        <Story/>
+  </Provider>],
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
