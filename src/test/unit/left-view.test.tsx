@@ -4,6 +4,17 @@ import store from '../../store';
 import { Provider } from 'react-redux';
 import mediaQuery from 'css-mediaquery';
 import '../../components/left-side/LeftView.css'
+import { vi } from 'vitest';
+
+vi.mock('react-router-dom', async () => {
+  const router = await vi.importActual<typeof import('react-router-dom')>('react-router-dom');
+  const mockNavigate = vi.fn();
+  return {
+    ...router,
+    useNavigate: vi.fn().mockReturnValue(mockNavigate),
+  };
+});
+
 
 const createMatchMedia = (width: number) => {
     return (query: string) => ({
