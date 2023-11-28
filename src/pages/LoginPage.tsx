@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import LoginForm from '../components/login-form';
+import LoginForm from '../components/login-form/';
 // import axios from 'axios';
 
 // const sessionKey = 'your-session-key'; // replace with your session key

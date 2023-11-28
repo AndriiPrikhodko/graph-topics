@@ -7,6 +7,8 @@ import { FaUnlink } from "react-icons/fa"
 import { IconBaseProps } from 'react-icons'
 import { IoArrowRedoSharp } from "react-icons/io5";
 import { IoArrowUndoSharp } from "react-icons/io5";
+import { BiLogOutCircle } from "react-icons/bi";
+
 interface IIconObject {
   [key: string]: React.FC<IconBaseProps & {
       onClick: React.MouseEventHandler
@@ -20,12 +22,14 @@ const iconFacade: IIconObject= {
     "cancelIcon": AiTwotoneStop,
     "deleteGraphNode": FaMinusCircle,
     "undo": IoArrowUndoSharp,
-    "redo": IoArrowRedoSharp
+    "redo": IoArrowRedoSharp,
+    "logout": BiLogOutCircle
 }
 
 type Props = {
-    iconName: "addGraphEdge" | "removeGraphEdge" | "deleteGraphNode" | "cancelIcon"
-    | "undo" | "redo"
+    iconName: "addGraphEdge" | "removeGraphEdge" 
+    | "deleteGraphNode" | "cancelIcon"
+    | "undo" | "redo" | "logout"
     label: string
     onClick: React.MouseEventHandler
     className?: string

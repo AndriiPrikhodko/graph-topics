@@ -1,9 +1,18 @@
 import './Header.css'
 import logo from '../../../../assets/graph.svg'
+import IconFabrica from '../../../shared/actions/actionIcon.fabrica'
+import Button from '../../../shared/button'
+import useLogout from '../../../../helpers/hooks/logout'
 
 const Header = () => {
+    const logoutHandler = useLogout()
+
     return (
         <div className="header">
+            <div className='logout-button'>
+            <Button label='Logout' onClick={logoutHandler} testid='logout'/>
+                <IconFabrica iconName='logout' label='logout' onClick={logoutHandler}/>
+            </div>
             <div className="logo-title">
                 <h3 className="title unselectable">
                     <span>Mind</span> Graph

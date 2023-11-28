@@ -48,3 +48,27 @@
     font-family: fantasy;
     font-size:  14pt;
 }
+
+.logout-button {
+    margin-left: -200px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: silver;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.logout-button button{
+    font-family: math;
+    font-size:  14pt;
+    font-weight: bold;
+    /* color: ghostwhite; */
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+
+.logout-button label:hover{
+    color: darkorange;
+}

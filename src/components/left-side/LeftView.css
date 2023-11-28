@@ -13,7 +13,7 @@
     height: 100vh;
     width: 310px;
     flex-shrink: 0;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-right: 10px;
     min-width: 310px;
 }

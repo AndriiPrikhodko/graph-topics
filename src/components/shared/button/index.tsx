@@ -4,6 +4,7 @@ type Props = {
     'testid': string
     onClick: React.MouseEventHandler<HTMLButtonElement>
     className?: string
+    children?: SVGAElement | Element | React.FC
 }
 
 const Button: React.FC<Props> = ({ label , onClick, testid, className=''}) => {
