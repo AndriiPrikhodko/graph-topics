@@ -8,6 +8,10 @@ import { IconBaseProps } from 'react-icons'
 import { IoArrowRedoSharp } from "react-icons/io5";
 import { IoArrowUndoSharp } from "react-icons/io5";
 import { BiLogOutCircle } from "react-icons/bi";
+import { PiGraphBold } from "react-icons/pi";
+import { SlGraph } from "react-icons/sl";
+import { RiEqualizerFill } from "react-icons/ri";
+import { TbTournament } from "react-icons/tb";
 
 interface IIconObject {
   [key: string]: React.FC<IconBaseProps & {
@@ -23,13 +27,18 @@ const iconFacade: IIconObject= {
     "deleteGraphNode": FaMinusCircle,
     "undo": IoArrowUndoSharp,
     "redo": IoArrowRedoSharp,
-    "logout": BiLogOutCircle
+    "logout": BiLogOutCircle,
+    "from": PiGraphBold,
+    "chain": SlGraph,
+    "bijection": RiEqualizerFill,
+    "into": TbTournament
 }
 
 type Props = {
     iconName: "addGraphEdge" | "removeGraphEdge" 
     | "deleteGraphNode" | "cancelIcon"
-    | "undo" | "redo" | "logout"
+    | "undo" | "redo" | "logout" | "from" 
+    | "chain" | "bijection" | "into"
     label: string
     onClick: React.MouseEventHandler
     className?: string

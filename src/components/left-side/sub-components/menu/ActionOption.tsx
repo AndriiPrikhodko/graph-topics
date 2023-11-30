@@ -90,7 +90,10 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
 
     return <div className="data-input menu-item" data-testid={actionFunction}>
             <label className="unselectable">
-                <IconFabrica iconName={actionFunction} onClick={actionIconClick} label={label} />
+                <IconFabrica 
+                iconName={actionFunction === "addGraphEdge" ? 
+                linkType: actionFunction} 
+                onClick={actionIconClick} label={label} />
                 <input 
                     ref={inputRef}
                     className="edge-input"

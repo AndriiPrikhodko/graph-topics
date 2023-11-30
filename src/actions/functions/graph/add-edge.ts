@@ -17,14 +17,14 @@ const linkFrom = (nodeNames: string []) => {
 
 const linkInto = (nodeNames: string []) => {
   let linkDiff: IGraphData["links"] = []
-  const firstNode = nodeNames[0]
+  const lastNode = nodeNames[nodeNames.length - 1]
   linkDiff = nodeNames
         .reduce((acc, node, index, arr) => {
-        if(node.toLowerCase() !== firstNode.toLowerCase())
+        if(node.toLowerCase() !== lastNode.toLowerCase())
         {
           acc.push({
             source: node,
-            target: firstNode
+            target: lastNode
           })
         }
         return acc
