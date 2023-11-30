@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const selectSlice = createSlice({
   name: 'select',
-  initialState: { type: 'star' },
+  initialState: { type: 'from' },
   reducers: {
     setLinkType: (state, action) => {
       state.type = action.payload;
