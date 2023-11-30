@@ -6,10 +6,8 @@ import graphFnFacade from '../../../../actions/graph-fn.facade'
 import { ImCancelCircle } from "react-icons/im";
 import { clone } from 'ramda'
 import React, { useState, useRef } from 'react'
-import { IconType } from 'react-icons/lib'
 import { setGraphDataLocal } from '../../../../helpers/local-storage'
 import IconFabrica from '../../../shared/actions/actionIcon.fabrica'
-import { IconBaseProps } from 'react-icons'
 
 type Props = {
     label: string,
@@ -18,22 +16,10 @@ type Props = {
     style?: React.CSSProperties
 }
 
-interface IIconObject {
-    [key: string]: React.FC<IconBaseProps & {
-        onClick: React.MouseEventHandler
-        label: string
-    }>; // This is the string index signature
-  }
-
-// const actionIcons: IIconObject = {
-//     addGraphEdge: AddEdgeIcon,
-//     removeGraphEdge: RemoveEdgeIcon,
-//     deleteGraphNode: DeleteNodeIcon
-// }
-
 const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) => {
     const dispatch = useDispatch()
     const data = useSelector((store: Store) => store.graphData)
+    const linkType = useSelector((store: Store) => store.linkType.type)
     const inputRef = useRef(null)
 
     const [inputValue, setInputValue] = useState('')
@@ -43,7 +29,16 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
         const getActionFunction = actionFunctionObj[actionFunction].value
         if(getActionFunction) {
             const mutableData = clone(data)
-            const updatedGraphData = getActionFunction.call(strValue, mutableData)
+            let updatedGraphData
+            if(actionFunction === 'addGraphEdge') {
+                updatedGraphData = 
+                    getActionFunction
+                    .call(strValue, mutableData, linkType)
+            }
+            else {
+                updatedGraphData = 
+                    getActionFunction.call(strValue, mutableData)
+            }
             setGraphDataLocal(updatedGraphData)
             dispatch(setGraphData(updatedGraphData))
         }

@@ -38,4 +38,7 @@ interface IGraphListState {
 type Store = {
   graphData: IGraphData,
   graphList: IGraphListState
+  linkType: {
+    type: 'from' | 'chain' | 'bijection' | 'into'
+  }
 }
