@@ -8,18 +8,18 @@ export function addEdge(this: string, graphData :IGraphData): IGraphData {
     let nodeNames: string[] = []
 
     trimmedNodes
-            .reduce((nodeNames, item) => {
+            .reduce((nodeDiff, item) => {
                 const existingNodeIndex = graphData.nodes.findIndex(
                     node => item.toLowerCase() === node.id.toLowerCase())
                 if(existingNodeIndex > -1) {
                     nodeNames.push(graphData.nodes[existingNodeIndex].id)
                 }
                 else {
-                    nodeDiff.push({id: item})
                     nodeNames.push(item)
+                    nodeDiff.push({id: item})
                 }
-                return nodeNames
-            }, nodeNames)
+                return nodeDiff
+            }, nodeDiff)
 
     linkDiff = nodeNames
         .reduce((acc, node, index, arr) => {
@@ -38,12 +38,12 @@ export function addEdge(this: string, graphData :IGraphData): IGraphData {
       ...linkDiff
     ]
 
-    const gNodes = [
+    const updatedNodes = [
       ...graphData.nodes,
       ...nodeDiff
     ]
     return  {
-        nodes: gNodes,
+        nodes: updatedNodes,
         links: updatedLinks
       }
   }
