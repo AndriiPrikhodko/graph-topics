@@ -7,7 +7,7 @@ import { ImCancelCircle } from "react-icons/im";
 import { clone } from 'ramda'
 import React, { useState, useRef } from 'react'
 import { setGraphDataLocal } from '../../../../helpers/local-storage'
-import IconFabrica from '../../../shared/actions/actionIcon.fabrica'
+import IconFactory from '../../../shared/actions/actionIcon.factory'
 
 type Props = {
     label: string,
@@ -90,7 +90,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
 
     return <div className="data-input menu-item" data-testid={actionFunction}>
             <label className="unselectable">
-                <IconFabrica 
+                <IconFactory 
                 iconName={actionFunction === "addGraphEdge" ? 
                 linkType: actionFunction} 
                 onClick={actionIconClick} label={label} />

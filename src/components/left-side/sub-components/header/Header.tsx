@@ -1,6 +1,6 @@
 import './Header.css'
 import logo from '../../../../assets/graph.svg'
-import IconFabrica from '../../../shared/actions/actionIcon.fabrica'
+import IconFactory from '../../../shared/actions/actionIcon.factory'
 import Button from '../../../shared/button'
 import useLogout from '../../../../helpers/hooks/logout'
 
@@ -11,7 +11,7 @@ const Header = () => {
         <div className="header">
             <div className='logout-button'>
             <Button label='Logout' onClick={logoutHandler} testid='logout'/>
-                <IconFabrica iconName='logout' label='logout' onClick={logoutHandler}/>
+                <IconFactory iconName='logout' label='logout' onClick={logoutHandler}/>
             </div>
             <div className="logo-title">
                 <h3 className="title unselectable">

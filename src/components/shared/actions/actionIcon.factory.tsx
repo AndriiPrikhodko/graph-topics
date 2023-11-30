@@ -3,7 +3,6 @@ import React from 'react'
 import { FaLink } from "react-icons/fa"
 import { AiTwotoneStop } from "react-icons/ai"
 import { FaMinusCircle } from "react-icons/fa"
-import { FaUnlink } from "react-icons/fa"
 import { IconBaseProps } from 'react-icons'
 import { IoArrowRedoSharp } from "react-icons/io5";
 import { IoArrowUndoSharp } from "react-icons/io5";
@@ -12,6 +11,7 @@ import { PiGraphBold } from "react-icons/pi";
 import { SlGraph } from "react-icons/sl";
 import { RiEqualizerFill } from "react-icons/ri";
 import { TbTournament } from "react-icons/tb";
+import { TbLinkOff } from "react-icons/tb";
 
 interface IIconObject {
   [key: string]: React.FC<IconBaseProps & {
@@ -22,7 +22,7 @@ interface IIconObject {
 
 const iconFacade: IIconObject= {
     "addGraphEdge": FaLink,
-    "removeGraphEdge": FaUnlink,
+    "removeGraphEdge": TbLinkOff,
     "cancelIcon": AiTwotoneStop,
     "deleteGraphNode": FaMinusCircle,
     "undo": IoArrowUndoSharp,
@@ -45,7 +45,7 @@ type Props = {
     selected? : boolean
 }
 
-const IconFabrica: React.FC<Props> = ({
+const IconFactory: React.FC<Props> = ({
   iconName,
   label,
   onClick: onClickHandler,
@@ -59,4 +59,4 @@ const IconFabrica: React.FC<Props> = ({
   );
 };
 
-export default IconFabrica
+export default IconFactory

@@ -1,10 +1,10 @@
-import IconFabrica from '../shared/actions/actionIcon.fabrica'
+import IconFactory from '../shared/actions/actionIcon.factory'
 
 const HistoryControls: React.FC = () => {
     return (
       <div className='history-wrapper header-item'>
-        <IconFabrica iconName='undo' label="undo action" onClick={() => {}}/>
-        <IconFabrica iconName='redo' label="redo action" onClick={() => {}}/>
+        <IconFactory iconName='undo' label="undo action" onClick={() => {}}/>
+        <IconFactory iconName='redo' label="redo action" onClick={() => {}}/>
       </div>
     );
   };

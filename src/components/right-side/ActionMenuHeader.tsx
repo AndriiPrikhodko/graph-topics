@@ -1,13 +1,13 @@
-import IconFabrica from '../shared/actions/actionIcon.fabrica'
+import IconFactory from '../shared/actions/actionIcon.factory'
 import './ActionMenu.css'
 
 const ActionMenu: React.FC = () => {
   return (
     <div className='action-wrapper-header'>
-      <IconFabrica iconName='addGraphEdge' label="link nodes" onClick={() => {}}/>
-      <IconFabrica iconName='removeGraphEdge' label="unlink nodes" onClick={() => {}}/>
-      <IconFabrica iconName='deleteGraphNode' label="delete node" onClick={() => {}}/>
-      <IconFabrica iconName='cancelIcon' label="cancel action" onClick={() => {}}/>
+      <IconFactory iconName='addGraphEdge' label="link nodes" onClick={() => {}}/>
+      <IconFactory iconName='removeGraphEdge' label="unlink nodes" onClick={() => {}}/>
+      <IconFactory iconName='deleteGraphNode' label="delete node" onClick={() => {}}/>
+      <IconFactory iconName='cancelIcon' label="cancel action" onClick={() => {}}/>
     </div>
   );
 };
