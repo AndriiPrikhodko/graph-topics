@@ -1,4 +1,5 @@
 import { ForceGraph2D } from 'react-force-graph'
+import { NodeObject } from 'force-graph'
 import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import graphFn from '../../../actions/graph-fn.facade'
@@ -6,19 +7,10 @@ import { setGraphData } from '../../../reducers/graph.reducer'
 import {default as graphConfig} from './graph.config.json'
 import { clone } from 'ramda'
 import { setGraphDataLocal } from '../../../helpers/local-storage'
+import { render } from '@testing-library/react'
+import Popup from '../../shared/pop-up'
 
 const { useRef } = React
-
-type NodeObject = object & {
-    id?: string | number;
-    x?: number;
-    y?: number;
-    vx?: number;
-    vy?: number;
-    fx?: number;
-    fy?: number;
-    color?: string
-  }
 
 interface INodeObjExt {
     neighbors?: string[]
@@ -26,6 +18,7 @@ interface INodeObjExt {
     color?: string
     __bckgDimensions?: number[]
 }
+
 const Graph = () => {
     const fgRef = useRef()
     const gData = useSelector((store: Store) => store.graphData)
@@ -33,14 +26,13 @@ const Graph = () => {
     const graphFunction = useSelector((store: Store) => 
         store.common.graphFunction)
 
-    // needed because of Immer (redux Toolkit)
-    // data returned is immutable however it should be mutable
-    // by design of force graph therefore creation copy is required
-
     const dispatch = useDispatch();
     const [edge, setEdge] = useState<string[]>([])
 
     const mutableGData = useMemo(() => {
+    // needed because of Immer (redux Toolkit)
+    // data returned is immutable however it should be mutable
+    // by design of force graph therefore creation copy is required
         return clone(gData)
       }, [gData]);
 
@@ -58,6 +50,9 @@ const Graph = () => {
             else if (edge.length === 0) {
                 setEdge([node.id])
             }
+            else if (graphFunction === 'editNode'){
+                render(<p>hey</p>)
+            }
             else {
                 const updatedData = graphFn[graphFunction]
                     .call([...edge, node.id].join(','), mutableGData)
@@ -67,8 +62,7 @@ const Graph = () => {
                 setGraphDataLocal(cloneData)
             }
         }
-      }, [edge, setEdge, dispatch, mutableGData, graphFunction])
-
+      }, [edge, setEdge, dispatch, mutableGData, graphFunction, Popup])
     return (
         <ForceGraph2D
             ref={fgRef}
