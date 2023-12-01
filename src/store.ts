@@ -6,7 +6,7 @@ const store = configureStore({
   reducer: {
     graphData: rootReducer.graphSlice,
     graphList: rootReducer.graphListSlice,
-    linkType: rootReducer.linkSlice
+    common: rootReducer.commonSlice
   },
   middleware: [thunk],
   devTools: true

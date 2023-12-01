@@ -1,5 +1,5 @@
 import { ForceGraph2D } from 'react-force-graph'
-import React, { useState, useCallback, useMemo } from 'react'
+import React, { useState, useCallback, useMemo, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import graphFn from '../../../actions/graph-fn.facade'
 import { setGraphData } from '../../../reducers/graph.reducer'
@@ -29,28 +29,41 @@ interface INodeObjExt {
 const Graph = () => {
     const fgRef = useRef()
     const gData = useSelector((store: Store) => store.graphData)
+    const graphFunction = useSelector((store: Store) => 
+        store.common.graphFunction)
 
     // needed because of Immer (redux Toolkit)
     // data returned is immutable however it should be mutable
     // by design of force graph therefore creation copy is required
-    const mutableGData = clone(gData)
+    let mutableGData = clone(gData)
 
     const dispatch = useDispatch();
-
     const [edge, setEdge] = useState<string[]>([])
 
-    const handleNodeClick = React.useCallback((node: NodeObject, event: MouseEvent) => {
-        // aim at node from outside it
-        if (edge.length === 0 && typeof node.id === 'string') {
-            setEdge([node.id])
+    const handleNodeClick = React.useCallback(
+        (node: NodeObject, event: MouseEvent) => {
+        if (graphFunction !== null && typeof node.id === 'string') {
+            let nodeId = clone(node.id)
+            if (graphFunction === 'deleteGraphNode') {
+                let updatedData = graphFn.deleteGraphNode
+                    .call(nodeId, mutableGData)
+                let cloneData = clone(updatedData)
+                dispatch(setGraphData(cloneData))
+                setGraphDataLocal(cloneData)
+            }
+            else if (edge.length === 0) {
+                setEdge([node.id])
+            }
+            else {
+                const updatedData = graphFn[graphFunction]
+                    .call([...edge, node.id].join(','), mutableGData)
+                setEdge([])
+                let cloneData = clone(updatedData)
+                dispatch(setGraphData(cloneData))
+                setGraphDataLocal(cloneData)
+            }
         }
-        else {
-            const updatedData = graphFn.addGraphEdge.call([...edge, node.id].join(','), mutableGData)
-            dispatch(setGraphData(updatedData))
-            setGraphDataLocal(updatedData)
-            setEdge([])
-        }
-      }, [edge, setEdge, dispatch])
+      }, [edge, setEdge, dispatch, mutableGData, graphFunction])
 
     return (
         <ForceGraph2D
@@ -94,7 +107,7 @@ const Graph = () => {
             //         (node.y as number) - bckgDimensions[1] / 2, ...bckgDimensions);
             // }}
 
-            // onNodeClick={handleNodeClick}
+            onNodeClick={handleNodeClick}
         />
     )
 }

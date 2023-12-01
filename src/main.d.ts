@@ -38,7 +38,8 @@ interface IGraphListState {
 type Store = {
   graphData: IGraphData,
   graphList: IGraphListState
-  linkType: {
+  common: {
     type: 'from' | 'chain' | 'bijection' | 'into'
+    graphFunction: null | 'addGraphEdge' | 'removeGraphEdge' | 'deleteGraphNode'
   }
 }

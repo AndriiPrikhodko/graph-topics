@@ -19,7 +19,7 @@ type Props = {
 const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) => {
     const dispatch = useDispatch()
     const data = useSelector((store: Store) => store.graphData)
-    const linkType = useSelector((store: Store) => store.linkType.type)
+    const linkType = useSelector((store: Store) => store.common.type)
     const inputRef = useRef(null)
 
     const [inputValue, setInputValue] = useState('')
@@ -39,7 +39,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                 updatedGraphData = 
                     getActionFunction.call(strValue, mutableData)
             }
-            setGraphDataLocal(updatedGraphData)
+            // setGraphDataLocal(updatedGraphData)
             dispatch(setGraphData(updatedGraphData))
         }
         else console.log('action is not in the list')

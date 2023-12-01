@@ -1,7 +1,7 @@
 import ActionOption from './ActionOption'
 import { actionList } from './ActionList'
 import { useDispatch } from 'react-redux'
-import { setLinkType } from '../../../../reducers/link.reducer'
+import { setLinkType } from '../../../../reducers/common.reducer'
 import './Menu.css'
 
 const ActionMenu: React.FC = () => {

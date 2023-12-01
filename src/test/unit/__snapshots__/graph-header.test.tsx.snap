@@ -13,16 +13,18 @@ exports[`header 1`] = `
     >
       <svg
         class="action-icon"
+        color="black"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
         stroke-width="0"
+        style="color: black;"
         viewBox="0 0 512 512"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <title>
-          cancel action
+          undo action
         </title>
         <path
           d="M464 440l-28.12-32.11c-22.48-25.65-43.33-45.45-72.08-58.7-26.61-12.26-60-18.65-104.27-19.84V432L48 252 259.53 72v103.21c72.88 3 127.18 27.08 161.56 71.75C449.56 284 464 335.19 464 399.26z"
@@ -34,16 +36,18 @@ exports[`header 1`] = `
     >
       <svg
         class="action-icon"
+        color="black"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
         stroke-width="0"
+        style="color: black;"
         viewBox="0 0 512 512"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <title>
-          cancel action
+          redo action
         </title>
         <path
           d="M48 399.26C48 335.19 62.44 284 90.91 247c34.38-44.67 88.68-68.77 161.56-71.75V72L464 252 252.47 432V329.35c-44.25 1.19-77.66 7.58-104.27 19.84-28.75 13.25-49.6 33.05-72.08 58.7L48 440z"
@@ -72,10 +76,12 @@ exports[`header 1`] = `
     >
       <svg
         class="action-icon"
+        color="black"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
         stroke-width="0"
+        style="color: black;"
         viewBox="0 0 512 512"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -93,11 +99,15 @@ exports[`header 1`] = `
     >
       <svg
         class="action-icon"
-        fill="currentColor"
+        color="black"
+        fill="none"
         height="1em"
         stroke="currentColor"
-        stroke-width="0"
-        viewBox="0 0 512 512"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color: black;"
+        viewBox="0 0 24 24"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
       >
@@ -105,7 +115,21 @@ exports[`header 1`] = `
           unlink nodes
         </title>
         <path
-          d="M304.083 405.907c4.686 4.686 4.686 12.284 0 16.971l-44.674 44.674c-59.263 59.262-155.693 59.266-214.961 0-59.264-59.265-59.264-155.696 0-214.96l44.675-44.675c4.686-4.686 12.284-4.686 16.971 0l39.598 39.598c4.686 4.686 4.686 12.284 0 16.971l-44.675 44.674c-28.072 28.073-28.072 73.75 0 101.823 28.072 28.072 73.75 28.073 101.824 0l44.674-44.674c4.686-4.686 12.284-4.686 16.971 0l39.597 39.598zm-56.568-260.216c4.686 4.686 12.284 4.686 16.971 0l44.674-44.674c28.072-28.075 73.75-28.073 101.824 0 28.072 28.073 28.072 73.75 0 101.823l-44.675 44.674c-4.686 4.686-4.686 12.284 0 16.971l39.598 39.598c4.686 4.686 12.284 4.686 16.971 0l44.675-44.675c59.265-59.265 59.265-155.695 0-214.96-59.266-59.264-155.695-59.264-214.961 0l-44.674 44.674c-4.686 4.686-4.686 12.284 0 16.971l39.597 39.598zm234.828 359.28l22.627-22.627c9.373-9.373 9.373-24.569 0-33.941L63.598 7.029c-9.373-9.373-24.569-9.373-33.941 0L7.029 29.657c-9.373 9.373-9.373 24.569 0 33.941l441.373 441.373c9.373 9.372 24.569 9.372 33.941 0z"
+          d="M0 0h24v24H0z"
+          fill="none"
+          stroke="none"
+        />
+        <path
+          d="M9 15l3 -3m2 -2l1 -1"
+        />
+        <path
+          d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464"
+        />
+        <path
+          d="M3 3l18 18"
+        />
+        <path
+          d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463"
         />
       </svg>
     </div>
@@ -114,10 +138,12 @@ exports[`header 1`] = `
     >
       <svg
         class="action-icon"
+        color="black"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
         stroke-width="0"
+        style="color: black;"
         viewBox="0 0 512 512"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
@@ -135,10 +161,12 @@ exports[`header 1`] = `
     >
       <svg
         class="action-icon"
+        color="darkorange"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
         stroke-width="0"
+        style="color: darkorange;"
         viewBox="0 0 1024 1024"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"

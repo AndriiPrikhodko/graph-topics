@@ -1,5 +1,5 @@
 {
-    "d3VelocityDecay": 0.2,
+    "d3VelocityDecay": 0.3,
     "fontSize": 14,
     "font": "Sans-Serif",
     "textAlign": "center",
