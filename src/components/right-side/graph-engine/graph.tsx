@@ -29,16 +29,20 @@ interface INodeObjExt {
 const Graph = () => {
     const fgRef = useRef()
     const gData = useSelector((store: Store) => store.graphData)
+    const editMode = useSelector((store: Store) => store.common.editMode)
     const graphFunction = useSelector((store: Store) => 
         store.common.graphFunction)
 
     // needed because of Immer (redux Toolkit)
     // data returned is immutable however it should be mutable
     // by design of force graph therefore creation copy is required
-    let mutableGData = clone(gData)
 
     const dispatch = useDispatch();
     const [edge, setEdge] = useState<string[]>([])
+
+    const mutableGData = useMemo(() => {
+        return clone(gData)
+      }, [gData]);
 
     const handleNodeClick = React.useCallback(
         (node: NodeObject, event: MouseEvent) => {
@@ -69,7 +73,7 @@ const Graph = () => {
         <ForceGraph2D
             ref={fgRef}
             graphData={mutableGData}
-            d3VelocityDecay={graphConfig.d3VelocityDecay}
+            d3VelocityDecay={ editMode ? 1 : graphConfig.d3VelocityDecay}
             nodeAutoColorBy="group"
             linkWidth={2}
             linkColor={() => graphConfig.linkColor}

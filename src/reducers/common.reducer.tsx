@@ -4,7 +4,8 @@ const selectSlice = createSlice({
   name: 'select',
   initialState: { 
     type: 'from',
-    graphFunction: null
+    graphFunction: null,
+    editMode: false
     },
   reducers: {
     setLinkType: (state, action) => {
@@ -13,9 +14,12 @@ const selectSlice = createSlice({
     setGraphFunction: (state, action) => {
         state.graphFunction = action.payload;
       },
+    setEditMode: (state, action) => {
+      state.editMode = action.payload;
+    }
   },
 });
 
-export const { setLinkType, setGraphFunction } = selectSlice.actions;
+export const { setLinkType, setGraphFunction, setEditMode } = selectSlice.actions;
 
 export default selectSlice.reducer;

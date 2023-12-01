@@ -39,6 +39,7 @@ type Store = {
   graphData: IGraphData,
   graphList: IGraphListState
   common: {
+    editMode: boolean
     type: 'from' | 'chain' | 'bijection' | 'into'
     graphFunction: null | 'addGraphEdge' | 'removeGraphEdge' | 'deleteGraphNode'
   }
