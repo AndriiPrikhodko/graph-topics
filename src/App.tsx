@@ -4,6 +4,7 @@ import { setGraphData } from "./reducers/graph.reducer"
 import { setGraphDataLocal } from './helpers/local-storage'
 import RouteComponents from './pages/Router'
 import { Routes } from "react-router-dom"
+import { selfDataAdapter } from './helpers/data-adapter/self-data-adapter'
 
 const App = () => {
   const graphData = useSelector((store: Store) => store.graphData)
@@ -16,8 +17,9 @@ const App = () => {
       {
         const savedGraph = JSON.parse(localStoreGraphStr)
         if (savedGraph) {
-          setGraphDataLocal(savedGraph)
-          dispatch(setGraphData(savedGraph))
+          const gData = selfDataAdapter(savedGraph)
+          setGraphDataLocal(gData)
+          dispatch(setGraphData(gData))
         }
     }
     
