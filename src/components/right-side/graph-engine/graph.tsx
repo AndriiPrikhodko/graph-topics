@@ -31,7 +31,7 @@ const Graph = () => {
 
     const handleNodeClick = React.useCallback(
         (node: NodeObject, event: MouseEvent) => {
-        if (graphFunction !== null && typeof node.id === 'string') {
+        if (graphFunction !== null) {
             let nodeId = clone(node.id)
             if (graphFunction === 'deleteGraphNode') {
                 let updatedData = graphFn.deleteGraphNode
@@ -69,11 +69,12 @@ const Graph = () => {
             
             
             nodeCanvasObject={(node: NodeObject, ctx, globalScale = 4) => {
-                const label = typeof node.id === 'string' ? node.id : '';
+                const label = node.id;
                 const fontSize = graphConfig.fontSize/globalScale;
                 ctx.font = `bold ${fontSize}px ${graphConfig.font}`;
-                const textWidth = label ? ctx.measureText(label).width : 1;
-                const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
+                const textWidth = ctx.measureText(label).width;
+                const bckgDimensions = [textWidth, fontSize]
+                    .map(n => n + fontSize * graphConfig.backGroundDimensions); // some padding
                 const [w, h] = bckgDimensions
                 ctx.fillStyle = graphConfig.labelBackgroundColor
                 ctx.fillRect(
@@ -87,7 +88,7 @@ const Graph = () => {
                 ctx.fillStyle = node.color && node.color !== '#a6cee3' ? 
                     node.color : graphConfig.defaultNodeColor;
                 ctx.fillStyle = graphConfig.labelColor
-                ctx.fillText(label, node.x ? node.x : 0, node.y? node.y : 0);
+                ctx.fillText(label, node.x ? node.x : 0, node.y ? node.y : 0);
                 node['__bckgDimensions'] = bckgDimensions; // to re-use in nodePointerAreaPaint
             }}
             

@@ -1,7 +1,4 @@
-import { NodeObject as gNodeObject,
-   LinkObject as gLinkObject,
-    GraphData as gGraphData
-} from 'force-graph'
+import { NodeObject as gNodeObject } from 'force-graph'
 
 declare global {
 

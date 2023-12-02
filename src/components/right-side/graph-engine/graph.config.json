@@ -9,5 +9,6 @@
     "defaultNodeColor": "rgb(120, 120, 120)",
     "labelColor": "black",
     "labelBackgroundColor": "rgba(180, 180, 180, 0.5)",
-    "linkColor": "lightgrey"
+    "linkColor": "lightgrey",
+    "backGroundDimensions": 0.4
 }
