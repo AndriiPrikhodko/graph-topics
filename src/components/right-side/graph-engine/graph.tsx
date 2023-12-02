@@ -1,13 +1,12 @@
 import { ForceGraph2D } from 'react-force-graph'
 import { NodeObject } from 'force-graph'
-import React, { useState, useCallback, useMemo, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import graphFn from '../../../actions/graph-fn.facade'
 import { setGraphData } from '../../../reducers/graph.reducer'
 import {default as graphConfig} from './graph.config.json'
 import { clone } from 'ramda'
 import { setGraphDataLocal } from '../../../helpers/local-storage'
-import { render } from '@testing-library/react'
 import Popup from '../../shared/pop-up'
 
 const { useRef } = React
@@ -30,9 +29,9 @@ const Graph = () => {
     const [edge, setEdge] = useState<string[]>([])
 
     const mutableGData = useMemo(() => {
-    // needed because of Immer (redux Toolkit)
-    // data returned is immutable however it should be mutable
-    // by design of force graph therefore creation copy is required
+        // needed because of Immer (redux Toolkit)
+        // data returned is immutable however it should be mutable
+        // by design of force graph therefore creation copy is required
         return clone(gData)
       }, [gData]);
 
@@ -50,9 +49,6 @@ const Graph = () => {
             else if (edge.length === 0) {
                 setEdge([node.id])
             }
-            else if (graphFunction === 'editNode'){
-                render(<p>hey</p>)
-            }
             else {
                 const updatedData = graphFn[graphFunction]
                     .call([...edge, node.id].join(','), mutableGData)
@@ -63,6 +59,7 @@ const Graph = () => {
             }
         }
       }, [edge, setEdge, dispatch, mutableGData, graphFunction, Popup])
+
     return (
         <ForceGraph2D
             ref={fgRef}
@@ -96,14 +93,15 @@ const Graph = () => {
                 ctx.fillText(label, node.x ? node.x : 0, node.y? node.y : 0);
                 node['__bckgDimensions'] = bckgDimensions; // to re-use in nodePointerAreaPaint
             }}
-            
+
             // nodePointerAreaPaint={(node: NodeObject & INodeObjExt, color, ctx) => {
-            //     ctx.fillStyle = color;
+            //     ctx.fillStyle = "#fff";
             //     const bckgDimensions: [number, number] = node.__bckgDimensions as [number, number];
             //     bckgDimensions && ctx.fillRect(
             //         (node.x as number) - bckgDimensions[0] / 2, 
             //         (node.y as number) - bckgDimensions[1] / 2, ...bckgDimensions);
             // }}
+            
 
             onNodeClick={handleNodeClick}
         />
