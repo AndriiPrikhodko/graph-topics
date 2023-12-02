@@ -50,7 +50,7 @@ export const graphAPI = {
         }
     },
 
-    getGraph: async function(args: object): Promise<IGraphData> {
+    getGraph: async function(args: object): Promise<GraphData> {
         const response = await api.request({
             url: `${ROUTER.graph}${constructGetArgsStr(args)}`,
             method: 'GET',

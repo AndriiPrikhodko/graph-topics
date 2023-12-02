@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export type GraphAction = {
-    [props : string]: (graphFunction: IGraphData | void) => IGraphData
+    [props : string]: (graphFunction: GraphData | void) => GraphData
 }
 
 const initGraphData = {
@@ -16,7 +16,7 @@ const emptyGraphData = {
 
 const graphSlice = createSlice({
     name: 'graph',
-    initialState: initGraphData as IGraphData,
+    initialState: initGraphData as GraphData,
     reducers: {
         setGraphData: (state, action) => {
             // possible because of immer

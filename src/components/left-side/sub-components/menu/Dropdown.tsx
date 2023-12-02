@@ -1,9 +1,6 @@
 import React, { useState } from "react"
-import { type Action } from './ActionList'
 
-
-
-const Dropdown: React.FC<{trigger: JSX.Element&IFuncProps, menu: JSX.Element[]}> = 
+const Dropdown: React.FC<{trigger: JSX.Element & IFuncProps, menu: JSX.Element[]}> = 
     ({ trigger, menu }): JSX.Element => {
     const [open, setOpen] = useState<boolean>(false)
 

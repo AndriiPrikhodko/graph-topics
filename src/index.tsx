@@ -18,9 +18,9 @@ const root = ReactDOM.createRoot(
 )
 
 root.render(
-<Provider store={store}>
-  <Router>
-    <App />
-  </Router>
-</Provider>
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
 )

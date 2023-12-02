@@ -1,5 +1,4 @@
 import { ForceGraph2D } from 'react-force-graph'
-import { NodeObject } from 'force-graph'
 import React, { useState, useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import graphFn from '../../../actions/graph-fn.facade'
@@ -7,16 +6,8 @@ import { setGraphData } from '../../../reducers/graph.reducer'
 import {default as graphConfig} from './graph.config.json'
 import { clone } from 'ramda'
 import { setGraphDataLocal } from '../../../helpers/local-storage'
-import Popup from '../../shared/pop-up'
 
 const { useRef } = React
-
-interface INodeObjExt {
-    neighbors?: string[]
-    links?: string[]
-    color?: string
-    __bckgDimensions?: number[]
-}
 
 const Graph = () => {
     const fgRef = useRef()
@@ -28,6 +19,9 @@ const Graph = () => {
     const dispatch = useDispatch();
     const [edge, setEdge] = useState<string[]>([])
 
+    // creating cached deeplinked copy of the date
+    // graph re-rendering won't occur if data has
+    // not been changed
     const mutableGData = useMemo(() => {
         // needed because of Immer (redux Toolkit)
         // data returned is immutable however it should be mutable
@@ -58,7 +52,7 @@ const Graph = () => {
                 setGraphDataLocal(cloneData)
             }
         }
-      }, [edge, setEdge, dispatch, mutableGData, graphFunction, Popup])
+      }, [edge, setEdge, dispatch, mutableGData, graphFunction])
 
     return (
         <ForceGraph2D
@@ -66,12 +60,15 @@ const Graph = () => {
             graphData={mutableGData}
             d3VelocityDecay={ editMode ? 1 : graphConfig.d3VelocityDecay}
             nodeAutoColorBy="group"
+            
             linkWidth={2}
             linkColor={() => graphConfig.linkColor}
+            enableZoomInteraction={true}
             linkDirectionalParticles={graphConfig.linkDirectionalParticles}
             linkDirectionalParticleSpeed={graphConfig.linkDirectionalParticleSpeed}
             
-            nodeCanvasObject={(node: INodeObjExt & NodeObject, ctx, globalScale = 4) => {
+            
+            nodeCanvasObject={(node: NodeObject, ctx, globalScale = 4) => {
                 const label = typeof node.id === 'string' ? node.id : '';
                 const fontSize = graphConfig.fontSize/globalScale;
                 ctx.font = `bold ${fontSize}px ${graphConfig.font}`;
@@ -93,7 +90,7 @@ const Graph = () => {
                 ctx.fillText(label, node.x ? node.x : 0, node.y? node.y : 0);
                 node['__bckgDimensions'] = bckgDimensions; // to re-use in nodePointerAreaPaint
             }}
-
+            
             // nodePointerAreaPaint={(node: NodeObject & INodeObjExt, color, ctx) => {
             //     ctx.fillStyle = "#fff";
             //     const bckgDimensions: [number, number] = node.__bckgDimensions as [number, number];

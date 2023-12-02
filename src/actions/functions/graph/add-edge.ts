@@ -1,5 +1,5 @@
 const linkFrom = (nodeNames: string []) => {
-  let linkDiff: IGraphData["links"] = []
+  let linkDiff: GraphData["links"] = []
   const firstNode = nodeNames[0]
   linkDiff = nodeNames
         .reduce((acc, node, index, arr) => {
@@ -16,7 +16,7 @@ const linkFrom = (nodeNames: string []) => {
 }
 
 const linkInto = (nodeNames: string []) => {
-  let linkDiff: IGraphData["links"] = []
+  let linkDiff: GraphData["links"] = []
   const lastNode = nodeNames[nodeNames.length - 1]
   linkDiff = nodeNames
         .reduce((acc, node, index, arr) => {
@@ -33,7 +33,7 @@ const linkInto = (nodeNames: string []) => {
 }
 
 const linkChain = (nodeNames: string []) => {
-  let linkDiff: IGraphData["links"] = []
+  let linkDiff: GraphData["links"] = []
   linkDiff = nodeNames
         .reduce((acc, node, index, arr) => {
         if(index < arr.length - 1)
@@ -49,7 +49,7 @@ const linkChain = (nodeNames: string []) => {
 }
 
 const linkBijection = (nodeNames: string []) => {
-  let linkDiff: IGraphData["links"] = []
+  let linkDiff: GraphData["links"] = []
   if (nodeNames.length % 2 === 0) {
     const arrayMiddle = nodeNames.length / 2
     for (let i = 0; i < arrayMiddle; i ++) {
@@ -74,23 +74,21 @@ const linkFacade = {
   into: linkInto
 }
 
-type LinkType = 'from' | 'chain' | 'bijection' | 'into'
-
-export function addEdge(this: string, graphData :IGraphData, linkType: LinkType ='from'): IGraphData {
+export function addEdge(this: string, graphData :GraphData, linkType: LinkType ='from'): GraphData {
   const edgeArr = this.split(',')
   if (edgeArr.length > 1) {
     const trimmedNodes = edgeArr.map(node => node.trim())
     
-    let nodeDiff: IGraphData["nodes"] = []
-    let linkDiff: IGraphData["links"] = []
+    let nodeDiff: NodeObject[] = []
+    let linkDiff: LinkObject[] = []
     let nodeNames: string[] = []
 
     trimmedNodes
         .reduce((nodeDiff, item) => {
             const existingNodeIndex = graphData.nodes.findIndex(
-                node => item.toLowerCase() === node.id.toLowerCase())
+                node => item.toLowerCase() === node.id?.toLowerCase())
             if(existingNodeIndex > -1) {
-                nodeNames.push(graphData.nodes[existingNodeIndex].id)
+                nodeNames.push((graphData.nodes[existingNodeIndex].id))
             }
             else {
                 nodeNames.push(item)

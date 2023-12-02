@@ -1,4 +1,4 @@
-export const selfDataAdapter = (reactForceGraph2dData: IGraphData) => {
+export const selfDataAdapter = (reactForceGraph2dData: GraphData) => {
     if(reactForceGraph2dData &&
         reactForceGraph2dData.nodes !== undefined &&
         reactForceGraph2dData !== undefined) {

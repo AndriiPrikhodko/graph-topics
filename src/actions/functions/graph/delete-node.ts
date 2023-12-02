@@ -1,4 +1,4 @@
-export const deleteNode = function (this: string, graphData :IGraphData): IGraphData {
+export const deleteNode = function (this: string, graphData :GraphData): GraphData {
     let isLinked: boolean = true
 
     const nodeTrimmed = this.trim()

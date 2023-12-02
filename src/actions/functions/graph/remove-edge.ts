@@ -1,4 +1,4 @@
-export const removeEdge = function (this: string, graphData :IGraphData): IGraphData {
+export const removeEdge = function (this: string, graphData :GraphData): GraphData {
     let islinked: boolean = false
 
     const edgeArr = this.split(',')
