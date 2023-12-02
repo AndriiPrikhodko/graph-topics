@@ -8,6 +8,7 @@ declare global {
     neighbors?: string[]
     links?: string[]
     color?: string
+    index?: number
     __bckgDimensions?: number[]
   }
 

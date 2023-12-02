@@ -103,11 +103,19 @@ export function addEdge(this: string, graphData :GraphData, linkType: LinkType =
       ...graphData.links,
       ...linkDiff
     ]
+    
+    // indexing nodes
+    const length = graphData.nodes.length
+
+    const indxNodeDiff = nodeDiff.map((n, idx) => { 
+      n.index = length + idx 
+      return n})
 
     const updatedNodes = [
       ...graphData.nodes,
-      ...nodeDiff
+      ...indxNodeDiff
     ]
+
     return  {
         nodes: updatedNodes,
         links: updatedLinks
