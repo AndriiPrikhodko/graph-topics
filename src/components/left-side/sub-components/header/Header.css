@@ -7,10 +7,10 @@
 
 .title {
     text-align: center;
-    color: darkorange;
+    color: coral;
     margin-left: 28%;
     /* font-family: Arial, Helvetica, sans-serif; */
-    text-decoration: underline steelblue;
+    text-decoration: underline rgb(36, 93, 151);
     font-family: math;
     text-decoration-thickness: 3px;
     font-size: larger;
@@ -44,7 +44,7 @@
 }
 
 .header p span {
-    color: darkorange;
+    color: coral;
     font-family: fantasy;
     font-size:  14pt;
 }
