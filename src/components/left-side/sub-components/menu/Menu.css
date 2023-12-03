@@ -64,11 +64,10 @@
   caret-color: transparent;
 }
 .dropdown-trigger {
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   width: 178px;
   background-color: #666;
-  margin-top: 2px;
   color: ghostwhite;
   border-radius: 4px;
   flex-grow: 1 ;
@@ -152,6 +151,10 @@
   flex-shrink: 0;
   margin-right: 5px;
   max-width: 150px;
+}
+
+.right-input {
+  padding: 6px 4px;
 }
 
 .menu-button-left {

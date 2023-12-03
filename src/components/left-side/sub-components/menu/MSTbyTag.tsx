@@ -15,7 +15,7 @@ const MST: React.FC = () => {
         onClick={onClickHandler}
         className='menu-button-right'
         />
-      <input className='data-input' placeholder='tag'></input>
+      <input className='data-input right-input' placeholder='tag'></input>
     </div>
   );
 };
