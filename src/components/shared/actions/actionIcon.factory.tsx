@@ -12,10 +12,10 @@ import { SlGraph } from "react-icons/sl";
 import { RiEqualizerFill } from "react-icons/ri";
 import { TbTournament } from "react-icons/tb";
 import { TbLinkOff } from "react-icons/tb";
+import { BsVectorPen } from "react-icons/bs";
 
 interface IIconObject {
   [key: string]: React.FC<IconBaseProps & {
-      onClick: React.MouseEventHandler
       selected? : boolean
   }>
 }
@@ -31,14 +31,15 @@ const iconFacade: IIconObject= {
     "from": PiGraphBold,
     "chain": SlGraph,
     "bijection": RiEqualizerFill,
-    "into": TbTournament
+    "into": TbTournament,
+    "editNode": BsVectorPen
 }
 
 type Props = {
     iconName: "addGraphEdge" | "removeGraphEdge" 
     | "deleteGraphNode" | "cancelIcon"
     | "undo" | "redo" | "logout" | "from" 
-    | "chain" | "bijection" | "into"
+    | "chain" | "bijection" | "into" | "editNode"
     label: string
     onClick: React.MouseEventHandler
     className?: string
@@ -53,8 +54,8 @@ const IconFactory: React.FC<Props> = ({
 }) => {
   const IconFC = iconFacade[iconName]
   return (
-    <div className='icon-encircle' >
-        <IconFC onClick={onClickHandler} title={label} 
+    <div className='icon-encircle' onClick={onClickHandler}>
+        <IconFC title={label} 
         color={selected? 'darkorange' : 'black'} 
         className='action-icon'/>
     </div>

@@ -163,3 +163,7 @@
   margin-left: 5px;
   max-width: 150px;
 }
+
+.menu-select {
+  border: none;
+}

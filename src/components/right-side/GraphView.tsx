@@ -8,7 +8,6 @@ const GraphView: React.FC = () => {
     const dispatch = useDispatch()
 
     const handleOnBlur:React.FocusEventHandler<HTMLDivElement> = (event) => {
-        console.log('focus')
         dispatch(setEditMode(false))
         dispatch(setGraphFunction(null))
     }

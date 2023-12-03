@@ -36,7 +36,7 @@
   }
   
   input:checked + .slider {
-    background-color: steelblue;
+    background-color: rgb(36, 93, 151);
   }
   
   input:checked + .slider:before {

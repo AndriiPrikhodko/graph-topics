@@ -26,6 +26,7 @@ const ActionMenu: React.FC = () => {
         onChange={handleChange} 
         testid={'link-strategy'} 
         label='pick the link strategy'
+        className='menu-select'
         />
         {actionList.map(action => {
             return <ActionOption 
