@@ -1,3 +1,9 @@
+/**
+ * 
+ * @param this 
+ * @param graphData 
+ * @returns updatedGraphData where links from the input list are removed
+ */
 export const removeEdge = function (this: string, graphData :GraphData): GraphData {
     let islinked: boolean = false
 

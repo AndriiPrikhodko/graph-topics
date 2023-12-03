@@ -7,7 +7,7 @@
  */
 export const deleteNode = function (this: string, graphData :GraphData): GraphData {
   const nodeArr = this.split(',')
-  if (nodeArr.length > 1) {
+  if (nodeArr.length >= 1) {
     let isLinked: boolean = true
     const { nodes, links } = graphData
     const nodeArrTrimmedLC = nodeArr.map(nodeName => nodeName.trim().toLowerCase())

@@ -8,16 +8,16 @@ export const actionList: Action[] = [
     {
         handleName: 'addGraphEdge',
         label: 'link nodes',
-        placeholder: 'comma separated strings'
+        placeholder: 'comma separated node names'
     },
     {
         handleName: 'removeGraphEdge',
         label: 'remove edge',
-        placeholder: 'comma separated strings'
+        placeholder: 'two comma separated node names'
     },
     {
         handleName: 'deleteGraphNode',
         label: 'delete node',
-        placeholder: 'node name'
+        placeholder: 'comma separated node names'
     }
 ]
