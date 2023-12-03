@@ -11,7 +11,6 @@ const Header = () => {
         <div className="header">
             <div className='logout-button'>
             <Button label='Logout' onClick={logoutHandler} testid='logout'/>
-                <IconFactory iconName='logout' label='logout' onClick={logoutHandler}/>
             </div>
             <div className="logo-title">
                 <h3 className="title unselectable">

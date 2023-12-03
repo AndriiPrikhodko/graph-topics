@@ -50,11 +50,10 @@
 }
 
 .logout-button {
-    margin-left: -200px;
+    margin-left: -240px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    background-color: silver;
     padding: 3px;
     border-radius: 4px;
 }
