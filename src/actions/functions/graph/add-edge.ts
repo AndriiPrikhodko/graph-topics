@@ -48,6 +48,23 @@ const linkChain = (nodeNames: string []) => {
   return linkDiff
 }
 
+const indexNode
+:(length: number, nodeDiff: NodeObject[]) => NodeObject[]
+ = (length, nodeDiff) => {
+
+    const nodeDiffNames = nodeDiff.map(n => n.id)
+    const indexedNodeDiff = nodeDiff
+    .filter((node, idx) => 
+      nodeDiffNames.lastIndexOf(node.id) === idx)
+    .map((n, idx) => { 
+      n.index = length + idx
+      n.vx = 0
+      n.vy = 0
+      return n})
+      
+    return indexedNodeDiff
+}
+
 const linkBijection = (nodeNames: string []) => {
   let linkDiff: GraphData["links"] = []
   if (nodeNames.length % 2 === 0) {
@@ -77,6 +94,7 @@ const linkFacade = {
 export function addEdge(this: string, graphData :GraphData, linkType: LinkType ='from'): GraphData {
   const edgeArr = this.split(',')
   if (edgeArr.length > 1) {
+    const length = graphData.nodes.length
     const trimmedNodes = edgeArr.map(node => node.trim())
     
     let nodeDiff: NodeObject[] = []
@@ -105,11 +123,7 @@ export function addEdge(this: string, graphData :GraphData, linkType: LinkType =
     ]
     
     // indexing nodes
-    const length = graphData.nodes.length
-
-    const indxNodeDiff = nodeDiff.map((n, idx) => { 
-      n.index = length + idx 
-      return n})
+    const indxNodeDiff = indexNode(length, nodeDiff)
 
     const updatedNodes = [
       ...graphData.nodes,
