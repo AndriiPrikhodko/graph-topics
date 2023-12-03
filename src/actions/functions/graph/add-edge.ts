@@ -1,129 +1,35 @@
-const linkFrom = (nodeNames: string []) => {
-  let linkDiff: GraphData["links"] = []
-  const firstNode = nodeNames[0]
-  linkDiff = nodeNames
-        .reduce((acc, node, index, arr) => {
-        if(node.toLowerCase() !== firstNode.toLowerCase())
-        {
-          acc.push({
-            source: firstNode,
-            target: node
-          })
-        }
-        return acc
-      }, linkDiff)
-  return linkDiff
-}
+import { nodeDiffReducer } from './reducers/nodes'
+import linkFacade from './reducers/links'
+import { nodeIndex } from '../../../helpers/data-adapter/node-indexer'
 
-const linkInto = (nodeNames: string []) => {
-  let linkDiff: GraphData["links"] = []
-  const lastNode = nodeNames[nodeNames.length - 1]
-  linkDiff = nodeNames
-        .reduce((acc, node, index, arr) => {
-        if(node.toLowerCase() !== lastNode.toLowerCase())
-        {
-          acc.push({
-            source: node,
-            target: lastNode
-          })
-        }
-        return acc
-      }, linkDiff)
-  return linkDiff
-}
-
-const linkChain = (nodeNames: string []) => {
-  let linkDiff: GraphData["links"] = []
-  linkDiff = nodeNames
-        .reduce((acc, node, index, arr) => {
-        if(index < arr.length - 1)
-        {
-          acc.push({
-            source: node,
-            target: arr[index+1]
-          })
-        }
-        return acc
-      }, linkDiff)
-  return linkDiff
-}
-
-const indexNode
-:(length: number, nodeDiff: NodeObject[]) => NodeObject[]
- = (length, nodeDiff) => {
-
-    const nodeDiffNames = nodeDiff.map(n => n.id)
-    const indexedNodeDiff = nodeDiff
-    .filter((node, idx) => 
-      nodeDiffNames.lastIndexOf(node.id) === idx)
-    .map((n, idx) => { 
-      n.index = length + idx
-      n.vx = 0
-      n.vy = 0
-      return n})
-      
-    return indexedNodeDiff
-}
-
-const linkBijection = (nodeNames: string []) => {
-  let linkDiff: GraphData["links"] = []
-  if (nodeNames.length % 2 === 0) {
-    const arrayMiddle = nodeNames.length / 2
-    for (let i = 0; i < arrayMiddle; i ++) {
-      linkDiff.push({
-          source: nodeNames[i],
-          target: nodeNames[arrayMiddle + i]
-      })
-    }
-  }
-
-  else {
-    console.warn('bijection link require even number of nodes')
-  }
-
-  return linkDiff
-}
-
-const linkFacade = {
-  from: linkFrom,
-  chain: linkChain,
-  bijection: linkBijection,
-  into: linkInto
-}
-
-export function addEdge(this: string, graphData :GraphData, linkType: LinkType ='from'): GraphData {
+/**
+ * 
+ * @param this is a string representing nodes separated with comma
+ * @param graphData 
+ * @param linkType is responsible to linking strategy
+ * @returns updatedGraphData is updated data including new nodes and links
+ */
+export function addEdge(this: string, graphData: GraphData, linkType: LinkType ='from'): GraphData{
   const edgeArr = this.split(',')
   if (edgeArr.length > 1) {
     const length = graphData.nodes.length
-    const trimmedNodes = edgeArr.map(node => node.trim())
-    
-    let nodeDiff: NodeObject[] = []
-    let linkDiff: LinkObject[] = []
-    let nodeNames: string[] = []
+    const trimmedNodes = edgeArr.map(nodeName => nodeName.trim())
 
-    trimmedNodes
-        .reduce((nodeDiff, item) => {
-            const existingNodeIndex = graphData.nodes.findIndex(
-                node => item.toLowerCase() === node.id?.toLowerCase())
-            if(existingNodeIndex > -1) {
-                nodeNames.push((graphData.nodes[existingNodeIndex].id))
-            }
-            else {
-                nodeNames.push(item)
-                nodeDiff.push({id: item})
-            }
-            return nodeDiff
-        }, nodeDiff)
-    
-    linkDiff = linkFacade[linkType](nodeNames)
+    // gathering correct node names and calculating node diff
+    // some names already exists in the graph and should be taken from there
+    let  [nodeNames, nodeDiff] = nodeDiffReducer(trimmedNodes, graphData)
 
+    // filtering for uniqueness and indexing new nodes
+    const indxNodeDiff = nodeIndex(length, nodeDiff)
+
+    // initializing new links depending on selected type
+    let linkDiff = linkFacade[linkType](nodeNames)
+
+    // updating links and nodes with new data
     const updatedLinks = [
       ...graphData.links,
       ...linkDiff
     ]
-    
-    // indexing nodes
-    const indxNodeDiff = indexNode(length, nodeDiff)
 
     const updatedNodes = [
       ...graphData.nodes,

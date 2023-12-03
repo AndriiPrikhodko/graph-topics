@@ -1,5 +1,7 @@
 import { NodeObject as gNodeObject } from 'force-graph'
 
+declare function addEdge(this: string, graphData: GraphData, linkType: LinkType): GraphData
+
 declare global {
 
   type NodeObject = Omit<gNodeObject, 'id'> & {id: string} & INodeObjExt
