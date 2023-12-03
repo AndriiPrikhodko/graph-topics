@@ -1,0 +1,9 @@
+.select {
+    width: '100px';
+    height: '30px';
+    padding: '5px';
+    font-size: '14px';
+    background-color: lightgrey;
+    border: '1px solid #ccc';
+    border-radius: '4px';
+}

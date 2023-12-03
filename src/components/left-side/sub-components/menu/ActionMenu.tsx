@@ -2,9 +2,17 @@ import ActionOption from './ActionOption'
 import { actionList } from './ActionList'
 import { useDispatch } from 'react-redux'
 import { setLinkType } from '../../../../reducers/common.reducer'
+import Select from '../../../shared/select'
 import './Menu.css'
 
 const ActionMenu: React.FC = () => {
+    const optionList = [
+        'from',
+        'chain',
+        'bijection',
+        'into'
+    ]
+
     const dispatch = useDispatch()
     const handleChange:React.ChangeEventHandler<HTMLSelectElement> = 
     (event) => {
@@ -13,12 +21,12 @@ const ActionMenu: React.FC = () => {
 
     return (
     <div>
-        <select onChange={handleChange}>
-            <option value="from">From</option>
-            <option value="chain">Chain</option>
-            <option value="bijection">Bijection</option>
-            <option value="into">Into</option>
-        </select>
+        <Select 
+        optionList={optionList} 
+        onChange={handleChange} 
+        testid={'link-strategy'} 
+        label='pick the link strategy'
+        />
         {actionList.map(action => {
             return <ActionOption 
                 label={action.label}
