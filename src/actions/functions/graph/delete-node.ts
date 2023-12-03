@@ -29,9 +29,16 @@ export const deleteNode = function (this: string, graphData :GraphData): GraphDa
     
     const filteredNodes = nodes
         .filter(node => !nodeArrTrimmedLC.includes(node.id.toLowerCase()))
-
+    
+    const indexFilteredNodes = filteredNodes.map((node, idx) => {
+      node.index = idx
+      node.vx = 0
+      node.vy = 0
+      return node
+    })
+  
     return {
-        nodes: filteredNodes,
+        nodes: indexFilteredNodes,
         links: filteredLinks
       }
     }
