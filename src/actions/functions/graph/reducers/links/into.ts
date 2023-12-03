@@ -1,5 +1,10 @@
-export const linkInto = (nodeNames: string []) => {
-    let linkDiff: GraphData["links"] = []
+/**
+ * 
+ * @param nodeNames 
+ * @returns links array where nodes attached to the last node
+ */
+export const linkInto = (nodeNames: string []): LinkObject[] => {
+    let linkDiff: LinkObject[] = []
     const lastNode = nodeNames[nodeNames.length - 1]
     linkDiff = nodeNames
           .reduce((acc, node, index, arr) => {
