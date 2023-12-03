@@ -22,7 +22,7 @@ export function addEdge(this: string, graphData: GraphData, linkType: LinkType =
     // filtering for uniqueness and indexing new nodes
     const indxNodeDiff = nodeIndex(length, nodeDiff)
 
-    // initializing new links depending on selected type
+    // initializing new links based on selected type
     let linkDiff = linkFacade[linkType](nodeNames)
 
     // updating links and nodes with new data

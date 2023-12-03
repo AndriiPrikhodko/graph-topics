@@ -7,7 +7,7 @@ export const linkFrom = (nodeNames: string []): LinkObject[] => {
     let linkDiff: LinkObject[] = []
     const firstNode = nodeNames[0]
     linkDiff = nodeNames
-          .reduce((acc, node, index, arr) => {
+          .reduce((acc, node) => {
           if(node.toLowerCase() !== firstNode.toLowerCase())
           {
             acc.push({
