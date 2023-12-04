@@ -28,8 +28,9 @@ const ActionMenu: React.FC = () => {
         label='pick the link strategy'
         className='menu-select'
         />
-        {actionList.map(action => {
-            return <ActionOption 
+        {actionList.map((action, idx) => {
+            return <ActionOption
+                key={idx}
                 label={action.label}
                 placeholder={action.placeholder}
                 actionFunction={action.handleName}
