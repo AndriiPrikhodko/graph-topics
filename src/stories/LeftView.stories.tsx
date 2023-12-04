@@ -5,7 +5,8 @@ import store from '../store';
 import LeftView from '../components/left-side/LeftView';
 import {default as testData} from './test-data/dropdown.data.json'
 import selectors from './components/dorpdown.selectors'
-import { Routes, Route } from "react-router-dom"
+
+import { getElementCollectionById } from './utils/element-collections';
 
 const meta = {
   title: 'left view',
@@ -40,11 +41,14 @@ export const leftView: Story = {
     })
 
     step('dropdown elements should have correct graph names', async () => {
-      const firstFileItem = await
-        canvas.findByTestId(selectors.testIdDropdownItem1)
-        const secondFileInput = await
-        canvas.findByTestId(selectors.testIdDropdownItem2)
-
+      const [
+        firstFileItem,
+        secondFileInput
+      ] = await getElementCollectionById.call(canvas, [
+        selectors.testIdDropdownItem1,
+        selectors.testIdDropdownItem2
+      ])
+      
       expect(firstFileItem.innerHTML).toContain(testData.valueFirstInput)
       expect(secondFileInput.innerHTML).toContain(testData.valueSecondInput)
     })

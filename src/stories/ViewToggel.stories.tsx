@@ -6,6 +6,7 @@ import {default as testData} from './test-data/toggle.data.json'
 import selectors from './components/viewToggle.selectors'
 
 import ToggleStatistics from '../components/left-side/sub-components/menu/ToggleStatistics';
+import { getElementCollectionById } from './utils/element-collections';
 
 const meta = {
   title: 'view toggle',
@@ -33,8 +34,14 @@ export const viewToggle: Story = {
     })
 
     await step(`should change label to ${testData.labelOn} on toggle click`, async () => {
-      const toggleLabel = await canvas.getByTestId(selectors.labeTestId)
-      const toggleCheckbox = await canvas.getByTestId(selectors.checkboxTestId)
+      const [
+        toggleLabel,
+        toggleCheckbox
+      ] = await getElementCollectionById.call(canvas, [
+        selectors.labeTestId,
+        selectors.checkboxTestId
+      ])
+
       await userEvent.click(toggleCheckbox)
       
       expect(toggleLabel.textContent).toContain(testData.labelOn)

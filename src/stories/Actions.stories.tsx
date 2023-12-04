@@ -4,7 +4,8 @@ import { Provider } from 'react-redux';
 import store from '../store';
 import selectors from './components/actions.selectors'
 import {default as testData} from './test-data/actions.data.json'
-
+import { expectIdSelectorsPresence } from './custom-expect/expect-presence';
+import { getElementCollectionById } from './utils/element-collections';
 import ActionMenu from '../components/left-side/sub-components/menu/ActionMenu';
 
 const meta = {
@@ -30,45 +31,68 @@ export const actionList: Story = {
     const canvas = within(canvasElement);
 
     await step('should not show clear on empty graph action', async () => {
-      expect(await canvas.queryByTestId(selectors.testIdClearAddEdge)).toBeNull()
-      expect(await canvas.queryByTestId(selectors.testIdClearRemoveEdge)).toBeNull()
-      expect(await canvas.queryByTestId(selectors.testIdClearDeleteNode)).toBeNull()
+      await expectIdSelectorsPresence.call(canvas,
+        [
+          selectors.testIdClearAddEdge, 
+          selectors.testIdClearRemoveEdge,
+          selectors.testIdClearDeleteNode
+        ],
+        false)
     })
     
     await step('should show clear when fill in graph actions inputs', async () => {
-      const addEdgeInput = await canvas.getByTestId(selectors.testIdInputAddEdge)
-      const removeEdgeInput = await canvas.getByTestId(selectors.testIdInputRemoveEdge)
-      const deleteNodeInput = await canvas.getByTestId(selectors.testIdInputDeleteNode)
-
+      const [
+        addEdgeInput,
+        removeEdgeInput,
+        deleteNodeInput
+      ] = await getElementCollectionById.call(canvas, [
+        selectors.testIdInputAddEdge,
+        selectors.testIdInputRemoveEdge,
+        selectors.testIdInputDeleteNode
+      ])
+      
       await userEvent.type(addEdgeInput, testData.addEdge);
       await userEvent.type(removeEdgeInput, testData.removeEdge);
       await userEvent.type(deleteNodeInput, testData.deleteNode);
 
-      expect(await canvas.getByTestId(selectors.testIdClearAddEdge)).toBeInTheDocument()
-      expect(await canvas.getByTestId(selectors.testIdClearRemoveEdge)).toBeInTheDocument()
-      expect(await canvas.getByTestId(selectors.testIdInputDeleteNode)).toBeInTheDocument()
+      await expectIdSelectorsPresence.call(canvas,
+        [
+          selectors.testIdClearAddEdge, 
+          selectors.testIdClearRemoveEdge,
+          selectors.testIdClearDeleteNode
+        ],
+        true)
     });
 
     await step('should clear in graph actions input when click on clear', async () => {
-      const clearAddEdgeIcon = await canvas.getByTestId(selectors.testIdClearAddEdge)
-      const clearRemoveEdgeIcon = await canvas.getByTestId(selectors.testIdClearRemoveEdge)
-      const clearDeleteNodeIcon = await canvas.getByTestId(selectors.testIdClearDeleteNode)
+      const clearInputs = await getElementCollectionById.call(canvas, [
+        selectors.testIdClearAddEdge,
+        selectors.testIdClearRemoveEdge,
+        selectors.testIdClearDeleteNode
+      ])
 
-      await userEvent.click(clearAddEdgeIcon)
-      await userEvent.click(clearRemoveEdgeIcon)
-      await userEvent.click(clearDeleteNodeIcon)
+      await Promise.all(clearInputs.map(clear => 
+        userEvent.click(clear)
+      ))
 
-      expect(await canvas.queryByTestId(selectors.testIdClearAddEdge)).toBeNull()
-      expect(await canvas.queryByTestId(selectors.testIdClearRemoveEdge)).toBeNull()
-      expect(await canvas.queryByTestId(selectors.testIdClearDeleteNode)).toBeNull()
+      await expectIdSelectorsPresence.call(canvas,
+        [
+          selectors.testIdClearAddEdge, 
+          selectors.testIdClearRemoveEdge,
+          selectors.testIdClearDeleteNode
+        ],
+      false)
 
-      const addEdgeInput = await canvas.getByTestId(selectors.testIdInputAddEdge)
-      const removeEdgeInput = await canvas.getByTestId(selectors.testIdInputRemoveEdge)
-      const deleteNodeInput = await canvas.getByTestId(selectors.testIdInputDeleteNode)
+      const actionInputs = await getElementCollectionById.call(canvas, [
+        selectors.testIdInputAddEdge,
+        selectors.testIdInputRemoveEdge,
+        selectors.testIdInputDeleteNode
+      ])
 
-      expect(addEdgeInput.nodeValue).toBeNull()
-      expect(removeEdgeInput.nodeValue).toBeNull()
-      expect(deleteNodeInput.nodeValue).toBeNull()
+
+      actionInputs.map(input => {
+        expect(input.nodeValue).toBeNull()
+      });
     })
   },
 };
