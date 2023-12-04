@@ -46,7 +46,7 @@ const initialStyles = {
 }
 
 
-export const actionOption: Story = {
+export const TextChip: Story = {
     render: args => {
 
         return <Chip

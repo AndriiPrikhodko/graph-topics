@@ -14,7 +14,11 @@ const ToggleStatistics = () => {
             <label className='toggle-label' data-testid='toggle-label'>
                 { isToggled ?  'Statistical insights:': 'Graph view:'}</label>
             <label className="switch">
-                <input type="checkbox" checked={isToggled} onChange={handleToggle} data-testid='toggle-checkbox'/>
+                <input
+                    type="checkbox"
+                    checked={isToggled}
+                    onChange={handleToggle}
+                    data-testid='toggle-checkbox'/>
                 <span className="slider"></span>
             </label>
         </div>

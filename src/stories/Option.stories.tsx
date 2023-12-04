@@ -38,7 +38,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>;
 
-export const actionOption: Story = {
+export const ActionOptionStory: Story = {
     render: args => {
 
         return <ActionOption {...args} style={{backgroundColor: args['backgroundColor']}} />

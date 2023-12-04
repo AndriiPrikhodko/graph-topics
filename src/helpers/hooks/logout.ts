@@ -8,7 +8,8 @@ const useLogout = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const logout = useCallback(() => {
-        const confirmed = window.confirm('Are you sure you want to logout? All your unsaved data will be lost.')
+        const confirmed = window
+            .confirm('Are you sure you want to logout? All your unsaved data will be lost.')
 
         if (confirmed) {
             // clear local storage items

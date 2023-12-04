@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { waitFor, within, userEvent, expect, fn } from '@storybook/test'
+import { within, userEvent, expect } from '@storybook/test'
 import { Provider } from 'react-redux'
 import store from '../store'
 import selectors from './components/actions.selectors'
@@ -26,7 +26,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>;
 
-export const actionList: Story = {
+export const ActionList: Story = {
     play: async ({ args, canvasElement, step }) => {
         const canvas = within(canvasElement)
 
@@ -90,9 +90,9 @@ export const actionList: Story = {
             ])
 
 
-            actionInputs.map(input => {
+            actionInputs.map(input =>
                 expect(input.nodeValue).toBeNull()
-            })
+            )
         })
     },
 }

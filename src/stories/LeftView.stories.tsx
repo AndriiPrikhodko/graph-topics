@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { waitFor, within, userEvent, expect, fn } from '@storybook/test'
+import { waitFor, within, userEvent, expect } from '@storybook/test'
 import { Provider } from 'react-redux'
 import store from '../store'
 import LeftView from '../components/left-side/LeftView'
 import {default as testData} from './test-data/dropdown.data.json'
 import selectors from './components/dorpdown.selectors'
-import { Routes, Route } from 'react-router-dom'
 
 const meta = {
     title: 'left view',
@@ -26,7 +25,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>;
 
-export const leftView: Story = {
+export const LeftViewStory: Story = {
     play: async ({ args, canvasElement, step }) => {
         const canvas = within(canvasElement)
 

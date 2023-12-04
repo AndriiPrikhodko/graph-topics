@@ -57,7 +57,8 @@ const LoginForm: React.FC = () => {
 
     return (
         <div className='login-container'>
-            <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+            <link href='https://fonts.googleapis.com/css?family=Montserrat'
+                rel='stylesheet' type='text/css'>
             </link>
             <div className="login">
                 <h2 className="active"> sign in </h2>

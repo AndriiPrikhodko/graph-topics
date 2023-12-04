@@ -1,4 +1,4 @@
-export default {
+const selectors = {
     testIdClearAddEdge: 'clear-addGraphEdge',
     testIdClearRemoveEdge: 'clear-removeGraphEdge',
     testIdClearDeleteNode: 'clear-deleteGraphNode',
@@ -6,3 +6,5 @@ export default {
     testIdInputRemoveEdge: 'action-removeGraphEdge',
     testIdInputDeleteNode: 'action-deleteGraphNode',
 }
+
+export default selectors

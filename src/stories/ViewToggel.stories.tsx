@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Provider } from 'react-redux'
-import { waitFor, within, userEvent, expect, fn } from '@storybook/test'
+import { within, userEvent, expect } from '@storybook/test'
 import store from '../store'
 import {default as testData} from './test-data/toggle.data.json'
 import selectors from './components/viewToggle.selectors'
@@ -23,7 +23,7 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>;
 
-export const viewToggle: Story = {
+export const ViewToggle: Story = {
     play: async ({ args, canvasElement, step }) => {
         const canvas = within(canvasElement)
 

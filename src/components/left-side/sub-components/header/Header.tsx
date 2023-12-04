@@ -1,6 +1,5 @@
 import './Header.css'
 import logo from '../../../../assets/graph.svg'
-import IconFactory from '../../../shared/actions/actionIcon.factory'
 import Button from '../../../shared/button'
 import useLogout from '../../../../helpers/hooks/logout'
 

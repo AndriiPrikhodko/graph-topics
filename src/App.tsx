@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setGraphData } from './reducers/graph.reducer'
 import { setGraphDataLocal } from './helpers/local-storage'
 import RouteComponents from './pages/Router'
@@ -7,8 +7,6 @@ import { Routes } from 'react-router-dom'
 import { selfDataAdapter } from './helpers/data-adapter/self-data-adapter'
 
 const App = () => {
-    const graphData = useSelector((store: Store) => store.graphData)
-
     const dispatch = useDispatch()
 
     useEffect(() => {
