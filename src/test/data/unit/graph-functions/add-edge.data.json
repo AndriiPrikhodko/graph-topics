@@ -118,7 +118,10 @@
                         "id": "4"
                     },
                     {
-                        "id": "5"
+                        "id": "5",
+                        "index": 4,
+                        "vx": 0,
+                        "vy": 0
                     }
                 ],
                 "links": [
@@ -191,10 +194,16 @@
                         "id": "4"
                     },
                     {
-                        "id": "6"
+                        "id": "6",
+                        "index": 4,
+                        "vx": 0,
+                        "vy": 0
                     },
                     {
-                        "id": "5"
+                        "id": "5",
+                        "index": 5,
+                        "vx": 0,
+                        "vy": 0
                     }
                 ],
                 "links": [
@@ -473,7 +482,10 @@
                         "id": "two things"
                     },
                     {
-                        "id": "three things"
+                        "id": "three things",
+                        "index": 2,
+                        "vx": 0,
+                        "vy": 0
                     }
                 ],
                 "links": [
@@ -518,7 +530,10 @@
                         "id": "two things"
                     },
                     {
-                        "id": "three things"
+                        "id": "three things",
+                        "index": 2,
+                        "vx": 0,
+                        "vy": 0
                     }
                 ],
                 "links": [
