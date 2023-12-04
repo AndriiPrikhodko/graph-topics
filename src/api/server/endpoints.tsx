@@ -9,7 +9,7 @@ const endpoints = {
     },
     test: {
         baseUrl: "localhost",
-        port: "3001"
+        port: "3100"
     }
 }
 
