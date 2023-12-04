@@ -1,7 +1,7 @@
 import { nodeDiffReducer } from './reducers/nodes'
 import linkFacade from './reducers/links'
-import { nodeIndex } from '../../../helpers/data-adapter/node-indexer'
-
+import { nodeIndex } from '../../../helpers/data-adapter/indexer'
+import { filterUnique } from '../../../helpers/data-adapter/filter'
 /**
  * 
  * @param this is a string representing nodes separated with comma
@@ -20,7 +20,8 @@ export function addEdge(this: string, graphData: GraphData, linkType: LinkType =
     let  [nodeNames, nodeDiff] = nodeDiffReducer(trimmedNodes, graphData)
 
     // filtering for uniqueness and indexing new nodes
-    const indxNodeDiff = nodeIndex(length, nodeDiff)
+    const uniqueNodes = filterUnique(nodeDiff)
+    const indxNodeDiff = nodeIndex(length, uniqueNodes)
 
     // initializing new links based on selected type
     let linkDiff = linkFacade[linkType](nodeNames)

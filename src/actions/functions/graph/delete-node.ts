@@ -1,3 +1,4 @@
+import { nodeIndex } from '../../../helpers/data-adapter/indexer'
 /**
  * 
  * @param this 
@@ -30,12 +31,7 @@ export const deleteNode = function (this: string, graphData :GraphData): GraphDa
     const filteredNodes = nodes
         .filter(node => !nodeArrTrimmedLC.includes(node.id.toLowerCase()))
     
-    const indexFilteredNodes = filteredNodes.map((node, idx) => {
-      node.index = idx
-      node.vx = 0
-      node.vy = 0
-      return node
-    })
+    const indexFilteredNodes = nodeIndex(0, filteredNodes)
   
     return {
         nodes: indexFilteredNodes,
