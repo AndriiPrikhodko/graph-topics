@@ -15,7 +15,9 @@ const TagNodes: React.FC = () => {
                 onClick={onClickHandler}
                 className='menu-button-right'
             />
-            <input className='data-input right-input' placeholder='limit tag class number'></input>
+            <input
+                className='data-input right-input'
+                placeholder='limit tag class number'></input>
         </div>
     )
 }
