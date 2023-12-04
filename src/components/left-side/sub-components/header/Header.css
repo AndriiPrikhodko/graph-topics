@@ -7,9 +7,8 @@
 
 .title {
     text-align: center;
-    color: coral;
+    color: darkblue;
     margin-left: 28%;
-    /* font-family: Arial, Helvetica, sans-serif; */
     text-decoration: underline rgb(36, 93, 151);
     font-family: math;
     text-decoration-thickness: 3px;
@@ -36,7 +35,7 @@
 
 .header p {
     text-align: center;
-    color: ivory;
+    color: darkblue;
     font-family: math;
     font-style: oblique;
     font-weight: 700;
@@ -44,7 +43,7 @@
 }
 
 .header p span {
-    color: coral;
+    color: ivory;
     font-family: fantasy;
     font-size:  14pt;
 }
@@ -62,12 +61,11 @@
     font-family: math;
     font-size:  14pt;
     font-weight: bold;
-    /* color: ghostwhite; */
     margin-left: 5px;
     cursor: pointer;
 }
 
 
 .logout-button label:hover{
-    color: darkorange;
+    color: ivory;
 }

@@ -8,7 +8,7 @@
     "linkDirectionalParticleSpeed": 1.006,
     "defaultNodeColor": "rgb(120, 120, 120)",
     "labelColor": "#333",
-    "labelBackgroundColor": "rgba(180, 180, 180, 0.5)",
+    "labelBackgroundColor": "rgba(183, 186, 197, 0.6)",
     "linkColor": "#bbb",
     "backGroundDimensions": 0.4
 }

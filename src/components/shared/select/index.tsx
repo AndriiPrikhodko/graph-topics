@@ -15,7 +15,7 @@ const Select: React.FC<Props> = ({optionList, onChange, testid, label, className
         onChange={onChange} 
         test-dataid={testid} 
         title={label}
-        className='select'
+        className={`select ${className}`}
         >
         {optionList.map(option => {
            return <option value={option}>{option}</option>

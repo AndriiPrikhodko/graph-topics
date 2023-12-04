@@ -23,12 +23,12 @@
   }
 
   .footer a {
-    color: black;
+    color: darkblue;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
   .footer a:hover {
-    color: black;
+    color: darkblue;
     text-decoration: underline;
   }

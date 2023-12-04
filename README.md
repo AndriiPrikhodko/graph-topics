@@ -1,6 +1,6 @@
 # React Mind Graph Application
 
-![image should be here](https://i.imgur.com/oTt2P8j.png)
+![image should be here](https://i.imgur.com/DXSZfIl.png)
 
 The motivation behind this app is to get rid of old sticky notes and tree like mind-maps. Based on the recent scientific studies, for instance [Researchers uncover how the human brain separates, stores, and retrieves memories](https://www.nih.gov/news-events/news-releases/researchers-uncover-how-human-brain-separates-stores-retrieves-memories) and [Connectome: Graph theory application in functional brain network architecture](https://www.sciencedirect.com/science/article/pii/S2467981X17300276) from NIH and Brain Connectivity Laboratory, IRCCS San Raffaele Pisana, Rome, Italy respectively, there is an intrinsic link between graph theory and real functional brain network architecture. 
 
