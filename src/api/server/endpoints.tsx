@@ -13,6 +13,5 @@ const endpoints = {
     }
 }
 
-
 const serverUrl = endpoints[process.env.NODE_ENV]
 export default serverUrl

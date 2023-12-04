@@ -25,7 +25,6 @@ declare global {
     links: LinkObject[];
   }
 
-
   interface IFuncProps {
     [props : string]: function
   }

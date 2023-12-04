@@ -74,7 +74,6 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
          else setInputValue('')
      }
 
-
     const handleClearInput = () => {
         cleanUpInput()
     }

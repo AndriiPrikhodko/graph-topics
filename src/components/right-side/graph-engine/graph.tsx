@@ -67,7 +67,6 @@ const Graph = () => {
             linkDirectionalParticles={graphConfig.linkDirectionalParticles}
             linkDirectionalParticleSpeed={graphConfig.linkDirectionalParticleSpeed}
 
-
             nodeCanvasObject={(node: NodeObject, ctx, globalScale = 4) => {
                 const label = node.id
                 const fontSize = graphConfig.fontSize/globalScale
@@ -99,7 +98,6 @@ const Graph = () => {
             //         (node.x as number) - bckgDimensions[0] / 2,
             //         (node.y as number) - bckgDimensions[1] / 2, ...bckgDimensions);
             // }}
-
 
             onNodeClick={handleNodeClick}
         />

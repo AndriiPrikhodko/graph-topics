@@ -15,7 +15,6 @@ vi.mock('react-router-dom', async () => {
     }
 })
 
-
 const createMatchMedia = (width: number) => {
     return (query: string) => ({
         matches: mediaQuery.match(query, { width }),

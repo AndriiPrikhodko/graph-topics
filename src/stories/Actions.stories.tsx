@@ -89,7 +89,6 @@ export const ActionList: Story = {
                 selectors.testIdInputDeleteNode
             ])
 
-
             actionInputs.map(input =>
                 expect(input.nodeValue).toBeNull()
             )

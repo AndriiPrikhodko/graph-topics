@@ -45,7 +45,6 @@ const initialStyles = {
     color : 'black'
 }
 
-
 export const TextChip: Story = {
     render: args => {
 

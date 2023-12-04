@@ -14,8 +14,6 @@ vi.mock('react-router-dom', async () => {
     }
 })
 
-
-
 test('header', () => {
     const { getByRole } = render(
         <Provider store={store}>

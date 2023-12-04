@@ -18,7 +18,6 @@ const ProtectedRoute = ({ children }: {children: React.ReactElement}) => {
         }
     }, [navigate])
 
-
     if (loading) {
         return null // or a loading spinner
     }
@@ -38,6 +37,5 @@ const routes = [
 const RouteComponents = routes.map(({path, component}, key) =>
     <Route path={path} element={component} key={key} />
 )
-
 
 export default RouteComponents

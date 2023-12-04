@@ -9,7 +9,6 @@ import { loadGraphList } from '../../../../actions/graph-api.action'
 import Button from '../../../shared/button'
 import { setGraphDataLocal } from '../../../../helpers/local-storage'
 
-
 const GraphLoad: React.FC = () => {
     const dispatch = useDispatch()
     const graphList = useSelector((store: Store) => store.graphList)
@@ -22,7 +21,6 @@ const GraphLoad: React.FC = () => {
             console.error(err)
         }
     }, [dispatch])
-
 
     const handleMenuItemClick =
     (menuItemProps: MouseEvent & {defaultValue?: string}) => {
