@@ -39,7 +39,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                 updatedGraphData = 
                     getActionFunction.call(strValue, mutableData)
             }
-            // setGraphDataLocal(updatedGraphData)
+            setGraphDataLocal(updatedGraphData)
             dispatch(setGraphData(updatedGraphData))
         }
         else console.log('action is not in the list')
