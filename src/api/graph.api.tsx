@@ -1,5 +1,5 @@
-import { api } from "./config/axios.config"
-import { defineCancelApiObject } from "./config/axios.utils"
+import { api } from './config/axios.config'
+import { defineCancelApiObject } from './config/axios.utils'
 
 const HEADERS = {
     'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ const ROUTER = {
 const constructGetArgsStr = (args: object): string => {
     let argsStr = ''
     if(args) {
-        argsStr = Object.entries(args).map((entrie) =>
+        argsStr = Object.entries(args).map(entrie =>
             entrie.join('=')
         ).join('&&')
         argsStr = `?${argsStr}`
@@ -25,7 +25,7 @@ export const graphAPI = {
     save: async function (graphData: IPostGraphPayload, cancel = false) {
         const response = await api.request({
             url: ROUTER.graph,
-            method: "POST",
+            method: 'POST',
             headers: HEADERS,
             data: graphData
             // signal: cancel ? cancelApiObject[this.get.name].handleRequestCancellation().signal : undefined,
@@ -41,7 +41,7 @@ export const graphAPI = {
                 method: 'GET',
                 headers: HEADERS,
             })
-    
+
             return response.data.graphList
         }
         catch (err) {

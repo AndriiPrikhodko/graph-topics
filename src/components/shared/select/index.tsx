@@ -10,24 +10,24 @@ type Props = {
 }
 
 const Select: React.FC<Props> = ({optionList, onChange, testid, label, className=''}) => {
-  return (
-      <select 
-        onChange={onChange} 
-        data-testid={testid}
-        title={label}
-        className={`select ${className}`}
+    return (
+        <select
+            onChange={onChange}
+            data-testid={testid}
+            title={label}
+            className={`select ${className}`}
         >
-        {optionList.map((option, idx) => {
-           return <option 
-           key={idx} 
-           value={option} 
-           data-testid={`link-${option}`}
-           >
-            {option}
-           </option>
-        })}
-      </select>
-  );
-};
+            {optionList.map((option, idx) => {
+                return <option
+                    key={idx}
+                    value={option}
+                    data-testid={`link-${option}`}
+                >
+                    {option}
+                </option>
+            })}
+        </select>
+    )
+}
 
 export default Select

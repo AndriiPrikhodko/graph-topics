@@ -18,28 +18,29 @@ declare global {
     source:  string | NodeObject
     target: string | NodeObject
     [key: string]: any
-  }[]
-  export interface GraphData {
+  }
+
+  interface GraphData {
     nodes: NodeObject[];
     links: LinkObject[];
   }
 
-  
+
   interface IFuncProps {
     [props : string]: function
   }
-  
+
   interface IPostGraphPayload {
     name?: string
     data?: GraphData
   }
-  
+
   interface IGraphListState {
     data: string [],
     status: 'idle' | 'succeeded' | 'failed' | 'loading',
     error: string | null | undefined,
   }
-  
+
   type LinkType = 'from' | 'chain' | 'bijection' | 'into'
 
   interface Edge {

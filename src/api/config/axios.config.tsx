@@ -1,5 +1,5 @@
-import axios from "axios"
-import serverUrl from "../server/endpoints"
+import axios from 'axios'
+import serverUrl from '../server/endpoints'
 
 export const api = axios.create({
     baseURL: `http://${serverUrl.baseUrl}:${serverUrl.port}`,
@@ -17,7 +17,7 @@ interface IErrorObj {
 const errorHandler = (error: IErrorObj) => {
     const statusCode = error.response?.status
 
-    if (error.code === "ERR_CANCELED") {
+    if (error.code === 'ERR_CANCELED') {
         // notification.error({
         //     placement: "bottomRight",
         //     description: "API canceled!",

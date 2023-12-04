@@ -10,7 +10,7 @@ export function defineCancelApiObject(apiObject: Object) {
     // is associated with a function that defines an API call
 
     // this loop iterates over each API property name
-    Object.getOwnPropertyNames(apiObject).forEach((apiPropertyName) => {
+    Object.getOwnPropertyNames(apiObject).forEach(apiPropertyName => {
         let cancellationControllerObject: IObjAny = {
             controller: undefined,
         }

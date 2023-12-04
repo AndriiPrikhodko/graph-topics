@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className='logout-button'>
-            <Button label='Logout' onClick={logoutHandler} testid='logout'/>
+                <Button label='Logout' onClick={logoutHandler} testid='logout'/>
             </div>
             <div className="logo-title">
                 <h3 className="title unselectable">

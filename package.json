@@ -40,13 +40,52 @@
     "storybook": "storybook dev -p 6006",
     "test:component": "test-storybook",
     "build-storybook": "storybook build",
-    "initialize-msw": "npx msw init ./public"
+    "initialize-msw": "npx msw init ./public",
+    "lint": "eslint src --fix"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "plugin:storybook/recommended"
-    ]
+    ],
+    "rules": {
+      "quotes": [
+        2,
+        "single",
+        {
+          "avoidEscape": true
+        }
+      ],
+      "playwright/no-eval": 0,
+      "no-useless-catch": 1,
+      "playwright/no-skipped-test": 0,
+      "max-len": [
+        1,
+        {
+          "code": 80
+        }
+      ],
+      "indent": [
+        "error",
+        4
+      ],
+      "semi": [
+        1,
+        "never"
+      ],
+      "no-trailing-spaces": [
+        "error",
+        {
+          "skipBlankLines": false,
+          "ignoreComments": false
+        }
+      ],
+      "no-prototype-builtins": 0,
+      "arrow-parens": [
+        2,
+        "as-needed"
+      ]
+    }
   },
   "browserslist": {
     "production": [
@@ -61,6 +100,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@storybook/addon-essentials": "^7.5.3",
     "@storybook/addon-interactions": "^7.5.3",
     "@storybook/addon-links": "^7.5.3",

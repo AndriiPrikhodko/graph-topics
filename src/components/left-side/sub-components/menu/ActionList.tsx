@@ -1,5 +1,5 @@
 export type Action = {
-    handleName: "addGraphEdge" | "removeGraphEdge" | "deleteGraphNode",
+    handleName: 'addGraphEdge' | 'removeGraphEdge' | 'deleteGraphNode',
     label: string,
     placeholder: string,
 }

@@ -1,7 +1,7 @@
 import { removeEdge } from '../../../actions/functions/graph/remove-edge'
-import {default as testsData} 
+import {default as testsData}
     from '../../data/unit/graph-functions/remove-edge.data.json'
-    import type { TestDataEdge } from '../../data/unit/graph-functions/data-types'
+import type { TestDataEdge } from '../../data/unit/graph-functions/data-types'
 
 
 describe('check remove edge function', () => {

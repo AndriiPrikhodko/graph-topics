@@ -8,4 +8,4 @@ export default {
     chain: linkChain,
     bijection: linkBijection,
     into: linkInto
-  }
+}

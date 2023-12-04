@@ -1,45 +1,45 @@
 import { nodeIndex } from '../../../helpers/data-adapter/indexer'
 /**
- * 
- * @param this 
- * @param graphData 
+ *
+ * @param this
+ * @param graphData
  * @returns updatedGraphData with nodes from the input list
  *  and all their links are removed
  */
 export const deleteNode = function (this: string, graphData :GraphData): GraphData {
-  const nodeArr = this.split(',')
-  if (nodeArr.length >= 1) {
-    let isLinked: boolean = true
-    const { nodes, links } = graphData
-    const nodeArrTrimmedLC = nodeArr.map(nodeName => nodeName.trim().toLowerCase())
+    const nodeArr = this.split(',')
+    if (nodeArr.length >= 1) {
+        let isLinked: boolean = true
+        const { nodes, links } = graphData
+        const nodeArrTrimmedLC = nodeArr.map(nodeName => nodeName.trim().toLowerCase())
 
-    const filteredLinks = links.filter(link => {
+        const filteredLinks = links.filter(link => {
             isLinked = !(
-              (
-                typeof link.source == 'string' ? 
-                nodeArrTrimmedLC.includes(link.source.toLowerCase()) :
-                nodeArrTrimmedLC.includes(link.source.id.toLowerCase())
-              ) || (
-                typeof link.target == 'string' ? 
-                nodeArrTrimmedLC.includes(link.target.toLowerCase()) :
-                nodeArrTrimmedLC.includes(link.target.id.toLowerCase())
-              )
+                (
+                    typeof link.source == 'string' ?
+                        nodeArrTrimmedLC.includes(link.source.toLowerCase()) :
+                        nodeArrTrimmedLC.includes(link.source.id.toLowerCase())
+                ) || (
+                    typeof link.target == 'string' ?
+                        nodeArrTrimmedLC.includes(link.target.toLowerCase()) :
+                        nodeArrTrimmedLC.includes(link.target.id.toLowerCase())
+                )
             )
-          return isLinked
+            return isLinked
         })
-    
-    const filteredNodes = nodes
-        .filter(node => !nodeArrTrimmedLC.includes(node.id.toLowerCase()))
-    
-    const indexFilteredNodes = nodeIndex(0, filteredNodes)
-  
-    return {
-        nodes: indexFilteredNodes,
-        links: filteredLinks
-      }
+
+        const filteredNodes = nodes
+            .filter(node => !nodeArrTrimmedLC.includes(node.id.toLowerCase()))
+
+        const indexFilteredNodes = nodeIndex(0, filteredNodes)
+
+        return {
+            nodes: indexFilteredNodes,
+            links: filteredLinks
+        }
     }
     else {
-      console.log(`incorrect input: ${this}`)
-      return graphData
+        console.log(`incorrect input: ${this}`)
+        return graphData
     }
-  }
+}

@@ -1,9 +1,9 @@
-import { ChangeEventHandler, KeyboardEvent, RefAttributes } from "react"
+import { ChangeEventHandler, KeyboardEvent, RefAttributes } from 'react'
 import './Menu.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { setGraphData } from '../../../../reducers/graph.reducer'
 import graphFnFacade from '../../../../actions/graph-fn.facade'
-import { ImCancelCircle } from "react-icons/im";
+import { ImCancelCircle } from 'react-icons/im'
 import { clone } from 'ramda'
 import React, { useState, useRef } from 'react'
 import { setGraphDataLocal } from '../../../../helpers/local-storage'
@@ -12,7 +12,7 @@ import IconFactory from '../../../shared/actions/actionIcon.factory'
 type Props = {
     label: string,
     placeholder: string
-    actionFunction: "addGraphEdge" | "removeGraphEdge" | "deleteGraphNode" 
+    actionFunction: 'addGraphEdge' | 'removeGraphEdge' | 'deleteGraphNode'
     style?: React.CSSProperties
 }
 
@@ -31,12 +31,12 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
             const mutableData = clone(data)
             let updatedGraphData
             if(actionFunction === 'addGraphEdge') {
-                updatedGraphData = 
+                updatedGraphData =
                     getActionFunction
-                    .call(strValue, mutableData, linkType)
+                        .call(strValue, mutableData, linkType)
             }
             else {
-                updatedGraphData = 
+                updatedGraphData =
                     getActionFunction.call(strValue, mutableData)
             }
             setGraphDataLocal(updatedGraphData)
@@ -52,12 +52,12 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
             setInputValue('')
         }
     }
-    
+
     const handleActionOnEnter = (event: KeyboardEvent): void =>  {
         if (event.key === 'Enter') {
             const target  = event.target as HTMLButtonElement
-         if(target) {
-            applyGraphFunction(target.value.toString())
+            if(target) {
+                applyGraphFunction(target.value.toString())
             }
             if(actionFunction !== 'addGraphEdge') {
                 cleanUpInput()
@@ -66,14 +66,14 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
     }
 
     const handleInputChange: ChangeEventHandler<HTMLInputElement>
-     = (event) => {
-        const target = event.target
-        if (target && target.value){
-            setInputValue(target.value)
-        }
-        else setInputValue('')
-      }
-    
+     = event => {
+         const target = event.target
+         if (target && target.value){
+             setInputValue(target.value)
+         }
+         else setInputValue('')
+     }
+
 
     const handleClearInput = () => {
         cleanUpInput()
@@ -89,25 +89,25 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
     }
 
     return <div className="data-input menu-item" data-testid={actionFunction}>
-            <label className="unselectable">
-                <IconFactory 
-                iconName={actionFunction === "addGraphEdge" ? 
-                linkType: actionFunction} 
+        <label className="unselectable">
+            <IconFactory
+                iconName={actionFunction === 'addGraphEdge' ?
+                    linkType: actionFunction}
                 onClick={actionIconClick} label={label} />
-                <input 
-                    ref={inputRef}
-                    className="edge-input"
-                    type="text"
-                    placeholder={placeholder}
-                    onKeyDown={handleActionOnEnter}
-                    onChange={handleInputChange}
-                    data-testid={`action-${actionFunction}`}
-                ></input>
-                {inputValue && (
-                    <ImCancelCircle onClick={handleClearInput} className='icon-right' data-testid={`clear-${actionFunction}`}/>
-                )}
-            </label>
-        </div>
+            <input
+                ref={inputRef}
+                className="edge-input"
+                type="text"
+                placeholder={placeholder}
+                onKeyDown={handleActionOnEnter}
+                onChange={handleInputChange}
+                data-testid={`action-${actionFunction}`}
+            ></input>
+            {inputValue && (
+                <ImCancelCircle onClick={handleClearInput} className='icon-right' data-testid={`clear-${actionFunction}`}/>
+            )}
+        </label>
+    </div>
 }
 
 export default ActionOption

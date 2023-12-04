@@ -1,16 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 export type GraphAction = {
     [props : string]: (graphFunction: GraphData | void) => GraphData
 }
 
 const initGraphData = {
-    nodes: [{id: 'Graph initialized successfully'}], 
+    nodes: [{id: 'Graph initialized successfully'}],
     links: []
 }
 
 const emptyGraphData = {
-    nodes: [], 
+    nodes: [],
     links: []
 }
 
@@ -23,13 +23,13 @@ const graphSlice = createSlice({
             state = action.payload
 
             return state
-          },
-          cleanGraphData: (state, action: {payload: void}) => {
+        },
+        cleanGraphData: (state, action: {payload: void}) => {
             // possible because of immer
             state = emptyGraphData
 
             return state
-          }
+        }
     }
 })
 

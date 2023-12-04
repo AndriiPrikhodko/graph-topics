@@ -1,15 +1,15 @@
 const endpoints = {
     development: {
-        baseUrl: "localhost",
-        port: "3100"
+        baseUrl: 'localhost',
+        port: '3100'
     },
     production: {
-        baseUrl: "localhost",
-        port: "3100"
+        baseUrl: 'localhost',
+        port: '3100'
     },
     test: {
-        baseUrl: "localhost",
-        port: "3100"
+        baseUrl: 'localhost',
+        port: '3100'
     }
 }
 

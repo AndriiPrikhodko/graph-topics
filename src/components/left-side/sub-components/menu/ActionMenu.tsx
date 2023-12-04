@@ -14,29 +14,29 @@ const ActionMenu: React.FC = () => {
     ]
 
     const dispatch = useDispatch()
-    const handleChange:React.ChangeEventHandler<HTMLSelectElement> = 
-    (event) => {
-        dispatch(setLinkType(event.target.value));
-      };
+    const handleChange:React.ChangeEventHandler<HTMLSelectElement> =
+    event => {
+        dispatch(setLinkType(event.target.value))
+    }
 
     return (
-    <div>
-        <Select 
-        optionList={optionList} 
-        onChange={handleChange} 
-        testid={'link-strategy'} 
-        label='pick the link strategy'
-        className='menu-select'
-        />
-        {actionList.map((action, idx) => {
-            return <ActionOption
-                key={idx}
-                label={action.label}
-                placeholder={action.placeholder}
-                actionFunction={action.handleName}
+        <div>
+            <Select
+                optionList={optionList}
+                onChange={handleChange}
+                testid={'link-strategy'}
+                label='pick the link strategy'
+                className='menu-select'
+            />
+            {actionList.map((action, idx) => {
+                return <ActionOption
+                    key={idx}
+                    label={action.label}
+                    placeholder={action.placeholder}
+                    actionFunction={action.handleName}
                 />
-        })}
-    </div>
+            })}
+        </div>
     )
 }
 

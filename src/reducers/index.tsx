@@ -3,7 +3,7 @@ import graphSlice from './graph.reducer'
 import commonSlice from './common.reducer'
 
 export default {
-  graphListSlice,
-  graphSlice,
-  commonSlice
+    graphListSlice,
+    graphSlice,
+    commonSlice
 }

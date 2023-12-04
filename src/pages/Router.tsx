@@ -1,43 +1,43 @@
-import React, { useEffect, useState } from 'react';
-import { Route } from "react-router-dom"
-import { useNavigate } from 'react-router-dom';
-import Login from './LoginPage';
-import Graph from './GraphPage';
+import React, { useEffect, useState } from 'react'
+import { Route } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import Login from './LoginPage'
+import Graph from './GraphPage'
 
 const isAuthenticated = () => !!localStorage.getItem('token')
 
 const ProtectedRoute = ({ children }: {children: React.ReactElement}) => {
-    const navigate = useNavigate();
-    const [loading, setLoading] = useState(true);
+    const navigate = useNavigate()
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-      if (!isAuthenticated()) {
-        navigate('/login');
-      } else {
-        setLoading(false);
-      }
-    }, [navigate]);
-  
-    
+        if (!isAuthenticated()) {
+            navigate('/login')
+        } else {
+            setLoading(false)
+        }
+    }, [navigate])
+
+
     if (loading) {
-      return null; // or a loading spinner
+        return null // or a loading spinner
     }
 
-    return children;
-  } 
+    return children
+}
 
-  const routes = [
+const routes = [
     { path: '/', component: <Login /> },
     { path: '/login', component: <Login /> },
-    { path: '/graph', component: 
+    { path: '/graph', component:
       <ProtectedRoute>
-        <Graph/>
+          <Graph/>
       </ProtectedRoute>},
-];
+]
 
-const RouteComponents = routes.map(({path, component}, key) => 
-  <Route path={path} element={component} key={key} />
-);
+const RouteComponents = routes.map(({path, component}, key) =>
+    <Route path={path} element={component} key={key} />
+)
 
 
-export default RouteComponents;
+export default RouteComponents

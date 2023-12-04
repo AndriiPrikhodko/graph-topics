@@ -1,7 +1,7 @@
-import { addEdge } from '../../../actions/functions/graph/add-edge';
-import {default as testsData} 
+import { addEdge } from '../../../actions/functions/graph/add-edge'
+import {default as testsData}
     from '../../data/unit/graph-functions/add-edge.data.json'
-import type { TestDataEdge } from '../../data/unit/graph-functions/data-types';
+import type { TestDataEdge } from '../../data/unit/graph-functions/data-types'
 import {default as fromTestData}
     from '../../data/unit/graph-functions/link-from.data.json'
 import {default as chainTestData}

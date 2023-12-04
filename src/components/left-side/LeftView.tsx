@@ -1,6 +1,6 @@
 import './LeftView.css'
-import Header from "./sub-components/header/Header"
-import GraphLoad from "./sub-components/menu/GraphLoad"
+import Header from './sub-components/header/Header'
+import GraphLoad from './sub-components/menu/GraphLoad'
 import ActionMenu from './sub-components/menu/ActionMenu'
 import Footer from './sub-components/footer/Footer'
 import TagNodes from './sub-components/menu/ActionTagNodes'
