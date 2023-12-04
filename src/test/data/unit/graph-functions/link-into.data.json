@@ -1,0 +1,21 @@
+[
+    {
+        "name": "should add nodes and link edges with into strategy",
+        "edge": "11,22,33,44,55,99",
+        "graphData": [
+            {"nodes":[{"id":"2","index":0,"vx":0,"vy":0},{"id":"3","index":1,"vx":0,"vy":0},{"id":"4","index":2,"vx":0,"vy":0},{"id":"5","index":3,"vx":0,"vy":0},{"id":"1","index":4,"vx":0,"vy":0},{"id":"11","index":5,"vx":0,"vy":0},{"id":"22","index":6,"vx":0,"vy":0},{"id":"33","index":7,"vx":0,"vy":0},{"id":"44","index":8,"vx":0,"vy":0},{"id":"55","index":9,"vx":0,"vy":0}],"links":[{"source":"1","target":"2"},{"source":"2","target":"3"},{"source":"3","target":"4"},{"source":"4","target":"5"},{"source":"5","target":"1"},{"source":"1","target":"11"},{"source":"2","target":"22"},{"source":"3","target":"33"},{"source":"4","target":"44"},{"source":"5","target":"55"}]},
+            {"nodes":[{"id":"2","index":0,"vx":0,"vy":0},{"id":"3","index":1,"vx":0,"vy":0},{"id":"4","index":2,"vx":0,"vy":0},{"id":"5","index":3,"vx":0,"vy":0},{"id":"1","index":4,"vx":0,"vy":0},{"id":"11","index":5,"vx":0,"vy":0},{"id":"22","index":6,"vx":0,"vy":0},{"id":"33","index":7,"vx":0,"vy":0},{"id":"44","index":8,"vx":0,"vy":0},{"id":"55","index":9,"vx":0,"vy":0},{"id":"99","index":10,"vx":0,"vy":0}],"links":[{"source":"1","target":"2"},{"source":"2","target":"3"},{"source":"3","target":"4"},{"source":"4","target":"5"},{"source":"5","target":"1"},{"source":"1","target":"11"},{"source":"2","target":"22"},{"source":"3","target":"33"},{"source":"4","target":"44"},{"source":"5","target":"55"},{"source":"11","target":"99"},{"source":"22","target":"99"},{"source":"33","target":"99"},{"source":"44","target":"99"},{"source":"55","target":"99"}]}
+        ]
+    },
+    {
+        "name": "should link into strategy in empty graph repetitive input",
+        "edge": "1,2,3,4,1",
+        "graphData": [
+            {
+                "nodes": [],
+                "links": []
+            },
+            {"nodes":[{"id":"2","index":0,"vx":0,"vy":0},{"id":"3","index":1,"vx":0,"vy":0},{"id":"4","index":2,"vx":0,"vy":0},{"id":"1","index":3,"vx":0,"vy":0}],"links":[{"source":"2","target":"1"},{"source":"3","target":"1"},{"source":"4","target":"1"}]}
+        ]
+    }
+]

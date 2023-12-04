@@ -1,0 +1,292 @@
+[
+    {
+        "name": "should add nodes and link edges with chain strategy in empty graph",
+        "edge": "1,2,3,4,5",
+        "graphData": [
+            {
+                "nodes": [],
+                "links": []
+            },
+            {
+                "nodes": [
+                    {
+                        "id": "1",
+                        "index": 0,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "2",
+                        "index": 1,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "3",
+                        "index": 2,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "4",
+                        "index": 3,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "5",
+                        "index": 4,
+                        "vx": 0,
+                        "vy": 0
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "1",
+                        "target": "2"
+                    },
+                    {
+                        "source": "2",
+                        "target": "3"
+                    },
+                    {
+                        "source": "3",
+                        "target": "4"
+                    },
+                    {
+                        "source": "4",
+                        "target": "5"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "should add nodes and link edges with chain strategy, with intersection",
+        "edge": "1,2,3,4,5,1",
+        "graphData": [
+            {
+                "nodes": [],
+                "links": []
+            },
+            {
+                "nodes": [
+                    {
+                        "id": "2",
+                        "index": 0,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "3",
+                        "index": 1,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "4",
+                        "index": 2,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "5",
+                        "index": 3,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "1",
+                        "index": 4,
+                        "vx": 0,
+                        "vy": 0
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "1",
+                        "target": "2"
+                    },
+                    {
+                        "source": "2",
+                        "target": "3"
+                    },
+                    {
+                        "source": "3",
+                        "target": "4"
+                    },
+                    {
+                        "source": "4",
+                        "target": "5"
+                    },
+                    {
+                        "source": "5",
+                        "target": "1"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "should add nodes and link edges with chin strategy, new intersection on existing intersection",
+        "edge": "1, 2, 3, 4, 5,1,11,111,1",
+        "graphData": [
+            {
+                "nodes": [
+                    {
+                        "id": "2",
+                        "index": 0,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "3",
+                        "index": 1,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "4",
+                        "index": 2,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "5",
+                        "index": 3,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "1",
+                        "index": 4,
+                        "vx": 0,
+                        "vy": 0
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "1",
+                        "target": "2"
+                    },
+                    {
+                        "source": "2",
+                        "target": "3"
+                    },
+                    {
+                        "source": "3",
+                        "target": "4"
+                    },
+                    {
+                        "source": "4",
+                        "target": "5"
+                    },
+                    {
+                        "source": "5",
+                        "target": "1"
+                    }
+                ]
+            },
+            {
+                "nodes": [
+                    {
+                        "id": "2",
+                        "index": 0,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "3",
+                        "index": 1,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "4",
+                        "index": 2,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "5",
+                        "index": 3,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "1",
+                        "index": 4,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "11",
+                        "index": 5,
+                        "vx": 0,
+                        "vy": 0
+                    },
+                    {
+                        "id": "111",
+                        "index": 6,
+                        "vx": 0,
+                        "vy": 0
+                    }
+                ],
+                "links": [
+                    {
+                        "source": "1",
+                        "target": "2"
+                    },
+                    {
+                        "source": "2",
+                        "target": "3"
+                    },
+                    {
+                        "source": "3",
+                        "target": "4"
+                    },
+                    {
+                        "source": "4",
+                        "target": "5"
+                    },
+                    {
+                        "source": "5",
+                        "target": "1"
+                    },
+                    {
+                        "source": "1",
+                        "target": "2"
+                    },
+                    {
+                        "source": "2",
+                        "target": "3"
+                    },
+                    {
+                        "source": "3",
+                        "target": "4"
+                    },
+                    {
+                        "source": "4",
+                        "target": "5"
+                    },
+                    {
+                        "source": "5",
+                        "target": "1"
+                    },
+                    {
+                        "source": "1",
+                        "target": "11"
+                    },
+                    {
+                        "source": "11",
+                        "target": "111"
+                    },
+                    {
+                        "source": "111",
+                        "target": "1"
+                    }
+                ]
+            }
+        ]
+    }
+]
