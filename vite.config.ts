@@ -12,6 +12,7 @@ export default {
     plugins: [
       react(),
     ],
+    setup: 'src/test/setup.ts',
     testTimeout: 60000,
     test: {
       globals: true,

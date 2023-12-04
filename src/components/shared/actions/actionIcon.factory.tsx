@@ -56,7 +56,8 @@ const IconFactory: React.FC<Props> = ({
   return (
     <div className='icon-encircle' onClick={onClickHandler}>
         <IconFC title={label} 
-        color={selected? 'darkorange' : 'black'} 
+        color={selected? 'darkorange' : 'black'}
+        data-testid={`icon-${iconName}`}
         className='action-icon'/>
     </div>
   );

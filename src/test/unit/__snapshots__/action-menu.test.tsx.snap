@@ -14,6 +14,7 @@ exports[`action menu data input items 1`] = `
       <svg
         class="action-icon"
         color="black"
+        data-testid="icon-from"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -34,7 +35,7 @@ exports[`action menu data input items 1`] = `
     <input
       class="edge-input"
       data-testid="action-addGraphEdge"
-      placeholder="comma separated strings"
+      placeholder="comma separated node names"
       type="text"
     />
   </label>
@@ -55,6 +56,7 @@ exports[`action menu data input items 2`] = `
       <svg
         class="action-icon"
         color="black"
+        data-testid="icon-removeGraphEdge"
         fill="none"
         height="1em"
         stroke="currentColor"
@@ -91,7 +93,7 @@ exports[`action menu data input items 2`] = `
     <input
       class="edge-input"
       data-testid="action-removeGraphEdge"
-      placeholder="comma separated strings"
+      placeholder="two comma separated node names"
       type="text"
     />
   </label>
@@ -112,6 +114,7 @@ exports[`action menu data input items 3`] = `
       <svg
         class="action-icon"
         color="black"
+        data-testid="icon-deleteGraphNode"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -132,7 +135,7 @@ exports[`action menu data input items 3`] = `
     <input
       class="edge-input"
       data-testid="action-deleteGraphNode"
-      placeholder="node name"
+      placeholder="comma separated node names"
       type="text"
     />
   </label>

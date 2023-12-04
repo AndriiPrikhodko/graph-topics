@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`menu select link strategy chain 1`] = `
+<select
+  class="select "
+  data-testid="link-strategy"
+  title=""
+>
+  <option
+    data-testid="link-from"
+    value="from"
+  >
+    from
+  </option>
+  <option
+    data-testid="link-chain"
+    value="chain"
+  >
+    chain
+  </option>
+</select>
+`;
