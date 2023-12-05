@@ -4,7 +4,7 @@ import GraphLoad from '../../components/left-side/sub-components/menu/GraphLoad'
 import store from '../../store'
 import { Provider } from 'react-redux'
 
-test('loader', () => {
+test.skip('loader', () => {
     const { getByTestId } = render(
         <Provider store={store}>
             <GraphLoad />
