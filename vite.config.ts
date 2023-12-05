@@ -11,7 +11,7 @@ const config = {
     environment: 'happy-dom',
     coverage: {
       provider: 'v8',
-      reportsDirectory: './coverage',
+      reportsDirectory: './coverage/unit',
       exclude: [
         '**/.storybook/**',
         '**/build/**',

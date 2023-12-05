@@ -30,7 +30,7 @@ export const LeftViewStory: Story = {
         const canvas = within(canvasElement)
 
         step('should open drop down on click', async () => {
-            const dropdownTrigger = canvas.getByTestId(selectors.testIdDropdownTrigger)
+            const dropdownTrigger = await canvas.getByTestId(selectors.testIdDropdownTrigger)
             await userEvent.click(dropdownTrigger)
             const dropdownEls = await document
                 .getElementsByClassName(selectors.classDropdownItems)
