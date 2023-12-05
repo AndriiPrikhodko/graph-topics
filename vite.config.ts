@@ -21,7 +21,6 @@ const config = {
         '**/src/mocks/**',
         '**/src/helpers/hooks/**',
         '**/src/assets/**',
-        '**/node_modules/**', 
         '**/dist/**', 
         '**/public/**',
         '**/.{idea,git,cache,output,temp}/**'
@@ -29,7 +28,7 @@ const config = {
     },
     include: [
       '**/src/test/unit/**/*.test.(ts|tsx)',
-  ], // Include only files in the 'src' directory
+    ],
   }
 }
 

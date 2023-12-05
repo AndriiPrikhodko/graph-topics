@@ -1,0 +1,128 @@
+[
+    {
+        "name": "re-index graph nodes",
+        "pointer": 0,
+        "graphData": {
+            "nodes": [
+                {
+                    "id": "1"
+                },
+                {
+                    "id": "2"
+                },
+                {
+                    "id": "3"
+                },
+                {
+                    "id": "4"
+                }
+            ],
+            "links": [
+                {
+                    "source": "1",
+                    "target": "2"
+                },
+                {
+                    "source": "1",
+                    "target": "3"
+                },
+                {
+                    "source": "4",
+                    "target": "3"
+                }
+            ]
+        },
+        "expected": [
+            {
+                "id": "1",
+                "index": 0,
+                "vx": 0,
+                "vy": 0
+            },
+            {
+                "id": "2",
+                "index": 1,
+                "vx": 0,
+                "vy": 0
+            },
+            {
+                "id": "3",
+                "index": 2,
+                "vx": 0,
+                "vy": 0
+            },
+            {
+                "id": "4",
+                "index": 3,
+                "vx": 0,
+                "vy": 0
+            }
+        ]
+    },
+    {
+        "name": "index graph nodes from 2 onward",
+        "pointer": 2,
+        "graphData": {
+            "nodes": [
+                {
+                    "id": "1",
+                    "index": 0,
+                    "vx": 0,
+                    "vy": 0
+                },
+                {
+                    "id": "2",
+                    "index": 1,
+                    "vx": 0,
+                    "vy": 0
+                },
+                {
+                    "id": "3"
+                },
+                {
+                    "id": "4"
+                }
+            ],
+            "links": [
+                {
+                    "source": "1",
+                    "target": "2"
+                },
+                {
+                    "source": "1",
+                    "target": "3"
+                },
+                {
+                    "source": "4",
+                    "target": "3"
+                }
+            ]
+        },
+        "expected": [
+            {
+                "id": "1",
+                "index": 2,
+                "vx": 0,
+                "vy": 0
+            },
+            {
+                "id": "2",
+                "index": 3,
+                "vx": 0,
+                "vy": 0
+            },
+            {
+                "id": "3",
+                "index": 4,
+                "vx": 0,
+                "vy": 0
+            },
+            {
+                "id": "4",
+                "index": 5,
+                "vx": 0,
+                "vy": 0
+            }
+        ]
+    }
+]
