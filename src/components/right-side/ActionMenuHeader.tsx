@@ -36,7 +36,8 @@ const ActionMenu: React.FC = () => {
                     despatch(setGraphFunction(null))
                     despatch(setEditMode(false))
                 }}
-                selected={graphFunction === null} />
+                disabled={graphFunction === null}
+            />
         </div>
     )
 }
