@@ -8,6 +8,7 @@ import { clone } from 'ramda'
 import React, { useState, useRef } from 'react'
 import { setGraphDataLocal } from '../../../../helpers/local-storage'
 import IconFactory from '../../../shared/actions/actionIcon.factory'
+import { addHistoryItem } from '../../../../reducers/history.reducer'
 
 type Props = {
     label: string,
@@ -25,20 +26,24 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
     const [inputValue, setInputValue] = useState('')
 
     const applyGraphFunction = (strValue: string) => {
+        // fetching the function
         const actionFunctionObj = Object.getOwnPropertyDescriptors(graphFnFacade)
         const getActionFunction = actionFunctionObj[actionFunction].value
+        // if function exists
         if(getActionFunction) {
             const mutableData = clone(data)
-            let updatedGraphData
-            if(actionFunction === 'addGraphEdge') {
-                updatedGraphData =
-                    getActionFunction
-                        .call(strValue, mutableData, linkType)
-            }
-            else {
-                updatedGraphData =
-                    getActionFunction.call(strValue, mutableData)
-            }
+            const {
+                graphData: updatedGraphData,
+                historyItem: updateHistoryItem
+            } = actionFunction === 'addGraphEdge' ?
+                getActionFunction
+                    .call(strValue, mutableData, linkType) // for graph add edge apply link type
+                :getActionFunction
+                    .call(strValue, mutableData)
+
+            if(updateHistoryItem)
+                dispatch(addHistoryItem(updateHistoryItem))
+
             setGraphDataLocal(updatedGraphData)
             dispatch(setGraphData(updatedGraphData))
         }

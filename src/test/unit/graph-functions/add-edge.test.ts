@@ -15,14 +15,14 @@ describe('check add edge function from', () => {
     testsData.map((testData: TestDataEdge) => test(testData.name, () => {
         const {edge, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = addEdge.call(edge, initGData)
+        const {graphData:  actualGData} = addEdge.call(edge, initGData)
         expect(expectedGData).toMatchObject(actualGData)
     }))
 
     fromTestData.map((testData: TestDataEdge) => test(testData.name, () => {
         const {edge, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = addEdge.call(edge, initGData)
+        const {graphData:  actualGData} = addEdge.call(edge, initGData)
         expect(expectedGData).toMatchObject(actualGData)
     }))
 })
@@ -31,14 +31,14 @@ describe('check add edge function chain', () => {
     testsData.map((testData: TestDataEdge) => test(testData.name, () => {
         const {edge, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = addEdge.call(edge, initGData, 'chain')
+        const {graphData:  actualGData} = addEdge.call(edge, initGData, 'chain')
         expect(expectedGData).toMatchObject(actualGData)
     }))
 
     mapTestData.map((testData: TestDataEdge) => test(testData.name, () => {
         const {edge, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = addEdge.call(edge, initGData, 'bijection')
+        const {graphData:  actualGData} = addEdge.call(edge, initGData, 'bijection')
         expect(expectedGData).toMatchObject(actualGData)
     }))
 })
@@ -47,14 +47,14 @@ describe('check add edge function bijection', () => {
     testsData.map((testData: TestDataEdge) => test(testData.name, () => {
         const {edge, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = addEdge.call(edge, initGData, 'bijection')
+        const {graphData:  actualGData} = addEdge.call(edge, initGData, 'bijection')
         expect(expectedGData).toMatchObject(actualGData)
     }))
 
     chainTestData.map((testData: TestDataEdge) => test(testData.name, () => {
         const {edge, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = addEdge.call(edge, initGData, 'chain')
+        const {graphData:  actualGData} = addEdge.call(edge, initGData, 'chain')
         expect(expectedGData).toMatchObject(actualGData)
     }))
 })
@@ -63,14 +63,14 @@ describe('check add edge function into', () => {
     testsData.map((testData: TestDataEdge) => test(testData.name, () => {
         const {edge, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = addEdge.call(edge, initGData, 'into')
+        const {graphData:  actualGData} = addEdge.call(edge, initGData, 'into')
         expect(expectedGData).toMatchObject(actualGData)
     }))
 
     intoTestData.map((testData: TestDataEdge) => test(testData.name, () => {
         const {edge, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = addEdge.call(edge, initGData, 'into')
+        const {graphData:  actualGData} = addEdge.call(edge, initGData, 'into')
         expect(expectedGData).toMatchObject(actualGData)
     }))
 })

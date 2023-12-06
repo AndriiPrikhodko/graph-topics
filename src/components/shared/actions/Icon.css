@@ -17,3 +17,8 @@
   .icon-encircle:hover {
     outline-color: darkorange;
   }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}

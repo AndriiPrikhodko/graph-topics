@@ -9,7 +9,7 @@ exports[`header 1`] = `
     class="history-wrapper header-item"
   >
     <div
-      class="icon-encircle"
+      class="icon-encircle disabled"
     >
       <svg
         class="action-icon"
@@ -33,7 +33,7 @@ exports[`header 1`] = `
       </svg>
     </div>
     <div
-      class="icon-encircle"
+      class="icon-encircle disabled"
     >
       <svg
         class="action-icon"
@@ -74,7 +74,7 @@ exports[`header 1`] = `
     class="action-wrapper-header"
   >
     <div
-      class="icon-encircle"
+      class="icon-encircle "
     >
       <svg
         class="action-icon"
@@ -98,7 +98,7 @@ exports[`header 1`] = `
       </svg>
     </div>
     <div
-      class="icon-encircle"
+      class="icon-encircle "
     >
       <svg
         class="action-icon"
@@ -138,7 +138,7 @@ exports[`header 1`] = `
       </svg>
     </div>
     <div
-      class="icon-encircle"
+      class="icon-encircle "
     >
       <svg
         class="action-icon"
@@ -162,7 +162,7 @@ exports[`header 1`] = `
       </svg>
     </div>
     <div
-      class="icon-encircle"
+      class="icon-encircle "
     >
       <svg
         class="action-icon"

@@ -44,17 +44,19 @@ type Props = {
     onClick: React.MouseEventHandler
     className?: string
     selected? : boolean
+    disabled?: boolean
 }
 
 const IconFactory: React.FC<Props> = ({
     iconName,
     label,
     onClick: onClickHandler,
-    selected = false
+    selected = false,
+    disabled = false
 }) => {
     const IconFC = iconFacade[iconName]
     return (
-        <div className='icon-encircle' onClick={onClickHandler}>
+        <div className={`icon-encircle ${disabled? 'disabled' : ''}`} onClick={onClickHandler}>
             <IconFC title={label}
                 color={selected? 'darkorange' : 'black'}
                 data-testid={`icon-${iconName}`}

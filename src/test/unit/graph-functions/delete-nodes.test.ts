@@ -7,7 +7,7 @@ describe('check delete node function', () => {
     testsData.map((testData: TestDataNode) => test(testData.name, () => {
         const {node, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = deleteNode.call(node, initGData)
+        const {graphData: actualGData} = deleteNode.call(node, initGData)
         expect(expectedGData).toMatchObject(actualGData)
     }))
 })

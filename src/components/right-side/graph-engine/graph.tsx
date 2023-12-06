@@ -34,7 +34,7 @@ const Graph = () => {
             if (graphFunction !== null) {
                 let nodeId = clone(node.id)
                 if (graphFunction === 'deleteGraphNode') {
-                    let updatedData = graphFn.deleteGraphNode
+                    let {graphData: updatedData, historyItem} = graphFn.deleteGraphNode
                         .call(nodeId, mutableGData)
                     let cloneData = clone(updatedData)
                     dispatch(setGraphData(cloneData))
@@ -44,7 +44,7 @@ const Graph = () => {
                     setEdge([node.id])
                 }
                 else {
-                    const updatedData = graphFn[graphFunction]
+                    const {graphData: updatedData, historyItem} = graphFn[graphFunction]
                         .call([...edge, node.id].join(','), mutableGData)
                     setEdge([])
                     let cloneData = clone(updatedData)

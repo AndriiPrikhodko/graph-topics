@@ -1,5 +1,5 @@
-import { vi } from 'vitest';
-import { test } from 'vitest';
+import { vi } from 'vitest'
+import { test } from 'vitest'
 import { setGraphDataLocal } from '../../../helpers/local-storage'
 
 globalThis.localStorage = {
@@ -9,11 +9,10 @@ globalThis.localStorage = {
     removeItem: vi.fn(),
     length: 0,
     key: vi.fn(),
-  }
+}
 
 test('should set graph data to local storage', () => {
     setGraphDataLocal({nodes: [], links: []})
-    
+
     expect(localStorage.setItem).toHaveBeenCalled()
 })
-  

@@ -9,6 +9,7 @@ import './GraphHeader.css'
 import { setGraphDataLocal } from '../../helpers/local-storage'
 import ActionMenuHeader from './ActionMenuHeader'
 import HistoryControls from './HistoryControls'
+import { clearHistory } from '../../reducers/history.reducer'
 
 const GraphHeader: React.FC = () => {
     const [graphLoading, setGraphLoading] = useState<boolean>(false)
@@ -43,6 +44,7 @@ const GraphHeader: React.FC = () => {
             nodes: [],
             links: []
         })
+        dispatch(clearHistory())
     }
 
     const handleInputNameChange = (event: ChangeEvent) => {

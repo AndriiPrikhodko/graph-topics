@@ -9,7 +9,7 @@ exports[`action menu data input items 1`] = `
     class="unselectable"
   >
     <div
-      class="icon-encircle"
+      class="icon-encircle "
     >
       <svg
         class="action-icon"
@@ -51,7 +51,7 @@ exports[`action menu data input items 2`] = `
     class="unselectable"
   >
     <div
-      class="icon-encircle"
+      class="icon-encircle "
     >
       <svg
         class="action-icon"
@@ -109,7 +109,7 @@ exports[`action menu data input items 3`] = `
     class="unselectable"
   >
     <div
-      class="icon-encircle"
+      class="icon-encircle "
     >
       <svg
         class="action-icon"

@@ -7,7 +7,7 @@ describe('check remove edge function', () => {
     testsData.map((testData: TestDataEdge) => test(testData.name, () => {
         const {edge, graphData} = testData
         const [initGData, expectedGData] = graphData
-        const actualGData = removeEdge.call(edge, initGData)
+        const {graphData: actualGData} = removeEdge.call(edge, initGData)
         expect(expectedGData).toMatchObject(actualGData)
     }))
 })

@@ -1,14 +1,25 @@
+import { clone } from 'ramda'
+import { filterUniqueNodes, filterUniqueLinks } from '../../helpers/data-adapter/filter'
+import { nodeIndex } from '../../helpers/data-adapter/indexer'
+
 export const addDiff =
     (graphData: GraphData, diffGraphData: GraphData) => {
-        // re-index nodes ?
-        graphData = {
-            nodes: [
-                ...graphData.nodes,
-                ...diffGraphData.nodes],
+        let mutableData = clone(graphData)
+        let mutableDiff = clone(diffGraphData)
+        let totalNodes = [
+            ...mutableData.nodes,
+            ...mutableDiff.nodes
+        ]
+
+        const uniqueNodes = filterUniqueNodes(totalNodes)
+        const indexedUniqueNodes = nodeIndex(0, uniqueNodes)
+
+        mutableData = {
+            nodes: indexedUniqueNodes,
             links: [
-                ...graphData.links,
-                ...diffGraphData.links
+                ...mutableData.links,
+                ...mutableDiff.links
             ]
         }
-        return graphData
+        return mutableData
     }

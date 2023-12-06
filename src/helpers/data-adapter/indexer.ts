@@ -1,4 +1,3 @@
-
 /**
  *
  * @param length length of all previous nodes in the graph
@@ -16,4 +15,21 @@ export const nodeIndex
              return n})
 
      return indexedNodeDiff
+ }
+
+/**
+ *
+ * @param length length of all previous nodes in the graph
+ * @param links array of new nodes
+ * @returns indexed node diff
+ */
+export const linkIndex
+:(length: number, links: LinkObject[]) => LinkObject[]
+ = (length, links) => {
+     const indexedLinks = links
+         .map((l, idx) => {
+             l.index = length + idx
+             return l})
+
+     return indexedLinks
  }

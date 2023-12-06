@@ -9,7 +9,8 @@ export const selfDataAdapter = (reactForceGraph2dData: GraphData) => {
             return n
         })
         const links = reactForceGraph2dData.links
-            .map(link => {
+            .map((link, idx) => {
+                link.index = idx
                 link.source = typeof link.source !== 'string' ? link.source.id : link.source
                 link.target = typeof link.target !== 'string' ? link.target.id : link.target
                 return link
