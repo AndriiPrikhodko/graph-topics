@@ -26,7 +26,6 @@ const useLogout = () => {
 
             // go to login
             navigate('/login')
-            window.location.reload()
         }
     }, [dispatch, navigate])
     return logout
