@@ -1,7 +1,13 @@
 import { clone } from 'ramda'
-import { filterUniqueNodes, filterUniqueLinks } from '../../helpers/data-adapter/filter'
+import { filterUniqueNodes } from '../../helpers/data-adapter/filter'
 import { nodeIndex } from '../../helpers/data-adapter/indexer'
 
+/**
+ *
+ * @param graphData
+ * @param diffGraphData
+ * @returns graphData with diff
+ */
 export const addDiff =
     (graphData: GraphData, diffGraphData: GraphData) => {
         let mutableData = clone(graphData)
