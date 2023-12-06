@@ -6,7 +6,8 @@ const store = configureStore({
     reducer: {
         graphData: rootReducer.graphSlice,
         graphList: rootReducer.graphListSlice,
-        common: rootReducer.commonSlice
+        common: rootReducer.commonSlice,
+        history: rootReducer.historySlice
     },
     middleware: [thunk],
     devTools: true

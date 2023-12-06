@@ -1,45 +1,51 @@
 
 import { createSlice } from '@reduxjs/toolkit'
-
+const STORED_ITEMS = 8
 interface History {
-    history: {
-        type: 'add' | 'delete'
-        data: GraphData
-    }[]
+    data: HistoryItem[]
     pointer: number
+    latest: boolean
 }
 
 const historySlice = createSlice({
     name: 'history',
-    initialState: { history: [], pointer: -1 } as History,
+    initialState: {
+        data: [],
+        pointer: -1,
+        latest: true
+    } as History,
     reducers: {
         addHistoryItem: (state, action) => {
             // If the latest state is not the last item in the history array,
             // remove the items after the pointer
-            if (state.pointer !== state.history.length - 1) {
-                state.history = state.history.slice(0, state.pointer + 1)
+            if (state.pointer !== state.data.length - 1) {
+                state.data = state.data.slice(0, state.pointer + 1)
             }
             // Add the new item
-            state.history.push(action.payload)
+            state.data.push(action.payload)
             // Update the pointer
             state.pointer++
             // Ensure the history array doesn't exceed 5 items
-            if (state.history.length > 5) {
-                state.history.shift()
+            if (state.data.length > STORED_ITEMS) {
+                state.data.shift()
                 state.pointer--
             }
+            // Update the latest property
+            state.latest = true
         },
         undo: state => {
             if (state.pointer > 0) {
                 state.pointer--
+                state.latest = false
             }
         },
         redo: state => {
-            if (state.pointer < state.history.length - 1) {
+            if (state.pointer < state.data.length - 1) {
                 state.pointer++
+                state.latest = state.pointer === state.data.length - 1
             }
         },
-        clearHistory: () => ({ history: [], pointer: -1 })
+        clearHistory: () => ({ data: [], pointer: -1, latest: true })
     }
 })
 

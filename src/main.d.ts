@@ -17,12 +17,18 @@ declare global {
   interface LinkObject {
     source:  string | NodeObject
     target: string | NodeObject
+    index?: number
     [key: string]: any
   }
 
   interface GraphData {
     nodes: NodeObject[];
     links: LinkObject[];
+  }
+
+  interface HistoryItem {
+    type: 'add' | 'delete'
+    data: GraphData
   }
 
   interface IFuncProps {
@@ -52,6 +58,11 @@ declare global {
       editMode: boolean
       type: LinkType
       graphFunction: null | 'addGraphEdge' | 'removeGraphEdge' | 'deleteGraphNode'
+    }
+    history: {
+      pointer: number
+      data: HistoryItem []
+      latest: boolean
     }
   }
 }
