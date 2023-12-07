@@ -4,8 +4,7 @@ import { undo, redo } from '../../reducers/history.reducer'
 import { setGraphData } from '../../reducers/graph.reducer'
 import { addDiff } from '../../actions/history/add-diff'
 import { removeDiff } from '../../actions/history/delete-diff'
-import { clone } from 'ramda'
-import { selfDataAdapter } from '../../helpers/data-adapter/self-data-adapter'
+import { setGraphDataLocal } from '../../helpers/local-storage'
 
 const HistoryControls: React.FC = () => {
     const dispatch = useDispatch()
@@ -24,6 +23,7 @@ const HistoryControls: React.FC = () => {
                 removeDiff(graphData, diff) :
                 addDiff(graphData, diff)
             dispatch(setGraphData(updatedGraphData))
+            setGraphDataLocal(updatedGraphData)
         }
     }
 
@@ -35,7 +35,8 @@ const HistoryControls: React.FC = () => {
             let updatedGraphData = type === 'add' ?
                 addDiff(graphData, diff) :
                 removeDiff(graphData, diff)
-            dispatch(setGraphData(selfDataAdapter(updatedGraphData)))
+            dispatch(setGraphData(updatedGraphData))
+            setGraphDataLocal(updatedGraphData)
         }
     }
 
