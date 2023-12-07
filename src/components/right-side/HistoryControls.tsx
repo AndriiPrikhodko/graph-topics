@@ -23,7 +23,7 @@ const HistoryControls: React.FC = () => {
             let updatedGraphData = type === 'add' ?
                 removeDiff(graphData, diff) :
                 addDiff(graphData, diff)
-            // graphData setting up object with NodeObject 
+            // graphData setting up object with NodeObject
             // in source, target of link
             // it has strict coordinates and currently not processed by
             // linkToString function to compare between strings and
