@@ -5,6 +5,7 @@ import { setGraphData } from '../../reducers/graph.reducer'
 import { addDiff } from '../../actions/history/add-diff'
 import { removeDiff } from '../../actions/history/delete-diff'
 import { setGraphDataLocal } from '../../helpers/local-storage'
+import { purgeLinks } from '../../helpers/data-adapter/clear-link-objects'
 
 const HistoryControls: React.FC = () => {
     const dispatch = useDispatch()
@@ -22,6 +23,12 @@ const HistoryControls: React.FC = () => {
             let updatedGraphData = type === 'add' ?
                 removeDiff(graphData, diff) :
                 addDiff(graphData, diff)
+            // graphData setting up object with NodeObject 
+            // in source, target of link
+            // it has strict coordinates and currently not processed by
+            // linkToString function to compare between strings and
+            // NodeObjects correctly
+            updatedGraphData.links = purgeLinks(updatedGraphData.links)
             dispatch(setGraphData(updatedGraphData))
             setGraphDataLocal(updatedGraphData)
         }
