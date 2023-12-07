@@ -23,8 +23,8 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
     const linkType = useSelector((store: Store) => store.common.type)
     const inputRef = useRef(null)
     const [inputValue, setInputValue] = useState('')
-    const isBijectionInput = linkType === 'bijection' &&
-        inputValue.split(',').length % 2 !== 0
+    const isBijectionInput = linkType !== 'bijection' ||
+        inputValue.split(',').length % 2 === 0
 
     const applyGraphFunction = (strValue: string) => {
         // fetching the function
@@ -61,7 +61,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
         if (event.key === 'Enter') {
             const target  = event.target as HTMLButtonElement
             if(target && (actionFunction !== 'addGraphEdge' ||
-            !isBijectionInput)) {
+            isBijectionInput)) {
                 applyGraphFunction(target.value.toString())
             }
             if(actionFunction !== 'addGraphEdge') {
@@ -99,7 +99,7 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                     linkType: actionFunction}
                 onClick={actionIconClick} label={label}
                 disabled = {actionFunction === 'addGraphEdge' ?
-                    isBijectionInput : false}
+                    !isBijectionInput : false}
             />
             <input
                 ref={inputRef}
