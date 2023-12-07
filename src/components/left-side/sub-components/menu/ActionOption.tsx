@@ -22,8 +22,9 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
     const data = useSelector((store: Store) => store.graphData)
     const linkType = useSelector((store: Store) => store.common.type)
     const inputRef = useRef(null)
-
     const [inputValue, setInputValue] = useState('')
+    const isBijectionInput = linkType === 'bijection' &&
+        inputValue.split(',').length % 2 !== 0
 
     const applyGraphFunction = (strValue: string) => {
         // fetching the function
@@ -59,7 +60,8 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
     const handleActionOnEnter = (event: KeyboardEvent): void =>  {
         if (event.key === 'Enter') {
             const target  = event.target as HTMLButtonElement
-            if(target) {
+            if(target && (actionFunction !== 'addGraphEdge' ||
+            !isBijectionInput)) {
                 applyGraphFunction(target.value.toString())
             }
             if(actionFunction !== 'addGraphEdge') {
@@ -95,7 +97,10 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
             <IconFactory
                 iconName={actionFunction === 'addGraphEdge' ?
                     linkType: actionFunction}
-                onClick={actionIconClick} label={label} />
+                onClick={actionIconClick} label={label}
+                disabled = {actionFunction === 'addGraphEdge' ?
+                    isBijectionInput : false}
+            />
             <input
                 ref={inputRef}
                 className="edge-input"
@@ -106,7 +111,11 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                 data-testid={`action-${actionFunction}`}
             ></input>
             {inputValue && (
-                <ImCancelCircle onClick={handleClearInput} className='icon-right' data-testid={`clear-${actionFunction}`}/>
+                <ImCancelCircle
+                    onClick={handleClearInput}
+                    className='icon-right'
+                    data-testid={`clear-${actionFunction}`
+                    }/>
             )}
         </label>
     </div>
