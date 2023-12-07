@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { loadGraphList } from '../../../../actions/graph-api.action'
 import Button from '../../../shared/button'
 import { setGraphDataLocal } from '../../../../helpers/local-storage'
+import { clearHistory } from '../../../../reducers/history.reducer'
 
 const GraphLoad: React.FC = () => {
     const dispatch = useDispatch()
@@ -39,7 +40,11 @@ const GraphLoad: React.FC = () => {
                 .then(graphData => {
                     setGraphDataLocal(graphData)
                     dispatch(setGraphData(graphData))
-                })
+                }).catch(error =>
+                    console.error(error))
+                .finally(() =>
+                    dispatch(clearHistory())
+                )
         }
     }
 

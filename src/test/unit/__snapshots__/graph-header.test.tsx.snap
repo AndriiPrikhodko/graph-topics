@@ -162,17 +162,17 @@ exports[`header 1`] = `
       </svg>
     </div>
     <div
-      class="icon-encircle "
+      class="icon-encircle disabled"
     >
       <svg
         class="action-icon"
-        color="darkorange"
+        color="black"
         data-testid="icon-cancelIcon"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
         stroke-width="0"
-        style="color: darkorange;"
+        style="color: black;"
         viewBox="0 0 1024 1024"
         width="1em"
         xmlns="http://www.w3.org/2000/svg"
