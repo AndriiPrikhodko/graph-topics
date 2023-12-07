@@ -98,8 +98,8 @@ const ActionOption: React.FC<Props> = ({ label, placeholder, actionFunction }) =
                 iconName={actionFunction === 'addGraphEdge' ?
                     linkType: actionFunction}
                 onClick={actionIconClick} label={label}
-                disabled = {actionFunction === 'addGraphEdge' ?
-                    !isBijectionInput : false}
+                disabled = {actionFunction === 'addGraphEdge' &&
+                !isBijectionInput}
             />
             <input
                 ref={inputRef}
