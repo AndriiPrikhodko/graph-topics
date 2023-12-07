@@ -6,6 +6,8 @@ import { setGraphData } from '../../../reducers/graph.reducer'
 import {default as graphConfig} from './graph.config.json'
 import { clone } from 'ramda'
 import { setGraphDataLocal } from '../../../helpers/local-storage'
+import { purgeLinks } from '../../../helpers/data-adapter/clear-link-objects'
+import { pushToHistory } from '../../../helpers/hooks/push-history'
 
 const { useRef } = React
 
@@ -39,6 +41,7 @@ const Graph = () => {
                     let cloneData = clone(updatedData)
                     dispatch(setGraphData(cloneData))
                     setGraphDataLocal(cloneData)
+                    pushToHistory(historyItem, dispatch)
                 }
                 else if (edge.length === 0) {
                     setEdge([node.id])
@@ -48,8 +51,10 @@ const Graph = () => {
                         .call([...edge, node.id].join(','), mutableGData)
                     setEdge([])
                     let cloneData = clone(updatedData)
+                    cloneData.links = purgeLinks(cloneData.links)
                     dispatch(setGraphData(cloneData))
                     setGraphDataLocal(cloneData)
+                    pushToHistory(historyItem, dispatch)
                 }
             }
         }, [edge, setEdge, dispatch, mutableGData, graphFunction])
