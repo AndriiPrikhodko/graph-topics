@@ -91,12 +91,13 @@ This playwright tests relies on computer vision technique for assertion, you can
 In order to launch the playwright tests follow the steps:
 
 1. [Installing App](README.md#installing-and-running-the-app) excluding 4th step
-1. [Setup MSW Mocks](README.md#setup-msw-mocks)
+2. [Setup MSW Mocks](README.md#setup-msw-mocks)
 3. ``npx playwright install`` if running for first time
-2. generate test data
+4. generate test data
 ```npx ts-node-esm playwright/utils/data-generator.ts```
-3. run tests
+5. run tests
 ```npm run test:playwright -- --grep @create```
+6. test report located in ``playwright-report`` dir
 
 ## Docker Building the App
 
