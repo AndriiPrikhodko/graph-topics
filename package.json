@@ -4,9 +4,13 @@
   "author": "Andrii Prykhodko",
   "license": "CC BY-NC 4.0",
   "private": true,
+  "type": "module",
   "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.41.2",
     "@reduxjs/toolkit": "^1.9.3",
     "@storybook/addon-coverage": "^1.0.0",
+    "@tensorflow/tfjs-node": "^4.17.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -18,6 +22,7 @@
     "axios": "^1.3.4",
     "css-mediaquery": "^0.1.2",
     "happy-dom": "^12.10.3",
+    "moment": "^2.30.1",
     "ramda": "^0.29.1",
     "react": "^18.2.0",
     "react-async": "^10.0.1",
@@ -29,7 +34,9 @@
     "react-scripts": "^5.0.1",
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
+    "sharp": "^0.33.2",
     "storybook-addon-react-router-v6": "^2.0.10",
+    "ts-node": "^10.9.2",
     "typescript": "^4.9.5",
     "vite": "^5.0.5",
     "vitest": "^1.0.1",
@@ -41,6 +48,7 @@
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "NODE_ENV=test npx vitest",
     "storybook": "storybook dev -p 6006",
+    "test:playwright": "npx playwright test",
     "test:component": "test-storybook",
     "test:component-coverage": "test-storybook && npx nyc report --temp-dir=./coverage/storybook --reporter=text",
     "build-storybook": "storybook build",
@@ -138,9 +146,11 @@
     "workerDirectory": "public"
   },
   "nyc": {
-    "include": ["src/**"],
+    "include": [
+      "src/**"
+    ],
     "exclude": [
-      "node_modules/**", 
+      "node_modules/**",
       "src/reducers/**",
       "src/helpers/**",
       "src/actions/**",

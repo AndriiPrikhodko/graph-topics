@@ -22,7 +22,8 @@
   },
   "typeRoots": [
     "./node_modules/@types",
-    "./src/"
+    "./src/",
+    "./playwright/"
   ],
   "include": [
     "./src",

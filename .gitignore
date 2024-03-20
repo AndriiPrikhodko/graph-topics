@@ -3,3 +3,11 @@ build
 coverage
 .vscode
 public/mockServiceWorker.js
+
+#playwright
+!playwright/data/generated/.gitkeep
+playwright/data/generated/*
+test-results
+playwright-report
+playwright/screenshots/*
+!playwright/screenshots/.gitkeep

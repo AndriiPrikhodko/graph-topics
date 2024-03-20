@@ -29,6 +29,7 @@ Therefore storing topics in form of graph exceeds just form of storing the data 
 - Remove graph edge
 - Delete graph node
 - Clear graph data
+- History up to 8 steps
 - Save graph
 - Load graph
 
@@ -72,6 +73,7 @@ To run storybook, use following command:
 Make sure mocks have been initialized.
 Install playwright, with command
 ```npx playwright install```
+
 #### Run tests
 Run component tests with following command:
 ```npm run test:component```
@@ -82,6 +84,19 @@ To run unit tests, use this command:
 
 ```npm test```
 
+## Running Playwright Tests
+
+This playwright tests relies on computer vision technique for assertion, you can find model  in ``playwright/tfjs_graph``.
+
+In order to launch the playwright tests follow the steps:
+
+1. [Installing App](README.md#installing-and-running-the-app) excluding 4th step
+1. [Setup MSW Mocks](README.md#setup-msw-mocks)
+3. ``npx playwright install`` if running for first time
+2. generate test data
+```npx ts-node-esm playwright/utils/data-generator.ts```
+3. run tests
+```npm run test:playwright -- --grep @create```
 
 ## Docker Building the App
 
